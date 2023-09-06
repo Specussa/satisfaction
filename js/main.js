@@ -15,15 +15,24 @@ window.onresize = function () {
 // end height
 
 // start btn
-var btn = document.querySelectorAll('.btn');
-btn.forEach(btns => { 
-  btns.onmousemove = function (e) {
+var btndefault = document.querySelectorAll('.btn__default');
+btndefault.forEach(btnds => { 
+  btnds.onmousemove = function (e) {
     var relX = e.pageX - this.offsetLeft;
     var relY = e.pageY - this.offsetTop;
-    this.children[0].style.setProperty('--rely', `${relY}px`);
-    this.children[0].style.setProperty('--relx', `${relX}px`);
+    this.children[1].style.setProperty('--rely', `${relY}px`);
+    this.children[1].style.setProperty('--relx', `${relX}px`);
     console.log(this.offsetLeft);
     console.log(this.offsetTop);
+  };
+})
+var btnhero = document.querySelectorAll('.hero__btn');
+btnhero.forEach(btnhs => { 
+  btnhs.onmousemove = function (e) {
+    var relX = e.pageX - this.offsetLeft - this.parentElement.parentElement.parentElement.parentElement.offsetLeft;
+    var relY = e.pageY - this.offsetTop - this.parentElement.parentElement.parentElement.offsetTop - this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop;
+    this.children[1].style.setProperty('--rely', `${relY}px`);
+    this.children[1].style.setProperty('--relx', `${relX}px`);
   };
 })
 // end btn
