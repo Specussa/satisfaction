@@ -773,6 +773,11 @@ section {
   padding: 0 0 60px;
 }
 
+.hero__item {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 .hero__image {
   display: -webkit-box;
   display: -ms-flexbox;

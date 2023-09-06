@@ -33,6 +33,7 @@ btnhero.forEach(btnhs => {
     var relY = e.pageY - this.offsetTop - this.parentElement.parentElement.parentElement.offsetTop - this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop;
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
+    console.log(this.parentNode.offsetLeft);
   };
 })
 // end btn
