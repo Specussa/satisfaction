@@ -37,21 +37,21 @@ const menu_c = document.querySelector('.header__consultation');
 const burger_c = document.querySelector('.button__project');
 
 // кнопка header__burger
-document.querySelector('.header__burger').addEventListener('click', function() {
-  if (burger.classList.contains("active")) {
-    bodyoverlay.classList.remove("active");
-    menu.classList.remove("active");
-    burger.classList.remove("active");
-    document.body.style.overflow = "visible";
-    document.body.style.height = "100%";
-  } else {
-    bodyoverlay.classList.add("active");
-    menu.classList.add("active");
-    burger.classList.add("active");
-    document.body.style.overflow = "hidden";
-    document.body.style.height = "100vh";
-  }
-})
+// document.querySelector('.header__burger').addEventListener('click', function() {
+//   if (burger.classList.contains("active")) {
+//     bodyoverlay.classList.remove("active");
+//     menu.classList.remove("active");
+//     burger.classList.remove("active");
+//     document.body.style.overflow = "visible";
+//     document.body.style.height = "100%";
+//   } else {
+//     bodyoverlay.classList.add("active");
+//     menu.classList.add("active");
+//     burger.classList.add("active");
+//     document.body.style.overflow = "hidden";
+//     document.body.style.height = "100vh";
+//   }
+// })
 // end header__burger
 
 // start expertise
