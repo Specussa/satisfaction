@@ -29,7 +29,7 @@ btndefault.forEach(btnds => {
 var btnhero = document.querySelectorAll('.hero__btn');
 btnhero.forEach(btnhs => { 
   btnhs.onmousemove = function (e) {
-    var relX = e.pageX - this.offsetLeft - this.parentElement.parentElement.parentElement.parentElement.offsetLeft;
+    var relX = e.pageX - this.offsetLeft - this.parentElement.parentElement.parentElement.parentElement.offsetLeft - this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft;
     var relY = e.pageY - this.offsetTop - this.parentElement.parentElement.parentElement.offsetTop - this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop;
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
