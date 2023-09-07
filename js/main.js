@@ -81,6 +81,36 @@ const burger_c = document.querySelector('.button__project');
 // })
 // end header__burger
 
+// start hover product
+var hover = document.querySelectorAll('.product__images');
+elemHover = false;
+hover.forEach(hovers => {
+  hovers.addEventListener('mouseover', function(e) {
+    if(elemHover) return;
+    var target = e.target.closest('.product__image');
+    if(!target) return;
+    elemHover = target;
+    var parent = target.closest('.product__images'),
+    old = parent.querySelector('.active')
+    if(old) old.classList.remove('active')
+    target.classList.add('active')
+  })
+  hovers.addEventListener('mouseout', function(e) {
+    if(!elemHover) return
+    elemHover = null;
+  })
+  hovers.addEventListener('mouseleave', function(){
+    let parent = this;
+    let elems = parent.children;
+
+    for (let elem of elems) {
+      elem.classList.remove('active');
+    }
+    this.children[0].classList.add('active');
+  });
+})
+// end hover product
+
 // start hero
 const heroSlider = document.querySelector('.hero__swiper');
 if(heroSlider){
@@ -137,7 +167,7 @@ if(shopSlider){
 }
 // end shop
 
-// start shop
+// start blog
 const blogSlider = document.querySelector('.blog__swiper');
 if(blogSlider){
   var aboutusThumbs = new Swiper('.blog__swiper', {
@@ -155,4 +185,24 @@ if(blogSlider){
     },
   });
 }
-// end shop
+// end blog
+
+// start product
+const productSlider = document.querySelector('.product__swiper');
+if(productSlider){
+  var aboutusThumbs = new Swiper('.product__swiper', {
+    loop: false,
+    slidesPerView: 5,
+    loopedSlides: 5,
+    spaceBetween: 20,
+    speed: 1000,
+    slideToClickedSlide: false,
+    allowTouchMove: true,
+    breakpoints: {
+      800: {
+        spaceBetween: 20,
+      },
+    },
+  });
+}
+// end product
