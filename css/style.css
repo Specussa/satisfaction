@@ -551,7 +551,7 @@ section {
 
 .footer__top_button:hover {
   color: var(--pink);
-  background-color: var(--bg);
+  background-color: var(--border-pink);
 }
 
 .footer__btn svg {
@@ -961,9 +961,13 @@ section {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0.85%, rgba(0, 0, 0, 0) 98.53%);
 }
 
-.hero__swiper,
 .shop__swiper {
   padding: 0 0 30px;
+}
+
+.hero__swiper {
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .hero__navigation,
@@ -974,6 +978,10 @@ section {
   align-items: center;
   justify-content: space-between;
   gap: 40px;
+}
+
+.hero__navigation {
+  padding: 30px 0 0;
 }
 
 .hero__slider .swiper-button-prev,
