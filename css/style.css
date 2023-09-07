@@ -281,11 +281,17 @@ section {
   color: var(--bg);
   background-color: var(--pink);
   border-radius: 10px;
+  -webkit-transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
   overflow: hidden;
 }
 
+.btn:hover {
+  color: var(--pink);
+}
+
 .hero__btn {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: #ffffff4d;
 }
 
 .btn:hover {
@@ -314,7 +320,7 @@ section {
   top: var(--rely);
   left: var(--relx);
   border-radius: 50%;
-  background-color: var(--bg);
+  background-color: var(--border-pink);
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   -webkit-transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
