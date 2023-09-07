@@ -18,8 +18,11 @@ window.onresize = function () {
 var btnshop = document.querySelectorAll('.shop__btn');
 btnshop.forEach(btns => { 
   btns.onmousemove = function (e) {
-    var relX = e.pageX - this.offsetLeft;
-    var relY = e.pageY - this.offsetTop;
+    var relX = e.pageX - this.offsetLeft - 
+    this.parentElement.parentElement.parentElement.offsetLeft;;
+    var relY = e.pageY - this.offsetTop - 
+    this.parentElement.parentElement.parentElement.offsetTop - 
+    this.parentElement.parentElement.parentElement.parentElement.offsetTop;
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
   };
@@ -28,33 +31,10 @@ var btnincatalog = document.querySelectorAll('.incatalog__btn');
 btnincatalog.forEach(btns => { 
   btns.onmousemove = function (e) {
     var relX = e.pageX - this.offsetLeft - 
-    this.parentElement.offsetLeft - 
-    this.parentElement.parentElement.offsetLeft - 
-    this.parentElement.parentElement.parentElement.offsetLeft - 
-    this.parentElement.parentElement.parentElement.parentElement.offsetLeft - 
-    this.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft - 
-    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft - 
-    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft;
-    console.log(this.offsetLeft)
-    console.log(this.parentElement.offsetLeft)
-    console.log(this.parentElement.parentElement.offsetLeft)
-    console.log(this.parentElement.parentElement.parentElement.offsetLeft)
-    console.log(this.parentElement.parentElement.parentElement.parentElement.offsetLeft)
-    console.log(this.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft)
-    console.log(this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft)
-    console.log(this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft)
-    console.log()
-    console.log()
-    console.log()
-    console.log()
+    this.parentElement.parentElement.parentElement.offsetLeft;
     var relY = e.pageY - this.offsetTop - 
-    this.parentElement.offsetTop - 
-    this.parentElement.parentElement.offsetTop - 
     this.parentElement.parentElement.parentElement.offsetTop - 
-    this.parentElement.parentElement.parentElement.parentElement.offsetTop - 
-    this.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop - 
-    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop - 
-    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop;
+    this.parentElement.parentElement.parentElement.parentElement.offsetTop;
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
   };
