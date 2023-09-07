@@ -1128,13 +1128,10 @@ section {
 }
 
 .product__item {
-  height: auto;
-}
-
-.product__item_link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: auto;
   padding: 20px;
   justify-content: space-between;
   flex-direction: column;
@@ -1155,8 +1152,8 @@ section {
 
 .product__favorites {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 20px;
+  right: 20px;
   color: var(--pink);
   z-index: 2;
 }
