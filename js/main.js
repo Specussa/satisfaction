@@ -142,7 +142,7 @@ const blogSlider = document.querySelector('.blog__swiper');
 if(blogSlider){
   var aboutusThumbs = new Swiper('.blog__swiper', {
     loop: true,
-    slidesPerView: 4,
+    slidesPerView: 'auto',
     loopedSlides: 4,
     spaceBetween: 20,
     speed: 1000,

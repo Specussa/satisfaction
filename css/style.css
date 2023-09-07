@@ -1060,6 +1060,7 @@ section {
 }
 
 .blog__item {
+  width: 465px;
   padding: 30px 0;
   flex-direction: column;
 }
