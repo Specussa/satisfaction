@@ -136,3 +136,23 @@ if(shopSlider){
   });
 }
 // end shop
+
+// start shop
+const blogSlider = document.querySelector('.blog__swiper');
+if(blogSlider){
+  var aboutusThumbs = new Swiper('.blog__swiper', {
+    loop: true,
+    slidesPerView: 4,
+    loopedSlides: 4,
+    spaceBetween: 20,
+    speed: 1000,
+    slideToClickedSlide: false,
+    allowTouchMove: true,
+    breakpoints: {
+      800: {
+        spaceBetween: 20,
+      },
+    },
+  });
+}
+// end shop
