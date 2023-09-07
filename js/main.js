@@ -15,8 +15,8 @@ window.onresize = function () {
 // end height
 
 // start btn
-var btnshop = document.querySelectorAll('.shop__btn');
-btnshop.forEach(btns => { 
+var btndefault = document.querySelectorAll('.default__btn');
+btndefault.forEach(btns => { 
   btns.onmousemove = function (e) {
     var relX = e.pageX - this.offsetLeft - 
     this.parentElement.parentElement.parentElement.offsetLeft;;
@@ -27,23 +27,14 @@ btnshop.forEach(btns => {
     this.children[1].style.setProperty('--relx', `${relX}px`);
   };
 })
-var btnincatalog = document.querySelectorAll('.incatalog__btn');
-btnincatalog.forEach(btns => { 
-  btns.onmousemove = function (e) {
-    var relX = e.pageX - this.offsetLeft - 
-    this.parentElement.parentElement.parentElement.offsetLeft;
-    var relY = e.pageY - this.offsetTop - 
-    this.parentElement.parentElement.parentElement.offsetTop - 
-    this.parentElement.parentElement.parentElement.parentElement.offsetTop;
-    this.children[1].style.setProperty('--rely', `${relY}px`);
-    this.children[1].style.setProperty('--relx', `${relX}px`);
-  };
-})
 var btnhero = document.querySelectorAll('.hero__btn');
 btnhero.forEach(btnhs => { 
   btnhs.onmousemove = function (e) {
-    var relX = e.pageX - this.offsetLeft - this.parentElement.parentElement.parentElement.parentElement.offsetLeft - this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft;
-    var relY = e.pageY - this.offsetTop - this.parentElement.parentElement.parentElement.offsetTop - this.parentElement.parentElement.parentElement.parentElement.offsetTop - this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop;
+    var relX = e.pageX - this.offsetLeft - this.parentElement.parentElement.parentElement.parentElement.offsetLeft - 
+    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft;
+    var relY = e.pageY - this.offsetTop - this.parentElement.parentElement.parentElement.offsetTop - 
+    this.parentElement.parentElement.parentElement.parentElement.offsetTop - 
+    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop;
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
   };
