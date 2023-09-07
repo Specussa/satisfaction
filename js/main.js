@@ -15,25 +15,57 @@ window.onresize = function () {
 // end height
 
 // start btn
-var btndefault = document.querySelectorAll('.btn__default');
-btndefault.forEach(btnds => { 
-  btnds.onmousemove = function (e) {
+var btnshop = document.querySelectorAll('.shop__btn');
+btnshop.forEach(btns => { 
+  btns.onmousemove = function (e) {
     var relX = e.pageX - this.offsetLeft;
     var relY = e.pageY - this.offsetTop;
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
-    console.log(this.offsetLeft);
-    console.log(this.offsetTop);
+  };
+})
+var btnincatalog = document.querySelectorAll('.incatalog__btn');
+btnincatalog.forEach(btns => { 
+  btns.onmousemove = function (e) {
+    var relX = e.pageX - this.offsetLeft - 
+    this.parentElement.offsetLeft - 
+    this.parentElement.parentElement.offsetLeft - 
+    this.parentElement.parentElement.parentElement.offsetLeft - 
+    this.parentElement.parentElement.parentElement.parentElement.offsetLeft - 
+    this.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft - 
+    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft - 
+    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft;
+    console.log(this.offsetLeft)
+    console.log(this.parentElement.offsetLeft)
+    console.log(this.parentElement.parentElement.offsetLeft)
+    console.log(this.parentElement.parentElement.parentElement.offsetLeft)
+    console.log(this.parentElement.parentElement.parentElement.parentElement.offsetLeft)
+    console.log(this.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft)
+    console.log(this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft)
+    console.log(this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft)
+    console.log()
+    console.log()
+    console.log()
+    console.log()
+    var relY = e.pageY - this.offsetTop - 
+    this.parentElement.offsetTop - 
+    this.parentElement.parentElement.offsetTop - 
+    this.parentElement.parentElement.parentElement.offsetTop - 
+    this.parentElement.parentElement.parentElement.parentElement.offsetTop - 
+    this.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop - 
+    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop - 
+    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop;
+    this.children[1].style.setProperty('--rely', `${relY}px`);
+    this.children[1].style.setProperty('--relx', `${relX}px`);
   };
 })
 var btnhero = document.querySelectorAll('.hero__btn');
 btnhero.forEach(btnhs => { 
   btnhs.onmousemove = function (e) {
     var relX = e.pageX - this.offsetLeft - this.parentElement.parentElement.parentElement.parentElement.offsetLeft - this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft;
-    var relY = e.pageY - this.offsetTop - this.parentElement.parentElement.parentElement.offsetTop - this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop;
+    var relY = e.pageY - this.offsetTop - this.parentElement.parentElement.parentElement.offsetTop - this.parentElement.parentElement.parentElement.parentElement.offsetTop - this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop;
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
-    console.log(this.parentNode.offsetLeft);
   };
 })
 // end btn
@@ -105,3 +137,31 @@ if(heroSlider){
   });
 }
 // end hero
+
+// start shop
+const shopSlider = document.querySelector('.shop__swiper');
+if(shopSlider){
+  var aboutusThumbs = new Swiper('.shop__swiper', {
+    loop: true,
+    slidesPerView: 1,
+    loopedSlides: 1,
+    spaceBetween: 40,
+    speed: 1000,
+    slideToClickedSlide: false,
+    allowTouchMove: true,
+    navigation: {
+      nextEl: '.shop__next',
+      prevEl: '.shop__prev',
+    },
+    pagination: {
+      el: '.shop__pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      800: {
+        spaceBetween: 20,
+      },
+    },
+  });
+}
+// end shop
