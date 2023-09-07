@@ -568,7 +568,7 @@ section {
   display: flex;
   max-width: 845px;
   flex-wrap: wrap;
-  gap: 20px 60px;
+  gap: 30px;
 }
 
 .footer__bottom_link {
