@@ -160,6 +160,54 @@ h6 {
   padding: 0;
 }
 
+section {
+  margin: -1px 0 0;
+  position: relative;
+  opacity: 1;
+  pointer-events: all;
+  background-color: var(--bg);
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  padding: 0 60px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: transparent;
+  -webkit-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+  transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+}
+
+.overlay.active {
+  /* background-color: var(--bg);
+  opacity: 0.95; */
+  visibility: visible;
+}
+
+/* .dark .overlay.active {
+  opacity: 0.9;
+} */
+
+.top {
+  height: 180px;
+  width: 100%;
+}
+
+/* start font */
+
 h1 {
   font-family: var(--title-font);
   font-size: 50px;
@@ -229,51 +277,14 @@ p,
   line-height: 17px;
 }
 
-section {
-  margin: -1px 0 0;
-  position: relative;
-  opacity: 1;
-  pointer-events: all;
-  background-color: var(--bg);
-  overflow: hidden;
+.header__counter {
+  font-family: var(--text-font);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
 }
 
-.container {
-  width: 100%;
-  max-width: 1920px;
-  padding: 0 60px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.overlay {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 99;
-  opacity: 0;
-  visibility: hidden;
-  background: transparent;
-  -webkit-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
-  transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
-}
-
-.overlay.active {
-  /* background-color: var(--bg);
-  opacity: 0.95; */
-  visibility: visible;
-}
-
-/* .dark .overlay.active {
-  opacity: 0.9;
-} */
-
-.top {
-  height: 180px;
-  width: 100%;
-}
+/* end font */
 
 /* start buttons */
 
@@ -440,6 +451,13 @@ section {
   color: var(--bg);
   background-color: var(--pink);
   position: relative;
+  -webkit-transition: background-color .2s linear, color .2s linear;
+  transition: background-color .2s linear, color .2s linear;
+}
+
+.header__right_buttons a:hover {
+  color: var(--pink);
+  background-color: var(--border-pink);
 }
 
 .header__counter {
@@ -453,14 +471,17 @@ section {
   position: absolute;
   top: 5px;
   right: 5px;
-  font-family: var(--text-font);
-  font-size: 10px;
-  font-weight: 500;
-  line-height: 12px;
-  color: var(--pink);
   text-align: center;
+  color: var(--pink);
   background-color: var(--bg);
   border-radius: 50%;
+  -webkit-transition: background-color .2s linear, color .2s linear;
+  transition: background-color .2s linear, color .2s linear;
+}
+
+.header__right_buttons a:hover .header__counter {
+  color: var(--bg);
+  background-color: var(--pink);
 }
 
 .header__top_link {
@@ -1622,18 +1643,48 @@ section {
   color: var(--bg);
   background-color: var(--pink);
   border-radius: 10px;
-  -webkit-transition: background-color 0.2s linear;
-  transition: background-color 0.2s linear;
+  -webkit-transition: background-color 0.2s linear, color 0.2s linear;
+  transition: background-color 0.2s linear, color 0.2s linear;
   overflow: hidden;
+}
+
+.product__cart:hover {
+  color: var(--pink);
+  background-color: var(--border-pink);
 }
 
 .product__cart.added {
   background-color: var(--green);
 }
 
+.product__cart:hover.added {
+  background-color: var(--border-pink);
+}
+
 .product__cart svg {
   width: 27px;
   height: 30px;
+}
+
+.product__cart svg path {
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+}
+
+.product__cart:hover svg path:nth-child(1) {
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+}
+
+.product__cart:hover svg path:nth-child(3) {
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
 }
 
 .product__images {
