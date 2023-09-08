@@ -715,6 +715,10 @@ section {
   color: var(--bg);
 }
 
+.footer__top_link:hover {
+  color: var(--pink);
+}
+
 .footer__top_buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -783,6 +787,10 @@ section {
 
 .footer__bottom_link {
   color: var(--text-gray);
+}
+
+.footer__bottom_link:hover {
+  color: var(--pink);
 }
 
 .footer__bottom_flex {
