@@ -49,7 +49,7 @@ btnheader.forEach(btns => {
     this.parentElement.parentElement.parentElement.offsetLeft;
     var relY = e.pageY - this.offsetTop - 
     this.parentElement.parentElement.parentElement.parentElement.offsetTop - this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop - 
-    Math.round(window.pageYOffset);
+    Math.round(window.pageYOffset) + Math.round(this.offsetParent.offsetParent.scrollTop);
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
   };
