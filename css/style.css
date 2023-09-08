@@ -1736,8 +1736,7 @@ section {
   .header__top_container,
   .header__left,
   .header__right,
-  .header__right_buttons,
-  .header__bottom_list {
+  .header__right_buttons {
     gap: 30px;
   }
   .header__right_buttons {
@@ -1755,6 +1754,12 @@ section {
   .header__bottom_hover {
     max-height: calc(var(--height) - 130px);
     top: 130px;
+  }
+  .header.active .header__bottom_hover {
+    max-height: calc(var(--height) - 50px);
+  }
+  .header.active .header__burger {
+    margin: 0px 15px 0px 0px;
   }
   .top {
     height: 130px;
