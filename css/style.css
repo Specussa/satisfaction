@@ -544,7 +544,7 @@ section {
 
 .header__burger_button {
   width: 26px;
-  height: 15px;
+  height: 26px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -566,20 +566,20 @@ section {
 }
 
 .header__burger_button span:nth-child(1) {
-  top: 0px;
+  top: 7.5px;
 }
 
 .header__burger_button span:nth-child(2) {
-  top: 7px;
+  top: 12px;
 }
 
 .header__burger_button span:nth-child(3) {
-  width: 13px;
-  top: 13px;
+  width: 16.5px;
+  top: 16.5px;
 }
 
 .header__burger.active .header__burger_button span:nth-child(1) {
-  top: 7px;
+  top: 12px;
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
 }
@@ -590,8 +590,8 @@ section {
 }
 
 .header__burger.active .header__burger_button span:nth-child(3) {
-  width: 26px;
-  top: 7px;
+  width: 22px;
+  top: 12px;
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
