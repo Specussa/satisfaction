@@ -269,7 +269,12 @@ section {
 } */
 
 .top {
-  /* height: 80px; */
+  height: 180px;
+  width: 100%;
+}
+
+.top.hidden {
+  height: 0px;
   width: 100%;
 }
 
@@ -344,19 +349,19 @@ section {
 
 /* start header */
 
-/* .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 80px;
-  align-items: center;
-  position: fixed;
+.header {
+  position: relative;
   z-index: 100;
   width: 100%;
-  border-bottom: 1px solid var(--border);
   background-color: var(--bg);
   overflow: hidden;
-} */
+}
+
+.header.active {
+  position: fixed;
+  top: -110px;
+  left: 0;
+}
 
 .header__top_container {
   height: 110px;

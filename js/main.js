@@ -14,6 +14,21 @@ window.onresize = function () {
 };
 // end height
 
+// start header__bottom
+const header = document.querySelector('.header');
+const headertop = document.querySelector('.header__top');
+const sectiontop = document.querySelector('.top');
+window.addEventListener("scroll", () => {
+  if (Math.round(window.pageYOffset) > headertop.clientHeight) {
+    header.classList.add('active');
+    sectiontop.classList.remove('hidden');
+  } else {
+    header.classList.remove('active');
+    sectiontop.classList.add('hidden');
+  }
+})
+// end header__bottom
+
 // start btn
 var btndefault = document.querySelectorAll('.default__btn');
 btndefault.forEach(btns => { 
@@ -64,7 +79,6 @@ year.remove();
 // start navbar
 const bodyoverlay = document.querySelector('.overlay');
 
-const header = document.querySelector('.header');
 const headerlinks = document.querySelector('.header__links');
 const headerbuttons = document.querySelector('.header__buttons');
 
