@@ -220,6 +220,13 @@ p,
   color: var(--text);
 }
 
+.footer__top_address {
+  font-family: var(--text-font);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+}
+
 section {
   margin: -1px 0 0;
   position: relative;
@@ -591,6 +598,26 @@ section {
 }
 
 .footer__bottom_flex_link {
+  color: var(--bg);
+}
+
+.footer__top_address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer__top_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__top_address {
   color: var(--bg);
 }
 
