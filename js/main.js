@@ -42,6 +42,18 @@ btndefault.forEach(btns => {
     this.children[1].style.setProperty('--relx', `${relX}px`);
   };
 })
+var btnheader = document.querySelectorAll('.header__blockbtn');
+btnheader.forEach(btns => { 
+  btns.onmousemove = function (e) {
+    var relX = e.pageX - this.offsetLeft - 
+    this.parentElement.parentElement.parentElement.offsetLeft;
+    var relY = e.pageY - this.offsetTop - 
+    this.parentElement.parentElement.parentElement.parentElement.offsetTop - this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop - 
+    Math.round(window.pageYOffset);
+    this.children[1].style.setProperty('--rely', `${relY}px`);
+    this.children[1].style.setProperty('--relx', `${relX}px`);
+  };
+})
 var btnhero = document.querySelectorAll('.hero__btn');
 btnhero.forEach(btnhs => { 
   btnhs.onmousemove = function (e) {
@@ -93,11 +105,13 @@ const burger_c = document.querySelector('.button__project');
 burger.addEventListener('click', function() {
   if (burger.classList.contains("active")) {
     bodyoverlay.classList.remove("active");
+    menu.classList.remove("active");
     burger.classList.remove("active");
     document.body.style.overflow = "visible";
     document.body.style.height = "100%";
   } else {
     bodyoverlay.classList.add("active");
+    menu.classList.add("active");
     burger.classList.add("active");
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
