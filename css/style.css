@@ -806,6 +806,10 @@ section {
   color: var(--bg);
 }
 
+.footer__bottom_flex_link:hover {
+  color: var(--pink);
+}
+
 .footer__top_address {
   display: -webkit-box;
   display: -ms-flexbox;
