@@ -272,11 +272,6 @@ section {
   width: 100%;
 }
 
-.top.hidden {
-  height: 0px;
-  width: 100%;
-}
-
 /* start buttons */
 
 .btn {
@@ -347,7 +342,9 @@ section {
 /* start header */
 
 .header {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 100;
   width: 100%;
 }
@@ -627,7 +624,7 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 10px 0;
+  padding: 30px 0;
   flex-wrap: wrap;
   gap: 10px;
 }
