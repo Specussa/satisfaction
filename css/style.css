@@ -292,6 +292,8 @@ section {
   color: var(--bg);
   background-color: var(--pink);
   border-radius: 10px;
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
   overflow: hidden;
 }
 
