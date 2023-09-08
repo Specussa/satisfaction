@@ -731,6 +731,10 @@ section {
   color: var(--bg);
 }
 
+.footer__logo:hover {
+  color: var(--pink);
+}
+
 .footer__logo svg {
   width: 300px;
   height: 56px;
