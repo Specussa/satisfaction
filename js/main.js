@@ -17,14 +17,11 @@ window.onresize = function () {
 // start header__bottom
 const header = document.querySelector('.header');
 const headertop = document.querySelector('.header__top');
-const sectiontop = document.querySelector('.top');
 window.addEventListener("scroll", () => {
   if (Math.round(window.pageYOffset) > headertop.clientHeight) {
     header.classList.add('active');
-    sectiontop.classList.remove('hidden');
   } else {
     header.classList.remove('active');
-    sectiontop.classList.add('hidden');
   }
 })
 // end header__bottom
@@ -169,8 +166,8 @@ if(heroSlider){
       clickable: true,
     },
     breakpoints: {
-      800: {
-        spaceBetween: 20,
+      1280: {
+        spaceBetween: 0,
       },
     },
   });
@@ -217,7 +214,11 @@ if(blogSlider){
     slideToClickedSlide: false,
     allowTouchMove: true,
     breakpoints: {
-      800: {
+      580: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      1280: {
         spaceBetween: 20,
       },
     },
@@ -237,7 +238,14 @@ if(productSlider){
     slideToClickedSlide: false,
     allowTouchMove: true,
     breakpoints: {
-      800: {
+      580: {
+        slidesPerView: 2,
+        loopedSlides: 2,
+        spaceBetween: 10,
+      },
+      1280: {
+        slidesPerView: 3,
+        loopedSlides: 3,
         spaceBetween: 20,
       },
     },

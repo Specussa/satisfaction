@@ -1565,6 +1565,10 @@ p,
   transform: scale(1.2);
 }
 
+.blog__link_mobile {
+  display: none;
+}
+
 /* end blog */
 
 /* start product */
@@ -1934,3 +1938,353 @@ p,
   }
 }
 /* media 1440px */
+
+/* media 1280px */
+@media (max-width: 1280px) {
+  a,
+  p,
+  .footer__bottom_link,
+  .footer__bottom_flex_link,
+  .header__bottom_link {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .header__top_link,
+  .footer__top_link {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .container {
+    padding: 0 20px;
+  }
+  .btn {
+    width: 235px;
+  }
+  .header.active,
+  .header {
+    position: fixed;
+    top: 0px;
+  }
+  .header__top {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: transparent;
+  }
+  .header__top_container {
+    height: 80px;
+    justify-content: flex-end;
+  }
+  .header__bottom_container,
+  .header__bottom_link,
+  .header__burger,
+  .header.active,
+  .header__top,
+  .header__bottom {
+    height: 80px;
+  }
+  .header__burger {
+    position: relative;
+    z-index: 2;
+  }
+  .header__bottom_hover {
+    display: none;
+  }
+  .header__bottom_list,
+  .header__left,
+  .header__logo,
+  .header__top_link,
+  .card__image {
+    display: none;
+  }
+  .header__nav {
+    height: calc(var(--height) - 80px);
+    top: 80px;
+  }
+  .top {
+    height: 80px;
+  }
+  .header.active .header__burger,
+  .header__burger {
+    width: 105px;
+    margin: 0 20px 0 0;
+    visibility: visible;
+  }
+  .header__burger.active .header__burger_button span:nth-child(3) {
+    width: 26px;
+  }
+  .hero__container {
+    padding: 0;
+  }
+  .hero__slider {
+    padding: 0 0 20px;
+  }
+  .hero__swiper,
+  .hero__item,
+  .hero__image {
+    border-radius: 0;
+  }
+  .hero__image {
+    height: calc(var(--height) - 80px);
+  }
+  .hero__navigation {
+    padding: 20px 0 0;
+  }
+  .hero__head,
+  .hero__desc {
+    max-width: 585px;
+  }
+  .hero__info {
+    padding: 20px;
+  }
+  .card__block {
+    padding: 20px 0;
+  }
+  .card__list {
+    width: 100%;
+    gap: 10px;
+  }
+  .card__item,
+  .blog__image,
+  .product__images,
+  .product__image_block {
+    height: 235px;
+  }
+  .card__item {
+    width: calc(33.333% - 7px);
+  }
+  .card__info {
+    padding: 10px 20px;
+  }
+  .card__desc {
+    padding: 0 20px;
+  }
+  .incatalog__image,
+  .shop__image {
+    height: 360px;
+  }
+  .incatalog__block {
+    padding: 20px 0;
+    gap: 20px;
+  }
+  .incatalog__info {
+    gap: 20px;
+  }
+  .incatalog__image,
+  .incatalog__info {
+    width: calc(50% - 10px);
+  }
+  .shop__swiper {
+    padding: 0 0 20px;
+  }
+  .shop__block,
+  .blog__block,
+  .product__block {
+    padding: 20px 0;
+    gap: 20px;
+  }
+  .shop__container {
+    padding: 0;
+  }
+  .shop__flex {
+    padding: 0 20px;
+  }
+  .blog__top,
+  .blog__heading {
+    padding: 0 10px;
+  }
+  .footer {
+    padding: 40px 0;
+    margin: 20px 0 0;
+    background-color: var(--text);
+  }
+  .footer__top {
+    flex-wrap: wrap;
+    gap: 40px 20px;
+  }
+  .footer__top_list {
+    width: 100%;
+    order: 3;
+    gap: 20px;
+  }
+  .footer__container {
+    gap: 20px;
+  }
+  .footer__bottom {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .footer__bottom_list {
+    max-width: 100%;
+    gap: 20px;
+  }
+  .footer__bottom_flex {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+/* media 1280px */
+
+/* media 580px */
+@media (max-width: 580px) {
+  h1,
+  h3 {
+    font-size: 29px;
+    line-height: 31px;
+  }
+  h4 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  a,
+  p,
+  .footer__bottom_link,
+  .footer__bottom_flex_link,
+  .header__bottom_link {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .btn {
+    width: 100%;
+  }
+  .container {
+    padding: 0 10px;
+  }
+  .header__bottom_container,
+  .header__bottom_link,
+  .header__burger,
+  .header.active,
+  .header__top,
+  .header__bottom,
+  .header__top_container,
+  .top {
+    height: 70px;
+  }
+  .header__nav {
+    height: calc(var(--height) - 70px);
+    top: 70px;
+  }
+  .hero__container {
+    padding: 0;
+  }
+  .hero__image {
+    height: calc(var(--height) - 70px);
+  }
+  .hero__info {
+    padding: 10px 10px 40px;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+  .hero__slider .swiper-pagination-bullet,
+  .shop__slider .swiper-pagination-bullet {
+    width: 10px;
+    height: 9.21px;
+    background-size: 10px 9.21px;
+  }
+  .hero__slider .swiper-pagination,
+  .shop__slider .swiper-pagination {
+    gap: 7.5px;
+  }
+  .hero__slider .swiper-button-next,
+  .hero__slider .swiper-button-prev,
+  .shop__slider .swiper-button-next,
+  .shop__slider .swiper-button-prev,
+  .hero__slider .swiper-button-next svg,
+  .hero__slider .swiper-button-prev svg,
+  .shop__slider .swiper-button-next svg,
+  .shop__slider .swiper-button-prev svg {
+    width: 30px;
+    height: 40px;
+    background-size: 30px 40px;
+  }
+  .hero__navigation {
+    padding: 10px 0 0;
+  }
+  .hero__slider,
+  .shop__container {
+    padding: 0;
+  }
+  .card__item {
+    width: calc(50% - 5px);
+  }
+  .card__item,
+  .blog__image,
+  .product__images,
+  .product__image_block,
+  .incatalog__image {
+    height: 180px;
+  }
+  .shop__swiper {
+    padding: 0 0 10px;
+  }
+  .shop__image {
+    height: 240px;
+  }
+  .incatalog__block,
+  .shop__flex {
+    flex-direction: column;
+  }
+  .shop__flex {
+    display: none;
+    padding: 0 10px;
+  }
+  .incatalog__image,
+  .incatalog__info {
+    width: 100%;
+  }
+  .blog__item {
+    padding: 0;
+  }
+  .blog__link_desktop {
+    display: none;
+  }
+  .blog__link_mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .blog__top,
+  .blog__heading {
+    padding: 0;
+  }
+  .blog__item_link {
+    align-items: flex-start;
+  }
+  .product__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .product__cart {
+    width: 100%;
+    height: 50px;
+  }
+  .product__slide:before,
+  .product__image.active .product__slide:before {
+    background-color: transparent;
+  }
+  .footer__logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .footer__logo svg {
+    width: 267.86px;
+    height: 50px;
+  }
+  .footer__top_buttons,
+  .footer__top_flex,
+  .footer__bottom_flex {
+    width: 100%;
+  }
+  .footer__btn {
+    width: calc(100% - 60px);
+  }
+}
+/* media 580px */
