@@ -28,57 +28,6 @@ if (oldWidth > 1280) {
 }
 // end header scroll active
 
-// start btn
-var btndefault = document.querySelectorAll('.default__btn');
-btndefault.forEach(btns => { 
-  btns.onmousemove = function (e) {
-    var relX = e.pageX - this.offsetLeft - 
-    this.parentElement.parentElement.parentElement.offsetLeft;
-    var relY = e.pageY - this.offsetTop - 
-    this.parentElement.parentElement.parentElement.offsetTop - 
-    this.parentElement.parentElement.parentElement.parentElement.offsetTop;
-    this.children[1].style.setProperty('--rely', `${relY}px`);
-    this.children[1].style.setProperty('--relx', `${relX}px`);
-  };
-})
-var btnheader = document.querySelectorAll('.header__blockbtn');
-btnheader.forEach(btns => { 
-  btns.onmousemove = function (e) {
-    var relX = e.pageX - this.offsetLeft - 
-    this.parentElement.parentElement.parentElement.offsetLeft;
-    var relY = e.pageY - this.offsetTop - 
-    this.parentElement.parentElement.parentElement.parentElement.offsetTop - this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop - 
-    Math.round(window.pageYOffset) + Math.round(this.offsetParent.offsetParent.scrollTop);
-    this.children[1].style.setProperty('--rely', `${relY}px`);
-    this.children[1].style.setProperty('--relx', `${relX}px`);
-  };
-})
-var btnhero = document.querySelectorAll('.hero__btn');
-btnhero.forEach(btnhs => { 
-  btnhs.onmousemove = function (e) {
-    var relX = e.pageX - this.offsetLeft - this.parentElement.parentElement.parentElement.parentElement.offsetLeft - 
-    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft;
-    var relY = e.pageY - this.offsetTop - this.parentElement.parentElement.parentElement.offsetTop - 
-    this.parentElement.parentElement.parentElement.parentElement.offsetTop - 
-    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop;
-    this.children[1].style.setProperty('--rely', `${relY}px`);
-    this.children[1].style.setProperty('--relx', `${relX}px`);
-  };
-})
-var btnfooter = document.querySelectorAll('.footer__btn');
-btnfooter.forEach(btns => { 
-  btns.onmousemove = function (e) {
-    var relX = e.pageX - this.offsetLeft - 
-    this.parentElement.parentElement.parentElement.parentElement.offsetLeft;
-    var relY = e.pageY - this.offsetTop - 
-    this.parentElement.parentElement.parentElement.offsetTop - 
-    this.parentElement.parentElement.parentElement.parentElement.offsetTop;
-    this.children[1].style.setProperty('--rely', `${relY}px`);
-    this.children[1].style.setProperty('--relx', `${relX}px`);
-  };
-})
-// end btn
-
 // start year
 const year = document.querySelector('.footer__year');
 if(!year){} else {
@@ -118,41 +67,11 @@ burger.addEventListener('click', function() {
 })
 // end header__burger
 
-// start hover product
-var hover = document.querySelectorAll('.product__images');
-elemHover = false;
-hover.forEach(hovers => {
-  hovers.addEventListener('mouseover', function(e) {
-    if(elemHover) return;
-    var target = e.target.closest('.product__image');
-    if(!target) return;
-    elemHover = target;
-    var parent = target.closest('.product__images'),
-    old = parent.querySelector('.active')
-    if(old) old.classList.remove('active')
-    target.classList.add('active')
-  })
-  hovers.addEventListener('mouseout', function(e) {
-    if(!elemHover) return
-    elemHover = null;
-  })
-  hovers.addEventListener('mouseleave', function(){
-    let parent = this;
-    let elems = parent.children;
-
-    for (let elem of elems) {
-      elem.classList.remove('active');
-    }
-    this.children[0].classList.add('active');
-  });
-})
-// end hover product
-
 // start hero
 const heroSlider = document.querySelector('.hero__swiper');
 if(heroSlider){
   var aboutusThumbs = new Swiper('.hero__swiper', {
-    loop: false,
+    loop: true,
     slidesPerView: 1,
     loopedSlides: 1,
     spaceBetween: 40,
@@ -232,7 +151,7 @@ if(blogSlider){
 const productSlider = document.querySelector('.product__swiper');
 if(productSlider){
   var aboutusThumbs = new Swiper('.product__swiper', {
-    loop: false,
+    loop: true,
     slidesPerView: 5,
     loopedSlides: 5,
     spaceBetween: 20,
@@ -254,3 +173,84 @@ if(productSlider){
   });
 }
 // end product
+
+// start hover product
+var hover = document.querySelectorAll('.product__images');
+elemHover = false;
+hover.forEach(hovers => {
+  hovers.addEventListener('mouseover', function(e) {
+    if(elemHover) return;
+    var target = e.target.closest('.product__image');
+    if(!target) return;
+    elemHover = target;
+    var parent = target.closest('.product__images'),
+    old = parent.querySelector('.active')
+    if(old) old.classList.remove('active')
+    target.classList.add('active')
+  })
+  hovers.addEventListener('mouseout', function(e) {
+    if(!elemHover) return
+    elemHover = null;
+  })
+  hovers.addEventListener('mouseleave', function(){
+    let parent = this;
+    let elems = parent.children;
+
+    for (let elem of elems) {
+      elem.classList.remove('active');
+    }
+    this.children[0].classList.add('active');
+  });
+})
+// end hover product
+
+// start btn
+var btndefault = document.querySelectorAll('.default__btn');
+btndefault.forEach(btns => { 
+  btns.onmousemove = function (e) {
+    var relX = e.pageX - this.offsetLeft - 
+    this.parentElement.parentElement.parentElement.offsetLeft;
+    var relY = e.pageY - this.offsetTop - 
+    this.parentElement.parentElement.parentElement.offsetTop - 
+    this.parentElement.parentElement.parentElement.parentElement.offsetTop;
+    this.children[1].style.setProperty('--rely', `${relY}px`);
+    this.children[1].style.setProperty('--relx', `${relX}px`);
+  };
+})
+var btnheader = document.querySelectorAll('.header__blockbtn');
+btnheader.forEach(btns => { 
+  btns.onmousemove = function (e) {
+    var relX = e.pageX - this.offsetLeft - 
+    this.parentElement.parentElement.parentElement.offsetLeft;
+    var relY = e.pageY - this.offsetTop - 
+    this.parentElement.parentElement.parentElement.parentElement.offsetTop - this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop - 
+    Math.round(window.pageYOffset) + Math.round(this.offsetParent.offsetParent.scrollTop);
+    this.children[1].style.setProperty('--rely', `${relY}px`);
+    this.children[1].style.setProperty('--relx', `${relX}px`);
+  };
+})
+var btnhero = document.querySelectorAll('.hero__btn');
+btnhero.forEach(btnhs => { 
+  btnhs.onmousemove = function (e) {
+    var relX = e.pageX - this.offsetLeft - this.parentElement.parentElement.parentElement.parentElement.offsetLeft - 
+    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft;
+    var relY = e.pageY - this.offsetTop - this.parentElement.parentElement.parentElement.offsetTop - 
+    this.parentElement.parentElement.parentElement.parentElement.offsetTop - 
+    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop;
+    this.children[1].style.setProperty('--rely', `${relY}px`);
+    this.children[1].style.setProperty('--relx', `${relX}px`);
+  };
+})
+var btnfooter = document.querySelectorAll('.footer__btn');
+btnfooter.forEach(btns => { 
+  btns.onmousemove = function (e) {
+    var relX = e.pageX - this.offsetLeft - 
+    this.parentElement.parentElement.parentElement.parentElement.offsetLeft;
+    var relY = e.pageY - this.offsetTop - 
+    this.parentElement.parentElement.parentElement.offsetTop - 
+    this.parentElement.parentElement.parentElement.parentElement.offsetTop;
+    this.children[1].style.setProperty('--rely', `${relY}px`);
+    this.children[1].style.setProperty('--relx', `${relX}px`);
+  };
+})
+// end btn
