@@ -14,17 +14,19 @@ window.onresize = function () {
 };
 // end height
 
-// start header__bottom
+// start header scroll active
 const header = document.querySelector('.header');
 const headertop = document.querySelector('.header__top');
-window.addEventListener("scroll", () => {
-  if (Math.round(window.pageYOffset) > headertop.clientHeight) {
-    header.classList.add('active');
-  } else {
-    header.classList.remove('active');
-  }
-})
-// end header__bottom
+if (oldWidth > 1280) {
+  window.addEventListener("scroll", () => {
+    if (Math.round(window.pageYOffset) > headertop.clientHeight) {
+      header.classList.add('active');
+    } else {
+      header.classList.remove('active');
+    }
+  })
+}
+// end header scroll active
 
 // start btn
 var btndefault = document.querySelectorAll('.default__btn');
