@@ -26,6 +26,18 @@ if (oldWidth > 1280) {
     }
   })
 }
+window.onresize = function () {
+  var newWidth = window.innerWidth;
+  if (newWidth != oldWidth > 1280) {
+    window.addEventListener("scroll", () => {
+      if (Math.round(window.pageYOffset) > headertop.clientHeight) {
+        header.classList.add('active');
+      } else {
+        header.classList.remove('active');
+      }
+    })
+  }
+};
 // end header scroll active
 
 // start year
@@ -66,6 +78,38 @@ burger.addEventListener('click', function() {
   }
 })
 // end header__burger
+
+// start accordion
+var acc = document.getElementsByClassName("catalog__button");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function(e) {
+    var accordion = this.nextElementSibling;
+    var courseAccordion = document.getElementsByClassName("catalog__sublist");
+    var courseAccordionActive = document.getElementsByClassName("catalog__button active");
+
+    if (accordion.style.maxHeight) {
+      accordion.style.maxHeight = null;
+      this.classList.remove("active");
+      accordion.classList.remove("active");
+    } else {
+      for (var q = 0; q < courseAccordionActive.length; q++) {
+        courseAccordionActive[q].classList.remove("active");
+        courseAccordion[q].classList.remove("active");
+      }
+      for (var p = 0; p < courseAccordion.length; p++) {
+        this.classList.remove("active");
+        courseAccordion[p].classList.remove("active");
+        courseAccordion[p].style.maxHeight = null;
+      }
+      accordion.style.maxHeight = (accordion.scrollHeight + 40) + "px";
+      accordion.classList.add("active");
+      this.classList.add("active");
+    }
+  };
+}
+// end accordion
 
 // start hero
 const heroSlider = document.querySelector('.hero__swiper');
@@ -254,3 +298,15 @@ btnfooter.forEach(btns => {
   };
 })
 // end btn
+
+// animation page
+let breadcrumb = document.querySelector('.breadcrumbs__item');
+let breadcrumbs = document.querySelectorAll('.breadcrumbs__list');
+if(!breadcrumb){} else {
+  function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
+  let breadcrumbopt = {threshold: [0.5]};
+  let breadcrumbserv = new IntersectionObserver(onEntry, breadcrumbopt);
+  for (let elm of breadcrumbs) {breadcrumbserv.observe(elm);}
+  [...breadcrumbs].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+}
+// animation page
