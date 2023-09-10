@@ -1765,8 +1765,8 @@ p,
 
 /* end product */
 
-/* media 1440px */
-@media (max-width: 1440px) {
+/* media 1600px */
+@media (max-width: 1600px) {
   h1,
   h3 {
     font-size: 37px;
@@ -1937,7 +1937,7 @@ p,
     width: 315px;
   }
 }
-/* media 1440px */
+/* media 1600px */
 
 /* media 1280px */
 @media (max-width: 1280px) {
