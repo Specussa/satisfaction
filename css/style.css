@@ -1938,6 +1938,47 @@ p,
   color: var(--pink);
 }
 
+.subcatalog__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.subcatalog__item {
+  width: calc(25% - 8px);
+}
+
+.subcatalog__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 10px 20px;
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.subcatalog__link span:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.subcatalog__link img {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+}
+
 /* end catalog */
 
 /* media 1600px */
