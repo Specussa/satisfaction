@@ -115,7 +115,7 @@ for (i = 0; i < acc.length; i++) {
 const heroSlider = document.querySelector('.hero__swiper');
 if(heroSlider){
   var aboutusThumbs = new Swiper('.hero__swiper', {
-    loop: true,
+    loop: false,
     slidesPerView: 1,
     loopedSlides: 1,
     spaceBetween: 40,
