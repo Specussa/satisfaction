@@ -119,8 +119,8 @@ if(heroSlider){
     slidesPerView: 1,
     loopedSlides: 1,
     spaceBetween: 40,
-    speed: 1000,
-    slideToClickedSlide: false,
+    speed: 2000,
+    slideToClickedSlide: true,
     allowTouchMove: true,
     navigation: {
       nextEl: '.hero__next',
