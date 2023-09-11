@@ -286,13 +286,13 @@ btnhero.forEach(btnhs => {
     this.children[1].style.setProperty('--relx', `${relX}px`);
   };
 })
-var btnsubcatalog = document.querySelectorAll('.subcatalog__kbtn');
+var btnsubcatalog = document.querySelectorAll('.subcatalog__btn');
 btnsubcatalog.forEach(btns => { 
   btns.onmousemove = function (e) {
     var relX = e.pageX - this.offsetLeft - 
-    this.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft;
+    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetLeft;
     var relY = e.pageY - this.offsetTop - 
-    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop;
+    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop;
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
   };
@@ -310,6 +310,27 @@ btnfooter.forEach(btns => {
   };
 })
 // end btn
+
+// start catalog__image
+var catalogit = document.querySelector('.catalog__image_tiles');
+var catalogil = document.querySelector('.catalog__image_list');
+var catalogp = document.querySelector('.catalog__product');
+
+catalogit.addEventListener('click', function() {
+  if (!catalogit.classList.contains("active")) {
+    catalogit.classList.add("active");
+    catalogil.classList.remove("active");
+    catalogp.classList.remove("active");
+  }
+})
+catalogil.addEventListener('click', function() {
+  if (!catalogil.classList.contains("active")) {
+    catalogil.classList.add("active");
+    catalogit.classList.remove("active");
+    catalogp.classList.add("active");
+  }
+})
+// end catalog__image
 
 // animation page
 let breadcrumb = document.querySelector('.breadcrumbs__item');
