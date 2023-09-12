@@ -79,37 +79,42 @@ burger.addEventListener('click', function() {
 })
 // end header__burger
 
-// start accordion
-var acc = document.getElementsByClassName("catalog__button");
+// start catalog__button
+var catalogb = document.getElementsByClassName("catalog__button");
 var i;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].onclick = function(e) {
-    var accordion = this.nextElementSibling;
-    var courseAccordion = document.getElementsByClassName("catalog__sublist");
-    var courseAccordionActive = document.getElementsByClassName("catalog__button active");
+for (i = 0; i < catalogb.length; i++) {
+  catalogb[i].onclick = function(e) {
+    var catalogn = this.nextElementSibling;
+    var catalogp = this.parentElement;
+    var catalogsbi = document.getElementsByClassName("catalog__button_item");
+    var catalogsl = document.getElementsByClassName("catalog__sublist");
+    var catalogba = document.getElementsByClassName("catalog__button active");
 
-    if (accordion.style.maxHeight) {
-      accordion.style.maxHeight = null;
+    if (catalogn.style.maxHeight) {
+      catalogn.style.maxHeight = null;
       this.classList.remove("active");
-      accordion.classList.remove("active");
+      catalogn.classList.remove("active");
+      catalogp.classList.remove("active");
     } else {
-      for (var q = 0; q < courseAccordionActive.length; q++) {
-        courseAccordionActive[q].classList.remove("active");
-        courseAccordion[q].classList.remove("active");
+      for (var q = 0; q < catalogba.length; q++) {
+        catalogba[q].classList.remove("active");
+        catalogsl[q].classList.remove("active");
       }
-      for (var p = 0; p < courseAccordion.length; p++) {
+      for (var p = 0; p < catalogsl.length; p++) {
         this.classList.remove("active");
-        courseAccordion[p].classList.remove("active");
-        courseAccordion[p].style.maxHeight = null;
+        catalogsl[p].classList.remove("active");
+        catalogsbi[p].classList.remove("active");
+        catalogsl[p].style.maxHeight = null;
       }
-      accordion.style.maxHeight = (accordion.scrollHeight + 40) + "px";
-      accordion.classList.add("active");
+      catalogn.style.maxHeight = (catalogn.scrollHeight + 40) + "px";
+      catalogn.classList.add("active");
+      catalogp.classList.add("active");
       this.classList.add("active");
     }
   };
 }
-// end accordion
+// end catalog__button
 
 // start hero
 const heroSlider = document.querySelector('.hero__swiper');
@@ -316,20 +321,59 @@ var catalogit = document.querySelector('.catalog__image_tiles');
 var catalogil = document.querySelector('.catalog__image_list');
 var catalogp = document.querySelector('.catalog__product');
 
-catalogit.addEventListener('click', function() {
-  if (!catalogit.classList.contains("active")) {
-    catalogit.classList.add("active");
-    catalogil.classList.remove("active");
-    catalogp.classList.remove("active");
-  }
-})
-catalogil.addEventListener('click', function() {
-  if (!catalogil.classList.contains("active")) {
-    catalogil.classList.add("active");
-    catalogit.classList.remove("active");
-    catalogp.classList.add("active");
-  }
-})
+if(!catalogp){} else {
+  catalogit.addEventListener('click', function() {
+    if (!catalogit.classList.contains("active")) {
+      catalogit.classList.add("active");
+      catalogil.classList.remove("active");
+      catalogp.classList.remove("active");
+    }
+  })
+  catalogil.addEventListener('click', function() {
+    if (!catalogil.classList.contains("active")) {
+      catalogil.classList.add("active");
+      catalogit.classList.remove("active");
+      catalogp.classList.add("active");
+    }
+  })
+}
+// end catalog__image
+
+// end catalog__image
+const rangeslider = document.getElementById('filterPrice');
+const rangeMin = parseInt(rangeslider.dataset.min);
+const rangeMax = parseInt(rangeslider.dataset.max);
+const rangestep = parseInt(rangeslider.dataset.step);
+const filterInputs = document.querySelectorAll('input.filter__input');
+
+if(!rangeslider){} else {
+  noUiSlider.create(rangeslider, {
+      start: [rangeMin, rangeMax],
+      connect: true,
+      step: rangestep,
+      range: {
+          'min': Math.round(rangeMin),
+          'max': Math.round(rangeMax)
+      },
+    
+      // make numbers whole
+      format: {
+        to: value => Math.round(value),
+        from: value => Math.round(value)
+      }
+  });
+
+  // bind inputs with noUiSlider 
+  rangeslider.noUiSlider.on('update', (values, handle) => { 
+    filterInputs[handle].value = values[handle]; 
+  });
+
+  filterInputs.forEach((input, indexInput) => { 
+    input.addEventListener('change', () => {
+      rangeslider.noUiSlider.setHandle(indexInput, input.value);
+    })
+  });
+}
 // end catalog__image
 
 // animation page
