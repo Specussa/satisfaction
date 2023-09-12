@@ -212,7 +212,7 @@ if(productSlider){
       1280: {
         slidesPerView: 3,
         loopedSlides: 3,
-        spaceBetween: 20,
+        spaceBetween: 10,
       },
     },
   });
