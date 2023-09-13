@@ -359,6 +359,7 @@ var frbs = document.querySelector('.filter__ranges');
 var fcbuttons = document.querySelector('.filter__check_buttons');
 var fcclear = document.querySelector('.filter__check_clear');
 var uncheck = document.getElementsByClassName('filter__check_hidden');
+var fbutton = document.querySelector('.filter__button');
 
 if(!rangeslider){} else {
   noUiSlider.create(rangeslider, {
@@ -386,11 +387,13 @@ if(!rangeslider){} else {
         frcount.classList.remove("hidden");
         frclear.classList.add("active");
         frbuttons.classList.add("active");
+        fbutton.classList.add("active");
       } else if (maxValueNumber == rangeMax && minValueNumber == rangeMin) {
         frprice.classList.remove("hidden");
         frcount.classList.add("hidden");
         frclear.classList.remove("active");
         frbuttons.classList.remove("active");
+        fbutton.classList.remove("active");
       }
     } else {
       minValue.innerText = values[handle];
@@ -401,11 +404,13 @@ if(!rangeslider){} else {
         frcount.classList.remove("hidden");
         frclear.classList.add("active");
         frbuttons.classList.add("active");
+        fbutton.classList.add("active");
       } else if (minValueNumber == rangeMin && maxValueNumber == rangeMax) {
         frprice.classList.remove("hidden");
         frcount.classList.add("hidden");
         frclear.classList.remove("active");
         frbuttons.classList.remove("active");
+        fbutton.classList.remove("active");
       }
     }
   });
@@ -441,31 +446,44 @@ if(!catalofl){} else {
       fcbs.classList.remove("active");
     }
   })
+
   fcb.addEventListener('click', function() {
     if (!fcb.classList.contains("active")) {
       fcb.classList.add("active");
       fcbs.classList.add("active");
       frb.classList.remove("active");
       frbs.classList.remove("active");
-      if (!fcbs.classList.contains("checked")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcb.classList.add("checked");}}}
+      
+      if (!fcbuttons.classList.contains("active")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcbuttons.classList.add("active");}}}
     } else {
       frb.classList.remove("active");
       frbs.classList.remove("active");
       fcb.classList.remove("active");
       fcbs.classList.remove("active");
-      if (!fcbs.classList.contains("checked")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcb.classList.add("checked");}}}
+      var unchecks = [].reduce.call(document.querySelectorAll('.filter__check_label'), function(temp, block) {
+        var box = block.querySelector('input[type=checkbox]');
+        var checkboxs = block.querySelectorAll('input[type=checkbox]:checked');
+        var title = box.parentNode.textContent.trim();
+        if (box.checked && checkboxs.length < 2) temp.push(title)
+        return temp
+      }, []);
+      if (unchecks.length) {
+        fbutton.classList.add("checked");
+      } else {
+        fbutton.classList.remove("checked");
+      }
+      if (!fcbuttons.classList.contains("active")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcbuttons.classList.add("active");}}}
     }
   })
 
   fcclear.addEventListener('click', function() {
-    for(var i = 0;i < uncheck.length; i++) {
-      uncheck[i].checked = false;
-    }
+    for(var i = 0;i < uncheck.length; i++) {uncheck[i].checked = false;}
     frb.classList.remove("active");
     frbs.classList.remove("active");
     fcb.classList.remove("active");
     fcbs.classList.remove("active");
-    if (fcbs.classList.contains("checked")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcb.classList.remove("checked");}}}
+    fcbuttons.classList.remove("active");
+    fbutton.classList.remove("checked");
   })
 
   window.addEventListener('click', e => {
@@ -475,7 +493,19 @@ if(!catalofl){} else {
       frbs.classList.remove("active");
       fcb.classList.remove("active");
       fcbs.classList.remove("active");
-      if (!fcbs.classList.contains("checked")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcb.classList.add("checked");}}}
+      var unchecks = [].reduce.call(document.querySelectorAll('.filter__check_label'), function(temp, block) {
+        var box = block.querySelector('input[type=checkbox]');
+        var checkboxs = block.querySelectorAll('input[type=checkbox]:checked');
+        var title = box.parentNode.textContent.trim();
+        if (box.checked && checkboxs.length < 2) temp.push(title)
+        return temp
+      }, []);
+      if (unchecks.length) {
+        fbutton.classList.add("checked");
+      } else {
+        fbutton.classList.remove("checked");
+      }
+      if (!fcbuttons.classList.contains("active")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcbuttons.classList.add("active");}}}
     }
   })
 }

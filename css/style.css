@@ -2621,12 +2621,12 @@ button {
 }
 
 .filter__range_buttons.active,
-.filter__range_buttons.active {
+.filter__check_buttons.active {
   background-color: var(--pink);
 }
 
 .filter__range_buttons.active button,
-.filter__range_buttons.active button {
+.filter__check_buttons.active button {
   color: var(--bg);
 }
 
@@ -2694,6 +2694,7 @@ button {
 
 .filter__range_clear.active,
 .filter__ranges.active .filter__range_clear,
+.filter__check_buttons.active .filter__check_clear,
 .filter__checked.active .filter__check_clear {
   display: inline-block;
 }
@@ -2727,6 +2728,12 @@ button {
   stroke: var(--text);
 }
 
+.filter__button.active svg circle,
+.filter__button.checked svg circle {
+  fill: var(--pink);
+  stroke: var(--pink);
+}
+
 .filter__range_price svg,
 .filter__check_button svg {
   width: 5px;
@@ -2739,7 +2746,8 @@ button {
 }
 
 .filter__range_button.active svg,
-.filter__check_button.active svg {
+.filter__check_button.active svg,
+.filter__check_buttons.active .filter__check_button svg {
   display: none;
 }
 
