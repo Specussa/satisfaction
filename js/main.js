@@ -339,12 +339,26 @@ if(!catalogp){} else {
 }
 // end catalog__image
 
-// end catalog__image
+// start range slider
 const rangeslider = document.getElementById('filterPrice');
 const rangeMin = parseInt(rangeslider.dataset.min);
 const rangeMax = parseInt(rangeslider.dataset.max);
 const rangestep = parseInt(rangeslider.dataset.step);
-const filterInputs = document.querySelectorAll('input.filter__input');
+const filterInputs = document.querySelectorAll('.filter__input');
+var frb = document.querySelector('.filter__range_button');
+var minValue = document.querySelector('.filter__range_min');
+var maxValue = document.querySelector('.filter__range_max');
+var frprice = document.querySelector('.filter__range_price');
+var frcount = document.querySelector('.filter__range_count');
+var frclear = document.querySelector('.filter__range_clear');
+var frbuttons = document.querySelector('.filter__range_buttons');
+var catalofl = document.querySelector('.catalog__filter_left');
+var fcb = document.querySelector('.filter__check_button');
+var fcbs = document.querySelector('.filter__checked');
+var frbs = document.querySelector('.filter__ranges');
+var fcbuttons = document.querySelector('.filter__check_buttons');
+var fcclear = document.querySelector('.filter__check_clear');
+var uncheck = document.getElementsByClassName('filter__check_hidden');
 
 if(!rangeslider){} else {
   noUiSlider.create(rangeslider, {
@@ -355,17 +369,45 @@ if(!rangeslider){} else {
           'min': Math.round(rangeMin),
           'max': Math.round(rangeMax)
       },
-    
-      // make numbers whole
       format: {
         to: value => Math.round(value),
-        from: value => Math.round(value)
+        from: value => Math.round(value),
       }
   });
 
-  // bind inputs with noUiSlider 
-  rangeslider.noUiSlider.on('update', (values, handle) => { 
-    filterInputs[handle].value = values[handle]; 
+  rangeslider.noUiSlider.on('update', (values, handle) => {
+    filterInputs[handle].value = values[handle];
+    if (handle) {
+      maxValue.innerText = values[handle];
+      const minValueNumber = Number(minValue.innerText);
+      const maxValueNumber = Number(maxValue.innerText);
+      if (maxValueNumber < rangeMax) {
+        frprice.classList.add("hidden");
+        frcount.classList.remove("hidden");
+        frclear.classList.add("active");
+        frbuttons.classList.add("active");
+      } else if (maxValueNumber == rangeMax && minValueNumber == rangeMin) {
+        frprice.classList.remove("hidden");
+        frcount.classList.add("hidden");
+        frclear.classList.remove("active");
+        frbuttons.classList.remove("active");
+      }
+    } else {
+      minValue.innerText = values[handle];
+      const minValueNumber = Number(minValue.innerText);
+      const maxValueNumber = Number(maxValue.innerText);
+      if (minValueNumber > rangeMin) {
+        frprice.classList.add("hidden");
+        frcount.classList.remove("hidden");
+        frclear.classList.add("active");
+        frbuttons.classList.add("active");
+      } else if (minValueNumber == rangeMin && maxValueNumber == rangeMax) {
+        frprice.classList.remove("hidden");
+        frcount.classList.add("hidden");
+        frclear.classList.remove("active");
+        frbuttons.classList.remove("active");
+      }
+    }
   });
 
   filterInputs.forEach((input, indexInput) => { 
@@ -373,8 +415,71 @@ if(!rangeslider){} else {
       rangeslider.noUiSlider.setHandle(indexInput, input.value);
     })
   });
+
+  frclear.addEventListener('click', function() {
+    rangeslider.noUiSlider.reset();
+    frb.classList.remove("active");
+    frbs.classList.remove("active");
+    fcb.classList.remove("active");
+    fcbs.classList.remove("active");
+  })
 }
-// end catalog__image
+// end range slider
+
+// start filter buttons
+if(!catalofl){} else {
+  frb.addEventListener('click', function() {
+    if (!frb.classList.contains("active")) {
+      frb.classList.add("active");
+      frbs.classList.add("active");
+      fcb.classList.remove("active");
+      fcbs.classList.remove("active");
+    } else {
+      frb.classList.remove("active");
+      frbs.classList.remove("active");
+      fcb.classList.remove("active");
+      fcbs.classList.remove("active");
+    }
+  })
+  fcb.addEventListener('click', function() {
+    if (!fcb.classList.contains("active")) {
+      fcb.classList.add("active");
+      fcbs.classList.add("active");
+      frb.classList.remove("active");
+      frbs.classList.remove("active");
+      if (!fcbs.classList.contains("checked")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcb.classList.add("checked");}}}
+    } else {
+      frb.classList.remove("active");
+      frbs.classList.remove("active");
+      fcb.classList.remove("active");
+      fcbs.classList.remove("active");
+      if (!fcbs.classList.contains("checked")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcb.classList.add("checked");}}}
+    }
+  })
+
+  fcclear.addEventListener('click', function() {
+    for(var i = 0;i < uncheck.length; i++) {
+      uncheck[i].checked = false;
+    }
+    frb.classList.remove("active");
+    frbs.classList.remove("active");
+    fcb.classList.remove("active");
+    fcbs.classList.remove("active");
+    if (fcbs.classList.contains("checked")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcb.classList.remove("checked");}}}
+  })
+
+  window.addEventListener('click', e => {
+    const target = e.target
+    if (!target.closest('.filter__ranges') && !target.closest('.filter__range_buttons') && !target.closest('.filter__checked') && !target.closest('.filter__check_buttons')) {
+      frb.classList.remove("active");
+      frbs.classList.remove("active");
+      fcb.classList.remove("active");
+      fcbs.classList.remove("active");
+      if (!fcbs.classList.contains("checked")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcb.classList.add("checked");}}}
+    }
+  })
+}
+// end filter buttons
 
 // animation page
 let breadcrumb = document.querySelector('.breadcrumbs__item');

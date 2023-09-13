@@ -41,21 +41,13 @@
   box-sizing: border-box;
 }
 
-*::-moz-selection {
-  background-color: var(--text);
-  color: var(--bg);
-}
-
+*::-moz-selection,
 *::selection {
   background-color: var(--text);
   color: var(--bg);
 }
 
-input::-moz-selection {
-  background-color: yellow;
-  color: var(--text);
-}
-
+input::-moz-selection,
 input::selection {
   background-color: yellow;
   color: var(--text);
@@ -76,11 +68,13 @@ input::-webkit-inner-spin-button {
 ::-webkit-scrollbar {
   width: 8px;
   background: var(--bg);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
   width: 8px;
   background: var(--pink);
+  border-radius: 10px;
 }
 
 html {
@@ -91,7 +85,6 @@ body {
   position: relative;
   height: 100%;
   font-family: var(--text-font);
-  font-size: 14px;
   color: var(--text);
   -webkit-tap-highlight-color: transparent;
   background-color: var(--bg);
@@ -348,7 +341,8 @@ p,
   color: var(--text);
 }
 
-input {
+input,
+button {
   font-family: var(--text-font);
   font-size: 16px;
   font-weight: 400;
@@ -997,14 +991,18 @@ input {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 50px;
-  height: 50px;
-  margin-top: -25px;
-  margin-left: -25px;
+  width: 80px;
+  height: 80px;
+  margin-top: -40px;
+  margin-left: -40px;
   text-align: center;
   -webkit-animation: preloader-rotate 2s infinite linear;
   animation: preloader-rotate 2s infinite linear;
   z-index: 1002;
+}
+
+.preloader__image path:first-child {
+  color: var(--pink);
 }
 
 .loaded_hiding .preloader__image {
@@ -1844,6 +1842,12 @@ input {
   left: 0;
   right: 0;
   z-index: 1;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .product__slide {
@@ -2242,6 +2246,11 @@ input {
   display: flex;
 }
 
+.catalog__filter_left {
+  align-items: center;
+  gap: 10px;
+}
+
 .catalog__product.active .product__buttons {
   width: 100%;
   flex-direction: column;
@@ -2423,18 +2432,17 @@ input {
 
 /* start filter */
 
-.filter {
+.filter__range {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 345px;
+  width: 345px;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 20px;
+  background-color: var(--bg);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 0 10px 10px 10px;
 }
 
 .filter__count {
@@ -2493,9 +2501,246 @@ input {
   background: var(--border-pink);
 }
 
-.filter__slider-price {
+.filter__slider {
   width: 100%;
   margin: 15px 18px;
+}
+
+.filter__check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 345px;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--bg);
+  border-radius: 0 10px 10px 10px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.filter__check_label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.filter__check_label .checkbox {
+  margin-right: 10px;
+}
+
+.filter__check_hidden {
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.filter__checkbox {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--text-dgray);
+  background-color: var(--bg);
+  border-radius: 5px;
+  -webkit-transition: border 0.2s linear, background-color 0.2s linear;
+  transition: border 0.2s linear, background-color 0.2s linear;
+}
+
+.filter__checkmark {
+  display: block;
+  width: 18px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: var(--bg);
+  -webkit-transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) scale(0);
+  -webkit-transition: transform 0.2s linear;
+  transition: transform 0.2s linear;
+}
+
+.filter__check_hidden:checked ~ .filter__checkbox .filter__checkmark {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.filter__check_hidden:checked ~ .filter__checkbox {
+  background-color: var(--pink);
+  border: 1px solid var(--pink);
+}
+
+.filter__ranges,
+.filter__checked {
+  position: relative;
+}
+
+.filter__range_buttons,
+.filter__check_buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: max-content;
+  height: 40px;
+  align-items: center;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  position: relative;
+  z-index: 5;
+  -webkit-transition: background-color 0.2s linear, border-radius 0.2s linear;
+  transition: background-color 0.2s linear, border-radius 0.2s linear;
+}
+
+.filter__range_buttons button,
+.filter__check_buttons button {
+  color: var(--text);
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+
+.filter__ranges.active .filter__range_buttons button,
+.filter__checked.active .filter__check_buttons button,
+.filter__range_buttons:hover button,
+.filter__check_buttons:hover button {
+  color: var(--bg);
+}
+
+.filter__ranges.active .filter__range_buttons,
+.filter__checked.active .filter__check_buttons {
+  background-color: var(--pink);
+  border-radius: 5px 5px 0 0;
+}
+
+.filter__range_buttons.active,
+.filter__range_buttons.active {
+  background-color: var(--pink);
+}
+
+.filter__range_buttons.active button,
+.filter__range_buttons.active button {
+  color: var(--bg);
+}
+
+.filter__range_buttons:hover,
+.filter__check_buttons:hover {
+  color: var(--bg);
+  background-color: var(--pink);
+}
+
+.filter__range_button,
+.filter__check_button {
+  padding: 10px 60px 10px 30px;
+}
+
+.filter__range,
+.filter__check {
+  max-height: 0;
+  padding: 0 20px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 4;
+  visibility: hidden;
+  -webkit-transition: max-height 0.2s linear, visibility 0s linear, padding 0.2s ease-out;
+  transition: max-height 0.2s linear, visibility 0s linear, padding 0.2s ease-out;
+  transition-delay: 0s, 0.2s, 0s;
+}
+
+.filter__range {
+  overflow: hidden;
+}
+
+.filter__check {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.filter__ranges.active .filter__range,
+.filter__checked.active .filter__check {
+  max-height: 230px;
+  padding: 30px 20px;
+  visibility: visible;
+  transition-delay: 0.2s, 0s, 0.2s;
+}
+
+.filter__range_clear,
+.filter__check_clear {
+  display: none;
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 1;
+  color: var(--text);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.filter__range_clear svg,
+.filter__check_clear svg {
+  width: 13px;
+  height: 12px;
+}
+
+.filter__range_clear.active,
+.filter__ranges.active .filter__range_clear,
+.filter__checked.active .filter__check_clear {
+  display: inline-block;
+}
+
+.filter__range_price,
+.filter__range_count {
+  display: inline-block;
+}
+
+.filter__range_price.hidden,
+.filter__range_count.hidden {
+  display: none;
+}
+
+.filter__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  margin: 0 10px 0 0;
+  align-items: center;
+}
+
+.filter__button svg {
+  width: 20px;
+  height: 19.56px;
+}
+
+.filter__button svg circle {
+  fill: var(--bg);
+  stroke: var(--text);
+}
+
+.filter__range_price svg,
+.filter__check_button svg {
+  width: 5px;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.filter__range_button.active svg,
+.filter__check_button.active svg {
+  display: none;
 }
 
 /* end filter */
@@ -2518,6 +2763,8 @@ input {
   }
   a,
   p,
+  input,
+  button,
   .footer__bottom_link,
   .footer__bottom_flex_link,
   .header__bottom_link {
@@ -2743,6 +2990,8 @@ input {
 @media (max-width: 1280px) {
   a,
   p,
+  input,
+  button,
   .footer__bottom_link,
   .footer__bottom_flex_link,
   .header__bottom_link {
@@ -3016,6 +3265,8 @@ input {
   }
   a,
   p,
+  input,
+  button,
   .footer__bottom_link,
   .footer__bottom_flex_link,
   .header__bottom_link {
