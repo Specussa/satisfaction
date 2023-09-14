@@ -503,6 +503,7 @@ if(!catalofl){} else {
     fcbuttons.classList.remove("active");
     fbutton.classList.remove("checked");
     fpopen.classList.remove("checked");
+    cfclear.classList.remove("checked");
   })
 
   cfclear.addEventListener('click', function() {
