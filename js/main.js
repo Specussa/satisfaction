@@ -50,7 +50,8 @@ year.remove();
 // end year
 
 // start navbar
-const bodyoverlay = document.querySelector('.overlay');
+const overlay = document.querySelector('.overlay');
+const overlaypopup = document.querySelector('.overlay__popup');
 
 const headerlinks = document.querySelector('.header__links');
 const headerbuttons = document.querySelector('.header__buttons');
@@ -64,13 +65,13 @@ const burger_c = document.querySelector('.button__project');
 // кнопка header__burger
 burger.addEventListener('click', function() {
   if (burger.classList.contains("active")) {
-    bodyoverlay.classList.remove("active");
+    overlay.classList.remove("active");
     menu.classList.remove("active");
     burger.classList.remove("active");
     document.body.style.overflow = "visible";
     document.body.style.height = "100%";
   } else {
-    bodyoverlay.classList.add("active");
+    overlay.classList.add("active");
     menu.classList.add("active");
     burger.classList.add("active");
     document.body.style.overflow = "hidden";
@@ -355,8 +356,12 @@ var fcbs = document.querySelector('.filter__checked');
 var frbs = document.querySelector('.filter__ranges');
 var fcbuttons = document.querySelector('.filter__check_buttons');
 var fcclear = document.querySelector('.filter__check_clear');
-var uncheck = document.getElementsByClassName('filter__check_hidden');
+const uncheck = [...document.querySelectorAll('.filter__check_hidden')];
 var fbutton = document.querySelector('.filter__button');
+var cfpopup = document.querySelector('.catalog__filter_popup');
+var fpopen = document.querySelector('.filter__popup_open');
+var fpclose = document.querySelector('.filter__popup_close');
+var cfclear = document.querySelector('.catalog__filter_clear');
 
 if(!rangeslider){} else {
   const rangeMin = parseInt(rangeslider.dataset.min);
@@ -388,12 +393,14 @@ if(!rangeslider){} else {
         frclear.classList.add("active");
         frbuttons.classList.add("active");
         fbutton.classList.add("active");
+        cfclear.classList.add("active");
       } else if (maxValueNumber == rangeMax && minValueNumber == rangeMin) {
         frprice.classList.remove("hidden");
         frcount.classList.add("hidden");
         frclear.classList.remove("active");
         frbuttons.classList.remove("active");
         fbutton.classList.remove("active");
+        cfclear.classList.remove("active");
       }
     } else {
       minValue.innerText = values[handle];
@@ -405,12 +412,16 @@ if(!rangeslider){} else {
         frclear.classList.add("active");
         frbuttons.classList.add("active");
         fbutton.classList.add("active");
+        fpopen.classList.add("active");
+        cfclear.classList.add("active");
       } else if (minValueNumber == rangeMin && maxValueNumber == rangeMax) {
         frprice.classList.remove("hidden");
         frcount.classList.add("hidden");
         frclear.classList.remove("active");
         frbuttons.classList.remove("active");
         fbutton.classList.remove("active");
+        fpopen.classList.remove("active");
+        cfclear.classList.remove("active");
       }
     }
   });
@@ -453,37 +464,59 @@ if(!catalofl){} else {
       fcbs.classList.add("active");
       frb.classList.remove("active");
       frbs.classList.remove("active");
-      
       if (!fcbuttons.classList.contains("active")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcbuttons.classList.add("active");}}}
     } else {
       frb.classList.remove("active");
       frbs.classList.remove("active");
       fcb.classList.remove("active");
       fcbs.classList.remove("active");
-      var unchecks = [].reduce.call(document.querySelectorAll('.filter__check_label'), function(temp, block) {
-        var box = block.querySelector('input[type=checkbox]');
-        var checkboxs = block.querySelectorAll('input[type=checkbox]:checked');
-        var title = box.parentNode.textContent.trim();
-        if (box.checked && checkboxs.length < 2) temp.push(title)
-        return temp
-      }, []);
-      if (unchecks.length) {
-        fbutton.classList.add("checked");
-      } else {
-        fbutton.classList.remove("checked");
-      }
       if (!fcbuttons.classList.contains("active")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcbuttons.classList.add("active");}}}
     }
   })
 
+  const onChecked = () => {
+    if(document.querySelector('.filter__check_label.checked')) {
+      fbutton.classList.add("checked");
+      fpopen.classList.add("checked");
+      cfclear.classList.add("active");
+    } else {
+      fbutton.classList.remove("checked");
+      fpopen.classList.remove("checked");
+      cfclear.classList.remove("active");
+    }
+  }
+  uncheck.forEach(input => input.addEventListener('input', function(event) {
+    if (event.target.checked) {
+      event.target.closest('.filter__check_label').classList.add('checked');
+    } else {
+      event.target.closest('.filter__check_label').classList.remove('checked');
+    }
+    onChecked()
+  }))
+
   fcclear.addEventListener('click', function() {
-    for(var i = 0;i < uncheck.length; i++) {uncheck[i].checked = false;}
+    for(var i = 0;i < uncheck.length; i++) {uncheck[i].checked = false;};
     frb.classList.remove("active");
     frbs.classList.remove("active");
     fcb.classList.remove("active");
     fcbs.classList.remove("active");
     fcbuttons.classList.remove("active");
     fbutton.classList.remove("checked");
+    fpopen.classList.remove("checked");
+  })
+
+  cfclear.addEventListener('click', function() {
+    rangeslider.noUiSlider.reset();
+    for(var i = 0;i < uncheck.length; i++) {uncheck[i].checked = false;};
+    frb.classList.remove("active");
+    frbs.classList.remove("active");
+    fcb.classList.remove("active");
+    fcbs.classList.remove("active");
+    fcbuttons.classList.remove("active");
+    fbutton.classList.remove("checked");
+    fbutton.classList.remove("active");
+    fpopen.classList.remove("checked");
+    fpopen.classList.remove("active");
   })
 
   window.addEventListener('click', e => {
@@ -493,20 +526,29 @@ if(!catalofl){} else {
       frbs.classList.remove("active");
       fcb.classList.remove("active");
       fcbs.classList.remove("active");
-      var unchecks = [].reduce.call(document.querySelectorAll('.filter__check_label'), function(temp, block) {
-        var box = block.querySelector('input[type=checkbox]');
-        var checkboxs = block.querySelectorAll('input[type=checkbox]:checked');
-        var title = box.parentNode.textContent.trim();
-        if (box.checked && checkboxs.length < 2) temp.push(title)
-        return temp
-      }, []);
-      if (unchecks.length) {
-        fbutton.classList.add("checked");
-      } else {
-        fbutton.classList.remove("checked");
-      }
       if (!fcbuttons.classList.contains("active")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcbuttons.classList.add("active");}}}
     }
+  })
+
+  fpopen.addEventListener('click', function() {
+    cfpopup.classList.add("active");
+    overlaypopup.classList.add("active");
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+  })
+
+  fpclose.addEventListener('click', function() {
+    cfpopup.classList.remove("active");
+    overlaypopup.classList.remove("active");
+    document.body.style.overflow = "visible";
+    document.body.style.height = "100%";
+  })
+
+  overlaypopup.addEventListener('click', function() {
+    cfpopup.classList.remove("active");
+    overlaypopup.classList.remove("active");
+    document.body.style.overflow = "visible";
+    document.body.style.height = "100%";
   })
 }
 // end filter buttons
