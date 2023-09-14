@@ -478,11 +478,11 @@ if(!catalofl){} else {
     if(document.querySelector('.filter__check_label.checked')) {
       fbutton.classList.add("checked");
       fpopen.classList.add("checked");
-      cfclear.classList.add("active");
+      cfclear.classList.add("checked");
     } else {
       fbutton.classList.remove("checked");
       fpopen.classList.remove("checked");
-      cfclear.classList.remove("active");
+      cfclear.classList.remove("checked");
     }
   }
   uncheck.forEach(input => input.addEventListener('input', function(event) {
@@ -517,6 +517,8 @@ if(!catalofl){} else {
     fbutton.classList.remove("active");
     fpopen.classList.remove("checked");
     fpopen.classList.remove("active");
+    cfclear.classList.remove("active");
+    cfclear.classList.remove("checked");
   })
 
   window.addEventListener('click', e => {

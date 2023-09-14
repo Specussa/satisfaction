@@ -2411,7 +2411,8 @@ button {
 }
 
 .catalog__filter_clear,
-.catalog__filter_clear.active {
+.catalog__filter_clear.active,
+.catalog__filter_clear.checked {
   display: none;
 }
 
@@ -3386,7 +3387,8 @@ button {
   .catalog__filter_flex {
     align-items: center;
   }
-  .catalog__filter_clear.active {
+  .catalog__filter_clear.active,
+  .catalog__filter_clear.checked {
     display: block;
   }
   .catalog__product.active .product__item {
