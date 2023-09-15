@@ -336,7 +336,9 @@ button,
 .product__minus,
 .product__plus,
 .product__input input,
-.header__subnav_link {
+.header__subnav_link,
+.breadcrumbs__link,
+.breadcrumbs__sublink {
   font-family: var(--text-font);
   font-size: 14px;
   font-weight: 500;
@@ -1898,6 +1900,10 @@ button,
 
 /* start breadcrumbs */
 
+.breadcrumbs {
+  overflow: visible;
+}
+
 .breadcrumbs__block {
   padding: 30px 0 0;
 }
@@ -1914,7 +1920,7 @@ button,
   display: inline-block;
   width: 13px;
   height: 12px;
-  margin: 0 10px;
+  margin: 0 40px;
   flex: 0 0 auto;
   background: url('../img/icon/heart_filled.svg') center center no-repeat;
   background-size: 13px 12px;
@@ -1933,19 +1939,40 @@ button,
   display: -ms-flexbox;
   display: flex;
   align-items: center;
-  opacity: 0;
-  -webkit-transform: translateY(-50px);
-  transform: translateY(-50px);
-  -webkit-transition: -webkit-transform 0.3s linear, opacity 0.3s linear;
-  transition: transform 0.3s linear, opacity 0.3s linear;
-  -webkit-transition-delay: calc(var(--inc-step)*0.1s);
-  transition-delay: calc(var(--inc-step)*0.1s);
+  position: relative;
 }
 
-.loaded .breadcrumbs__list.animate .breadcrumbs__item {
+.breadcrumbs__absolute {
+  visibility: hidden;
+  padding: 50px 0 0;
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+  transition: visibility 0.2s linear, padding 0.2s linear, opacity 0.2s linear;
+}
+
+.breadcrumbs__item:hover .breadcrumbs__absolute {
+  visibility: visible;
+  padding: 10px 0 0;
   opacity: 1;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
+}
+
+.breadcrumbs__sublist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--bg);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.breadcrumbs__link:hover,
+.breadcrumbs__sublink:hover {
+  color: var(--pink);
 }
 
 /* end breadcrumbs */
@@ -3378,6 +3405,9 @@ button,
   .header__nav_buttons a {
     width: calc(33.333% - 5px);
     padding: 12px 20px;
+  }
+  .breadcrumbs__absolute {
+    display: none;
   }
   .footer {
     padding: 40px 0;
