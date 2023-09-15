@@ -322,9 +322,20 @@ btnheader.forEach(btns => {
     var relX = e.pageX - this.offsetLeft - 
     this.parentElement.parentElement.parentElement.offsetLeft;
     var relY = e.pageY - this.offsetTop - 
-    Math.round(this.offsetParent.offsetParent.scrollTop) - 
+    this.offsetParent.offsetParent.scrollTop - 
     this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop - 
     Math.round(window.pageYOffset) + Math.round(this.offsetParent.offsetParent.scrollTop);
+    this.children[1].style.setProperty('--rely', `${relY}px`);
+    this.children[1].style.setProperty('--relx', `${relX}px`);
+  };
+})
+var btnbrands = document.querySelectorAll('.brands__btn');
+btnbrands.forEach(btns => { 
+  btns.onmousemove = function (e) {
+    var relX = e.pageX - this.offsetLeft - 
+    this.offsetParent.offsetLeft;
+    var relY = e.pageY - this.offsetTop - 
+    this.offsetParent.offsetParent.offsetTop;
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
   };
