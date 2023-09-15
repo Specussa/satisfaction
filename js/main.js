@@ -500,13 +500,11 @@ if(!frb){} else {
       fcbs.classList.add("active");
       frb.classList.remove("active");
       frbs.classList.remove("active");
-      if (!fcbuttons.classList.contains("active")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcbuttons.classList.add("active");}}}
     } else {
       frb.classList.remove("active");
       frbs.classList.remove("active");
       fcb.classList.remove("active");
       fcbs.classList.remove("active");
-      if (!fcbuttons.classList.contains("active")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcbuttons.classList.add("active");}}}
     }
   })
 
@@ -515,10 +513,12 @@ if(!frb){} else {
       fbutton.classList.add("checked");
       fpopen.classList.add("checked");
       cfclear.classList.add("checked");
+      fcbuttons.classList.add("active");
     } else {
       fbutton.classList.remove("checked");
       fpopen.classList.remove("checked");
       cfclear.classList.remove("checked");
+      fcbuttons.classList.remove("active");
     }
   }
   uncheck.forEach(input => input.addEventListener('input', function(event) {
@@ -565,7 +565,6 @@ if(!frb){} else {
       frbs.classList.remove("active");
       fcb.classList.remove("active");
       fcbs.classList.remove("active");
-      if (!fcbuttons.classList.contains("active")) {for(var i = 0;i < uncheck.length; i++) {if(uncheck[i].checked) {fcbuttons.classList.add("active");}}}
     }
   })
 
