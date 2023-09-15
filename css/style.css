@@ -1324,10 +1324,11 @@ button,
 }
 
 .shop__swiper {
-  padding: 0 0 30px;
+  margin: 0 0 30px;
 }
 
-.hero__swiper {
+.hero__swiper,
+.shop__swiper {
   border-radius: 10px;
   overflow: hidden;
 }
@@ -1584,12 +1585,16 @@ button,
 
 .shop__item {
   height: 600px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .shop__image {
   width: 100%;
   height: 100%;
   position: relative;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .shop__image img {
@@ -3522,7 +3527,10 @@ button,
   }
   .hero__swiper,
   .hero__item,
-  .hero__image {
+  .hero__image,
+  .shop__swiper,
+  .shop__item,
+  .shop__image {
     border-radius: 0;
   }
   .hero__item {
@@ -3576,7 +3584,7 @@ button,
     width: calc(50% - 10px);
   }
   .shop__swiper {
-    padding: 0 0 20px;
+    margin: 0 0 20px;
   }
   .shop__block,
   .blog__block,
@@ -4031,7 +4039,7 @@ button,
     height: 180px;
   }
   .shop__swiper {
-    padding: 0 0 10px;
+    margin: 0 0 10px;
   }
   .shop__item {
     height: 240px;
