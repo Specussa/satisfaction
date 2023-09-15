@@ -101,6 +101,7 @@ for (i = 0; i < catalogb.length; i++) {
       for (var q = 0; q < catalogba.length; q++) {
         catalogba[q].classList.remove("active");
         catalogsl[q].classList.remove("active");
+        catalogsl[q].classList.remove("active");
       }
       for (var p = 0; p < catalogsl.length; p++) {
         this.classList.remove("active");
@@ -108,7 +109,7 @@ for (i = 0; i < catalogb.length; i++) {
         catalogsbi[p].classList.remove("active");
         catalogsl[p].style.maxHeight = null;
       }
-      catalogn.style.maxHeight = (catalogn.scrollHeight + 40) + "px";
+      catalogn.style.maxHeight = (catalogn.scrollHeight + 16.5) + "px";
       catalogn.classList.add("active");
       catalogp.classList.add("active");
       this.classList.add("active");
@@ -311,6 +312,19 @@ btnfooter.forEach(btns => {
     var relY = e.pageY - this.offsetTop - 
     this.parentElement.parentElement.parentElement.offsetTop - 
     this.parentElement.parentElement.parentElement.parentElement.offsetTop;
+    this.children[1].style.setProperty('--rely', `${relY}px`);
+    this.children[1].style.setProperty('--relx', `${relX}px`);
+  };
+})
+var btnheader = document.querySelectorAll('.header__btn');
+btnheader.forEach(btns => { 
+  btns.onmousemove = function (e) {
+    var relX = e.pageX - this.offsetLeft - 
+    this.parentElement.parentElement.parentElement.offsetLeft;
+    var relY = e.pageY - this.offsetTop - 
+    Math.round(this.offsetParent.offsetParent.scrollTop) - 
+    this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.offsetTop - 
+    Math.round(window.pageYOffset) + Math.round(this.offsetParent.offsetParent.scrollTop);
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
   };
