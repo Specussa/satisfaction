@@ -375,7 +375,6 @@ var frprice = document.querySelector('.filter__range_price');
 var frcount = document.querySelector('.filter__range_count');
 var frclear = document.querySelector('.filter__range_clear');
 var frbuttons = document.querySelector('.filter__range_buttons');
-var catalofl = document.querySelector('.catalog__filter_left');
 var fcb = document.querySelector('.filter__check_button');
 var fcbs = document.querySelector('.filter__checked');
 var frbs = document.querySelector('.filter__ranges');
@@ -468,7 +467,7 @@ if(!rangeslider){} else {
 // end range slider
 
 // start filter buttons
-if(!catalofl){} else {
+if(!frb){} else {
   frb.addEventListener('click', function() {
     if (!frb.classList.contains("active")) {
       frb.classList.add("active");

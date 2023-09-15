@@ -3009,6 +3009,29 @@ button,
   color: var(--pink);
 }
 
+.brands__right_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.brands__right_image {
+  width: 465px;
+  height: 360px;
+  padding: 60px;
+  flex: 0 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.brands__right_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 /* end brands */
 
 /* media 1600px */
@@ -3281,6 +3304,11 @@ button,
     height: 260px;
     padding: 40px;
   }
+  .brands__right_image {
+    width: 340px;
+    height: 260px;
+    padding: 40px;
+  }
   .footer__top_button {
     width: 50px;
     height: 50px;
@@ -3537,6 +3565,15 @@ button,
   }
   .brands__block {
     padding: 20px 0;
+  }
+  .brands__right_flex {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .brands__right_image {
+    width: 360px;
+    height: 260px;
   }
   .footer {
     padding: 40px 0;
@@ -3957,6 +3994,14 @@ button,
   .brands__image {
     height: 240px;
     padding: 30px;
+  }
+  .brands__right_image {
+    width: 100%;
+    height: 240px;
+    padding: 30px;
+  }
+  .brands__right_flex {
+    gap: 20px;
   }
   .footer__logo {
     display: -webkit-box;
