@@ -226,6 +226,44 @@ if(productsSlider){
 }
 // end products
 
+// start product
+const productSlider = document.querySelector('.product__swiper');
+if(productSlider){
+  var productSlide = new Swiper('.product__swiper', {
+    slidesPerView: 1,
+    speed: 1000,
+    loop: true,
+    loopedSlides: 4,
+    parallax: true,
+    watchSlidesProgress: true,
+    slideToClickedSlide: true,
+    allowTouchMove: true,
+  });
+
+  var productThumbs = new Swiper('.product__thumbs_swiper', {
+    direction: 'vertical',
+    loop: true,
+    loopedSlides: 4,
+    slidesPerView: 4,
+    touchRatio: 0.1,
+    spaceBetween: 20,
+    speed: 1000,
+    parallax: true,
+    watchSlidesProgress: true,
+    slideToClickedSlide: true,
+    allowTouchMove: true,
+    breakpoints: {
+      580: {
+        spaceBetween: 10,
+      },
+    },
+  });
+  
+  productSlide.controller.control = productThumbs;
+  productThumbs.controller.control = productSlide;
+}
+// end info slider
+
 // start hover products
 var hover = document.querySelectorAll('.products__images');
 elemHover = false;
