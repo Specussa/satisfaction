@@ -229,40 +229,27 @@ if(productsSlider){
 // start product
 const productSlider = document.querySelector('.product__swiper');
 if(productSlider){
-  var productSlide = new Swiper('.product__swiper', {
-    slidesPerView: 1,
-    speed: 1000,
-    loop: true,
-    loopedSlides: 4,
-    parallax: true,
-    watchSlidesProgress: true,
-    slideToClickedSlide: true,
-    allowTouchMove: true,
-  });
-
   var productThumbs = new Swiper('.product__thumbs_swiper', {
     direction: 'vertical',
-    loop: true,
-    loopedSlides: 4,
+    spaceBetween: 10,
     slidesPerView: 4,
-    touchRatio: 0.1,
-    spaceBetween: 20,
-    speed: 1000,
-    parallax: true,
+    loop: false,
+    freeMode: true,
+    loopedSlides: 4,
+    watchSlidesVisibility: true,
     watchSlidesProgress: true,
-    slideToClickedSlide: true,
-    allowTouchMove: true,
-    breakpoints: {
-      580: {
-        spaceBetween: 10,
-      },
+  });
+  var productSlide = new Swiper('.product__swiper', {
+    spaceBetween: 10,
+    loop: false,
+    speed: 1000,
+    loopedSlides: 4,
+    thumbs: {
+      swiper: productThumbs,
     },
   });
-  
-  productSlide.controller.control = productThumbs;
-  productThumbs.controller.control = productSlide;
 }
-// end info slider
+// end product
 
 // start hover products
 var hover = document.querySelectorAll('.products__images');
@@ -414,6 +401,20 @@ btnfavorite.forEach(btns => {
     this.offsetParent.offsetParent.offsetTop;
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
+  };
+})
+var btnproduct = document.querySelectorAll('.product__btn');
+btnproduct.forEach(btns => { 
+  btns.onmousemove = function (e) {
+    var relX = e.pageX - this.offsetLeft - 
+    this.offsetParent.offsetLeft - 
+    this.offsetParent.offsetParent.offsetLeft;
+    var relY = e.pageY - this.offsetTop - 
+    this.offsetParent.offsetTop - 
+    this.offsetParent.offsetParent.offsetTop;
+    this.children[1].style.setProperty('--rely', `${relY}px`);
+    this.children[1].style.setProperty('--relx', `${relX}px`);
+    console.log()
   };
 })
 // end btn
