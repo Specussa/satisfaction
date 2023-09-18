@@ -3235,8 +3235,9 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 50%;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
 }
 
 .product__minus,
@@ -3244,7 +3245,7 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 110px;
+  width: calc(33.333% - 3px);
   height: 70px;
   align-items: center;
   justify-content: center;
@@ -3265,7 +3266,7 @@ button,
 }
 
 .product__input {
-  width: 110px;
+  width: calc(33.333% - 3px);
   height: 70px;
   flex: 0 0 auto;
 }
@@ -3276,6 +3277,10 @@ button,
   text-align: center;
   border: 1px solid var(--pink);
   border-radius: 10px;
+}
+
+.product__btn {
+  width: 50%;
 }
 
 .product__slider {
