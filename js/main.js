@@ -199,10 +199,10 @@ if(blogSlider){
 }
 // end blog
 
-// start product
-const productSlider = document.querySelector('.product__swiper');
-if(productSlider){
-  var aboutusThumbs = new Swiper('.product__swiper', {
+// start products
+const productsSlider = document.querySelector('.products__swiper');
+if(productsSlider){
+  var aboutusThumbs = new Swiper('.products__swiper', {
     loop: true,
     slidesPerView: 5,
     loopedSlides: 5,
@@ -224,18 +224,18 @@ if(productSlider){
     },
   });
 }
-// end product
+// end products
 
-// start hover product
-var hover = document.querySelectorAll('.product__images');
+// start hover products
+var hover = document.querySelectorAll('.products__images');
 elemHover = false;
 hover.forEach(hovers => {
   hovers.addEventListener('mouseover', function(e) {
     if(elemHover) return;
-    var target = e.target.closest('.product__image');
+    var target = e.target.closest('.products__image');
     if(!target) return;
     elemHover = target;
-    var parent = target.closest('.product__images'),
+    var parent = target.closest('.products__images'),
     old = parent.querySelector('.active')
     if(old) old.classList.remove('active')
     target.classList.add('active')
@@ -254,7 +254,7 @@ hover.forEach(hovers => {
     this.children[0].classList.add('active');
   });
 })
-// end hover product
+// end hover products
 
 // start btn
 var btndefault = document.querySelectorAll('.default__btn');
@@ -383,7 +383,7 @@ btnfavorite.forEach(btns => {
 // start catalog__image
 var catalogit = document.querySelector('.catalog__image_tiles');
 var catalogil = document.querySelector('.catalog__image_list');
-var catalogp = document.querySelector('.catalog__product');
+var catalogp = document.querySelector('.catalog__products');
 
 if(!catalogp){} else {
   catalogit.addEventListener('click', function() {
