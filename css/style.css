@@ -3793,7 +3793,7 @@ button,
   height: 70px;
   padding: 0 15px;
   background-color: var(--border-pink);
-  border: 1px solid var(--text-dgray);
+  border: 1px solid var(--border);
   border-radius: 10px;
   -webkit-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
