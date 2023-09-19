@@ -721,3 +721,75 @@ class Select {
 
 Select.attach()
 // end select
+
+// start accordion info
+const pdescrbutton = document.querySelector(".product__descr_button");
+const pcharacterbutton = document.querySelector(".product__character_button");
+const pdeliverybutton = document.querySelector(".product__delivery_button");
+const previewsbutton = document.querySelector('.product__reviews_button');
+const pbutton = document.querySelectorAll(".product__blocks .product__button");
+
+const pdescr = document.querySelector('.product__descr');
+const pcharacter = document.querySelector('.product__character');
+const pdelivery = document.querySelector('.product__delivery');
+const previews = document.querySelector('.product__reviews');
+const pinfo = document.querySelectorAll(".product__blocks .product__information");
+const pinformation = document.querySelector(".product__information");
+if(pinformation){
+  pdescrbutton.addEventListener('click', function() {
+    if (!this.classList.contains("active")) {
+      pbutton.forEach(n => n.classList.remove('active'));
+      pinfo.forEach(n => n.classList.remove('active'));
+      pinfo.forEach(n => n.style.maxHeight = null);
+      pdescr.classList.add("active");
+      pdescr.style.maxHeight = (pdescr.scrollHeight * 1) + "px";
+      this.classList.add("active");
+    }
+  })
+  pcharacterbutton.addEventListener('click', function() {
+    if (!this.classList.contains("active")) {
+      pbutton.forEach(n => n.classList.remove('active'));
+      pinfo.forEach(n => n.classList.remove('active'));
+      pinfo.forEach(n => n.style.maxHeight = null);
+      pcharacter.classList.add("active");
+      pcharacter.style.maxHeight = (pcharacter.scrollHeight * 1) + "px";
+      this.classList.add("active");
+    }
+  })
+  pdeliverybutton.addEventListener('click', function() {
+    if (!this.classList.contains("active")) {
+      pbutton.forEach(n => n.classList.remove('active'));
+      pinfo.forEach(n => n.classList.remove('active'));
+      pinfo.forEach(n => n.style.maxHeight = null);
+      pdelivery.classList.add("active");
+      pdelivery.style.maxHeight = (pdelivery.scrollHeight * 1) + "px";
+      this.classList.add("active");
+    }
+  })
+  previewsbutton.addEventListener('click', function() {
+    if (!this.classList.contains("active")) {
+      pbutton.forEach(n => n.classList.remove('active'));
+      pinfo.forEach(n => n.classList.remove('active'));
+      pinfo.forEach(n => n.style.maxHeight = null);
+      previews.classList.add("active");
+      previews.style.maxHeight = (previews.scrollHeight * 1) + "px";
+      this.classList.add("active");
+    }
+  })
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.product__blocks .product__descr.active').forEach(n => n.style.maxHeight = (pdescr.scrollHeight * 1) + "px");
+    document.querySelectorAll('.product__blocks .product__character.active').forEach(n => n.style.maxHeight = (pcharacter.scrollHeight * 1) + "px");
+    document.querySelectorAll('.product__blocks .product__delivery.active').forEach(n => n.style.maxHeight = (pdelivery.scrollHeight * 1) + "px");
+    document.querySelectorAll('.product__blocks .product__reviews.active').forEach(n => n.style.maxHeight = (previews.scrollHeight * 1) + "px");
+  });
+  window.onresize = function () {
+    var newWidth = window.innerWidth;
+    if (newWidth != oldWidth) {
+      document.querySelectorAll('.product__blocks .product__descr.active').forEach(n => n.style.maxHeight = (pdescr.scrollHeight * 1) + "px");
+      document.querySelectorAll('.product__blocks .product__character.active').forEach(n => n.style.maxHeight = (pcharacter.scrollHeight * 1) + "px");
+      document.querySelectorAll('.product__blocks .product__delivery.active').forEach(n => n.style.maxHeight = (pdelivery.scrollHeight * 1) + "px");
+      document.querySelectorAll('.product__blocks .product__reviews.active').forEach(n => n.style.maxHeight = (previews.scrollHeight * 1) + "px");
+    }
+  };
+}
+// end accordion info
