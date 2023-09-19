@@ -3653,7 +3653,7 @@ button,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 40px;
 }
 
 .product__review_left,
@@ -3666,6 +3666,9 @@ button,
 }
 
 .product__review_image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 54px;
   height: 42px;
 }
@@ -3677,8 +3680,12 @@ button,
 }
 
 .product__review_name {
+  display: -webkit-box;
   margin: 0 20px 0 0;
   font-weight: 600;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .product__review_like {
@@ -3744,8 +3751,8 @@ button,
 
 .product__review_button {
   font-weight: 500;
-  -webkit-transition: -webkit-transform 0.2s linear;
-  transition: transform 0.2s linear;
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
 }
 
 .product__review_edit {
