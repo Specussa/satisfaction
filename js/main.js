@@ -762,6 +762,12 @@ if(pinformation){
       pdescr.classList.add("active");
       pdescr.style.maxHeight = (pdescr.scrollHeight * 1) + "px";
       this.classList.add("active");
+      if (!preview.classList.contains("active")) {
+        preview.classList.add("active");
+        preview.style.maxHeight = (preview.scrollHeight * 1) + "px";
+        previewform.classList.remove("active");
+        previewform.style.maxHeight = null;
+      }
     }
   })
   pcharacterbutton.addEventListener('click', function() {
@@ -773,6 +779,12 @@ if(pinformation){
       pcharacter.classList.add("active");
       pcharacter.style.maxHeight = (pcharacter.scrollHeight * 1) + "px";
       this.classList.add("active");
+      if (!preview.classList.contains("active")) {
+        preview.classList.add("active");
+        preview.style.maxHeight = (preview.scrollHeight * 1) + "px";
+        previewform.classList.remove("active");
+        previewform.style.maxHeight = null;
+      }
     }
   })
   pdeliverybutton.addEventListener('click', function() {
@@ -784,6 +796,12 @@ if(pinformation){
       pdelivery.classList.add("active");
       pdelivery.style.maxHeight = (pdelivery.scrollHeight * 1) + "px";
       this.classList.add("active");
+      if (!preview.classList.contains("active")) {
+        preview.classList.add("active");
+        preview.style.maxHeight = (preview.scrollHeight * 1) + "px";
+        previewform.classList.remove("active");
+        previewform.style.maxHeight = null;
+      }
     }
   })
   previewsbutton.addEventListener('click', function() {
@@ -795,6 +813,19 @@ if(pinformation){
       previews.classList.add("active");
       previews.style.maxHeight = (previews.scrollHeight * 1) + "px";
       this.classList.add("active");
+      if (!preview.classList.contains("active")) {
+        preview.classList.add("active");
+        preview.style.maxHeight = (preview.scrollHeight * 1) + "px";
+        previewform.classList.remove("active");
+        previewform.style.maxHeight = null;
+      }
+    } else {
+      if (!preview.classList.contains("active")) {
+        preview.classList.add("active");
+        preview.style.maxHeight = (preview.scrollHeight * 1) + "px";
+        previewform.classList.remove("active");
+        previewform.style.maxHeight = null;
+      }
     }
   })
   document.addEventListener("DOMContentLoaded", function() {
