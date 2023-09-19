@@ -407,14 +407,25 @@ var btnproduct = document.querySelectorAll('.product__btn');
 btnproduct.forEach(btns => { 
   btns.onmousemove = function (e) {
     var relX = e.pageX - this.offsetLeft - 
-    this.offsetParent.offsetLeft - 
-    this.offsetParent.offsetParent.offsetLeft;
+    this.offsetParent.offsetLeft;
     var relY = e.pageY - this.offsetTop - 
-    this.offsetParent.offsetTop - 
     this.offsetParent.offsetParent.offsetTop;
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
-    console.log()
+  };
+})
+var btnproductrb = document.querySelectorAll('.product__reviews_btn');
+btnproductrb.forEach(btns => { 
+  btns.onmousemove = function (e) {
+    var relX = e.pageX - this.offsetLeft - 
+    this.offsetParent.offsetParent.offsetLeft - 
+    this.offsetParent.offsetParent.offsetParent.offsetLeft;
+    var relY = e.pageY - this.offsetTop - 
+    this.offsetParent.offsetTop - 
+    this.offsetParent.offsetParent.offsetTop - 
+    this.offsetParent.offsetParent.offsetParent.offsetParent.offsetTop;
+    this.children[1].style.setProperty('--rely', `${relY}px`);
+    this.children[1].style.setProperty('--relx', `${relX}px`);
   };
 })
 // end btn
@@ -739,6 +750,7 @@ const pinformations = document.querySelector(".product__informations_blocks");
 
 const pibutton = document.querySelector('.product__information_button');
 const preview = document.querySelector('.product__reviews_block');
+const previewform = document.querySelector('.product__reviews_forms');
 
 if(pinformation){
   pdescrbutton.addEventListener('click', function() {
@@ -806,7 +818,11 @@ if(pinformation){
     if (preview.classList.contains("active")) {
       preview.classList.remove("active");
       preview.style.maxHeight = null;
+      previewform.classList.add("active");
+      previewform.style.maxHeight = (preview.scrollHeight * 1) + "px";
     } else {
+      previewform.classList.remove("active");
+      previewform.style.maxHeight = null;
       preview.classList.add("active");
       preview.style.maxHeight = (preview.scrollHeight * 1) + "px";
     }
