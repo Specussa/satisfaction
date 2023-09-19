@@ -122,7 +122,8 @@ select:-webkit-autofill:hover {
   box-shadow: 0 0 0 1000px var(--bg) inset;
 }
 
-button, button:hover {
+button,
+button:hover {
   outline: 0;
   border: none;
   -webkit-touch-callout: none;
@@ -339,7 +340,6 @@ p,
 .filter__label::before,
 input,
 textarea,
-button,
 label,
 .header__nav_counter,
 .filter__count span:first-child,
@@ -389,7 +389,8 @@ label,
 .products__article,
 .product__article,
 .filter__select_selected-title,
-.filter__select_list_item {
+.filter__select_list_item,
+button {
   font-family: var(--text-font);
   font-size: 12px;
   font-weight: 500;
