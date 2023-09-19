@@ -736,10 +736,6 @@ const previews = document.querySelector('.product__reviews');
 const pinfo = document.querySelectorAll(".product__blocks .product__information");
 const pinformation = document.querySelector(".product__information");
 const pinformations = document.querySelector(".product__informations_blocks");
-const pdescrActive = document.querySelectorAll('.product__blocks .product__descr.active');
-const pcharacterActive = document.querySelectorAll('.product__blocks .product__character.active');
-const pdeliveryActive = document.querySelectorAll('.product__blocks .product__delivery.active');
-const previewsActive = document.querySelectorAll('.product__blocks .product__reviews.active');
 
 const pibutton = document.querySelector('.product__information_button');
 const preview = document.querySelector('.product__reviews_block');
@@ -790,20 +786,20 @@ if(pinformation){
     }
   })
   document.addEventListener("DOMContentLoaded", function() {
-    preview.style.maxHeight = (preview.scrollHeight * 1) + "px";
-    pdescrActive.forEach(n => n.style.maxHeight = (pdescr.scrollHeight * 1) + "px");
-    pcharacterActive.forEach(n => n.style.maxHeight = (pcharacter.scrollHeight * 1) + "px");
-    pdeliveryActive.forEach(n => n.style.maxHeight = (pdelivery.scrollHeight * 1) + "px");
-    previewsActive.forEach(n => n.style.maxHeight = (previews.scrollHeight * 1) + "px");
+    if (preview.classList.contains("active")) {preview.style.maxHeight = (preview.scrollHeight * 1) + "px";}
+    if (pdescr.classList.contains("active")) {pdescr.style.maxHeight = (pdescr.scrollHeight * 1) + "px";}
+    if (pcharacter.classList.contains("active")) {pcharacter.style.maxHeight = (pcharacter.scrollHeight * 1) + "px";}
+    if (pdelivery.classList.contains("active")) {pdelivery.style.maxHeight = (pdelivery.scrollHeight * 1) + "px";}
+    if (previews.classList.contains("active")) {previews.style.maxHeight = (previews.scrollHeight * 1) + "px";}
   });
   window.onresize = function () {
     var newWidth = window.innerWidth;
     if (newWidth != oldWidth) {
-      preview.style.maxHeight = (preview.scrollHeight * 1) + "px";
-      pdescrActive.forEach(n => n.style.maxHeight = (pdescr.scrollHeight * 1) + "px");
-      pcharacterActive.forEach(n => n.style.maxHeight = (pcharacter.scrollHeight * 1) + "px");
-      pdeliveryActive.forEach(n => n.style.maxHeight = (pdelivery.scrollHeight * 1) + "px");
-      previewsActive.forEach(n => n.style.maxHeight = (previews.scrollHeight * 1) + "px");
+      if (preview.classList.contains("active")) {preview.style.maxHeight = (preview.scrollHeight * 1) + "px";}
+      if (pdescr.classList.contains("active")) {pdescr.style.maxHeight = (pdescr.scrollHeight * 1) + "px";}
+      if (pcharacter.classList.contains("active")) {pcharacter.style.maxHeight = (pcharacter.scrollHeight * 1) + "px";}
+      if (pdelivery.classList.contains("active")) {pdelivery.style.maxHeight = (pdelivery.scrollHeight * 1) + "px";}
+      if (previews.classList.contains("active")) {previews.style.maxHeight = (previews.scrollHeight * 1) + "px";}
     }
   };
   pibutton.addEventListener('click', function() {
