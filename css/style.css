@@ -106,7 +106,6 @@ button {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 input:-webkit-autofill,
@@ -327,7 +326,7 @@ h4 {
 .header__nav_link {
   font-family: var(--text-font);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 22px;
   letter-spacing: 0.05em;
   color: var(--text);
@@ -844,8 +843,12 @@ button {
 /* start footer */
 
 .footer {
+  margin: auto 0 0;
+}
+
+.footer__block {
+  margin: 60px auto 0;
   padding: 60px 0;
-  margin: 60px 0 0;
   background-color: var(--text)
 }
 
@@ -2243,21 +2246,21 @@ button {
 }
 
 .products__item:hover {
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1),
-              0px 1px 2px 0px rgba(0, 0, 0, 0.1),
-              0px 3px 3px 0px rgba(0, 0, 0, 0.09),
-              0px 6px 4px 0px rgba(0, 0, 0, 0.05),
-              0px 11px 4px 0px rgba(0, 0, 0, 0.01),
-              0px 17px 5px 0px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 0px 0px rgba(175, 89, 84, 0.1),
+              0px 1px 2px 0px rgba(175, 89, 84, 0.1),
+              0px 3px 3px 0px rgba(175, 89, 84, 0.09),
+              0px 6px 4px 0px rgba(175, 89, 84, 0.05),
+              0px 11px 4px 0px rgba(175, 89, 84, 0.01),
+              0px 17px 5px 0px rgba(175, 89, 84, 0);
 }
 
 .catalog__products.active .products__item:hover {
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1),
-              2px 1px 6px 0px rgba(0, 0, 0, 0.1),
-              9px 5px 10px 0px rgba(0, 0, 0, 0.09),
-              20px 12px 14px 0px rgba(0, 0, 0, 0.05),
-              35px 21px 16px 0px rgba(0, 0, 0, 0.01),
-              55px 33px 18px 0px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 0px 0px rgba(175, 89, 84, 0.1),
+              2px 1px 6px 0px rgba(175, 89, 84, 0.1),
+              9px 5px 10px 0px rgba(175, 89, 84, 0.09),
+              20px 12px 14px 0px rgba(175, 89, 84, 0.05),
+              35px 21px 16px 0px rgba(175, 89, 84, 0.01),
+              55px 33px 18px 0px rgba(175, 89, 84, 0);
 }
 
 .catalog__products.active .products__top {
@@ -4145,6 +4148,9 @@ button {
   .products__item {
     padding: 10px;
   }
+  .subcatalog__item {
+    width: calc(33.333% - 7px);
+  }
   .brands__block {
     padding: 30px 0;
   }
@@ -4268,6 +4274,9 @@ button {
   }
   .product__reviews_forms {
     padding: 20px;
+  }
+  .breadcrumbs__item:not(:last-child)::after {
+    margin: 0 30px;
   }
   .product__review_name {
     margin: 0 10px 0 0;
@@ -4520,9 +4529,6 @@ button {
     padding: 10px;
     gap: 10px;
   }
-  .subcatalog__item {
-    width: calc(33.333% - 7px);
-  }
   .breadcrumbs__absolute,
   .brands__left,
   .brands__right_desc {
@@ -4602,10 +4608,15 @@ button {
   .product__info {
     padding: 0;
   }
-  .footer {
-    padding: 40px 0;
-    margin: 20px 0 0;
-    background-color: var(--text);
+  .breadcrumbs__item:not(:last-child)::after {
+    margin: 0 20px;
+  }
+  .footer__block {
+    margin: 40px auto 0;
+    padding: 20px 0;
+  }
+  .footer__container {
+    margin: 20px auto 0;
   }
   .footer__top {
     flex-wrap: wrap;
@@ -5141,6 +5152,9 @@ button {
   }
   .product__image {
     padding: 0 0 20px;
+  }
+  .breadcrumbs__item:not(:last-child)::after {
+    margin: 0 10px;
   }
   .footer__logo {
     display: -webkit-box;
