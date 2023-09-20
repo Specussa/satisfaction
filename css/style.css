@@ -1320,6 +1320,9 @@ button {
 }
 
 .hero__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: 600px;
   border-radius: 10px;
   overflow: hidden;
@@ -4610,6 +4613,9 @@ button {
   }
   .breadcrumbs__item:not(:last-child)::after {
     margin: 0 20px;
+  }
+  .card .card__list {
+    width: 100%;
   }
   .footer__block {
     margin: 40px auto 0;
