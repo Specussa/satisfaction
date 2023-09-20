@@ -291,7 +291,8 @@ h3,
   color: var(--text);
 }
 
-h4 {
+h4,
+.article__info b {
   font-family: var(--text-font);
   font-size: 31px;
   font-weight: 500;
@@ -4007,7 +4008,8 @@ button {
   }
   h4,
   .catalog__products.active .products__heading,
-  .product__review_name {
+  .product__review_name,
+  .article__info b {
     font-size: 23px;
     line-height: 28px;
   }
@@ -5036,7 +5038,8 @@ button {
     font-size: 29px;
     line-height: 31px;
   }
-  h4 {
+  h4,
+  .article__info b {
     font-size: 18px;
     line-height: 22px;
   }
