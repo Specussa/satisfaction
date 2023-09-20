@@ -1316,14 +1316,19 @@ button {
 /* start hero */
 
 .hero__slider {
+  height: 600px;
   padding: 30px 0;
+}
+
+.hero__swiper {
+  height: 100%;
 }
 
 .hero__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 600px;
+  height: 100%;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -4010,7 +4015,7 @@ button {
     width: 20px;
     height: 4px;
   }
-  .hero__item,
+  .hero__slider,
   .incatalog__image,
   .shop__item {
     height: 450px;
@@ -4449,7 +4454,7 @@ button {
   .shop__image {
     border-radius: 0;
   }
-  .hero__item {
+  .hero__slider {
     height: calc(var(--height) - 80px);
   }
   .hero__navigation {
@@ -4942,7 +4947,7 @@ button {
   .hero__container {
     padding: 0;
   }
-  .hero__item {
+  .hero__slider {
     height: calc(var(--height) - 70px);
   }
   .hero__info {
