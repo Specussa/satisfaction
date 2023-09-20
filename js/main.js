@@ -238,6 +238,11 @@ if(productSlider){
     loopedSlides: 4,
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
+    breakpoints: {
+      580: {
+        direction: 'horizontal',
+      },
+    },
   });
   var productSlide = new Swiper('.product__swiper', {
     spaceBetween: 10,
