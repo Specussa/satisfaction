@@ -4352,6 +4352,7 @@ button {
   .header__bottom_container,
   .header__bottom_link,
   .header__burger,
+  .header,
   .header.active,
   .header__top,
   .header__bottom {
@@ -4920,6 +4921,7 @@ button {
   .header__bottom_container,
   .header__bottom_link,
   .header__burger,
+  .header,
   .header.active,
   .header__top,
   .header__bottom,
