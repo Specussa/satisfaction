@@ -1,12 +1,14 @@
 // start height
-var oldWidth = window.innerWidth;
+let oldWidth = window.innerWidth;
 const docheight = document.documentElement
 docheight.style.setProperty('--height', `${window.innerHeight}px`)
 const appHeight = () => {
   var newWidth = window.innerWidth;
   if (newWidth != oldWidth) {
+    let oldWidth = window.innerWidth;
     docheight.style.setProperty('--height', `${window.innerHeight}px`)
   }
+  oldWidth = window.innerWidth
 }
 window.addEventListener('resize', appHeight)
 appHeight()
