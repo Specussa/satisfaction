@@ -3984,6 +3984,57 @@ button {
 
 /* end article */
 
+/* start shop__page */
+
+.shops__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px 0 60px;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.shop__page .swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+          transition-timing-function: linear !important;
+}
+
+.shop__page .swiper-slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shop__page_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 640px;
+  height: 400px;
+  pointer-events: none;
+}
+
+.shops__image svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.shops__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 70%;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  text-align: center;
+}
+
+/* end article */
+
 /* media 1600px */
 @media (max-width: 1600px) {
   .error__head {
@@ -4411,9 +4462,20 @@ button {
   .favorites__flex {
     gap: 20px;
   }
-  .article__block {
+  .article__block,
+  .shops__block {
     padding: 30px 0;
     gap: 30px;
+  }
+  .shop__page_item {
+    max-width: 480px;
+    height: 300px;
+  }
+  .shops__flex {
+    gap: 30px;
+  }
+  .shop__slider_container {
+    padding: 0;
   }
   .footer__top_button {
     width: 50px;
@@ -4765,9 +4827,21 @@ button {
   .article__top {
     padding: 0;
   }
-  .article__block {
+  .article__block,
+  .shops__block {
     padding: 20px 0;
     gap: 20px;
+  }
+  .shop__page_item {
+    max-width: 480px;
+    height: 300px;
+  }
+  .shops__flex {
+    max-width: 80%;
+    gap: 20px;
+  }
+  .shop__slider_container {
+    padding: 0;
   }
   .footer__block {
     margin: 40px auto 0;
@@ -5022,6 +5096,10 @@ button {
   }
   .article__image {
     height: 400px;
+  }
+  .shop__page_item {
+    max-width: 400px;
+    height: 250px;
   }
 }
 /* media 1024px */
@@ -5321,6 +5399,16 @@ button {
   }
   .article__image {
     height: 300px;
+  }
+  .shop__page_item {
+    max-width: 255px;
+    height: 160px;
+  }
+  .shops__flex {
+    max-width: 100%;
+  }
+  .shop__slider_container {
+    padding: 0;
   }
   .footer__logo {
     display: -webkit-box;
