@@ -4443,9 +4443,6 @@ button {
   .hero__container {
     padding: 0;
   }
-  .hero__slider {
-    padding: 0 0 20px;
-  }
   .hero__swiper,
   .hero__item,
   .hero__image,
@@ -4455,7 +4452,8 @@ button {
     border-radius: 0;
   }
   .hero__slider {
-    height: calc(var(--height) - 80px);
+    height: calc(var(--height) - 60px);
+    padding: 0 0 20px;
   }
   .hero__navigation {
     padding: 20px 0 0;
@@ -4947,9 +4945,6 @@ button {
   .hero__container {
     padding: 0;
   }
-  .hero__slider {
-    height: calc(var(--height) - 70px);
-  }
   .hero__info {
     padding: 10px 10px 40px;
     justify-content: flex-end;
@@ -4983,6 +4978,9 @@ button {
   .hero__slider,
   .shop__container {
     padding: 0;
+  }
+  .hero__slider {
+    height: calc(var(--height) - 70px);
   }
   .card .card__item {
     width: calc(50% - 5px);

@@ -1,17 +1,15 @@
 // start height
 var oldWidth = window.innerWidth;
 const docheight = document.documentElement
-const appHeight = () => {docheight.style.setProperty('--height', `${window.innerHeight}px`)}
-window.addEventListener('resize', appHeight)
-appHeight()
-window.onresize = function () {
+docheight.style.setProperty('--height', `${window.innerHeight}px`)
+const appHeight = () => {
   var newWidth = window.innerWidth;
   if (newWidth != oldWidth) {
-    const appHeight = () => {docheight.style.setProperty('--height', `${window.innerHeight}px`)}
-    window.addEventListener('resize', appHeight)
-    appHeight()
+    docheight.style.setProperty('--height', `${window.innerHeight}px`)
   }
-};
+}
+window.addEventListener('resize', appHeight)
+appHeight()
 // end height
 
 // start header scroll active
