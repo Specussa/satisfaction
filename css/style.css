@@ -4063,6 +4063,16 @@ button {
   gap: 60px;
 }
 
+.cart__clear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
 .cart__clear_image svg {
   width: 180.77px;
   height: 200px;
