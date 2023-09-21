@@ -273,7 +273,9 @@ h2 {
 
 h3,
 .product__price,
-.cart__total_block span:last-child {
+.cart__total_block span:last-child,
+.cart__price,
+.cart__totals span:first-child {
   font-family: var(--title-font);
   font-size: 48px;
   font-weight: 400;
@@ -318,7 +320,8 @@ h4,
 .product__review_count,
 .article__info,
 .cart__count,
-.cart__button {
+.cart__button,
+.cart__name {
   font-family: var(--text-font);
   font-size: 20px;
   font-weight: 400;
@@ -1332,7 +1335,7 @@ button {
 
 .hero__slider {
   height: 600px;
-  padding: 30px 0;
+  padding: 30px 0 60px;
 }
 
 .hero__swiper {
@@ -4259,14 +4262,6 @@ button {
   justify-content: space-between;
 }
 
-.cart__name {
-
-}
-
-.cart__totals {
-  
-}
-
 .cart__counts {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4316,8 +4311,21 @@ button {
   border-radius: 10px;
 }
 
-.cart__price {
+.cart__totals {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+}
 
+.cart__price {
+  flex: 0 0 auto;
+}
+
+.cart__totals span:first-child {
+  flex: 0 0 auto;
 }
 
 /* end cart */
@@ -4371,7 +4379,8 @@ button {
   .product__review_count,
   .article__info,
   .cart__count,
-  .cart__button {
+  .cart__button,
+  .cart__name {
     font-size: 14px;
     line-height: 17px;
   }
@@ -4934,7 +4943,7 @@ button {
   }
   .hero__slider {
     height: calc(var(--height) - 60px);
-    padding: 0 0 20px;
+    padding: 0 0 40px;
   }
   .hero__navigation {
     padding: 20px 0 0;
@@ -5516,12 +5525,12 @@ button {
   .hero__navigation {
     padding: 10px 0 0;
   }
-  .hero__slider,
   .shop__container {
     padding: 0;
   }
   .hero__slider {
     height: calc(var(--height) - 70px);
+    padding: 0 0 40px;
   }
   .card .card__item {
     width: calc(50% - 5px);
