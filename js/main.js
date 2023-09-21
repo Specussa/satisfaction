@@ -452,6 +452,19 @@ btnproductrb.forEach(btns => {
     this.children[1].style.setProperty('--relx', `${relX}px`);
   };
 })
+var btncart = document.querySelectorAll('.cart__btn');
+btncart.forEach(btns => { 
+  btns.onmousemove = function (e) {
+    var relX = e.pageX - this.offsetLeft - 
+    this.offsetParent.offsetLeft - 
+    this.offsetParent.offsetParent.offsetLeft;
+    var relY = e.pageY - this.offsetTop - 
+    this.offsetParent.offsetTop - 
+    this.offsetParent.offsetParent.offsetTop;
+    this.children[1].style.setProperty('--rely', `${relY}px`);
+    this.children[1].style.setProperty('--relx', `${relX}px`);
+  };
+})
 // end btn
 
 // start catalog__image

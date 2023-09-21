@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/nouislider.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
@@ -526,6 +526,67 @@
       <div class="container cart__container">
         <div class="cart__block">
           <h1 class="cart__head">Корзина</h1>
+          <div class="cart__top">
+            <div class="cart__promocode">
+              <span class="cart__promocode_text">Введите купон для скидки</span>
+              <div class="cart__promocode_block">
+                <input type="text" class="cart__promocode_input">
+                <button class="cart__promocode_button">
+                  <svg width="31" height="16" viewBox="0 0 31 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30.7071 8.70711C31.0976 8.31658 31.0976 7.68342 30.7071 7.29289L24.3431 0.928932C23.9526 0.538408 23.3195 0.538408 22.9289 0.928932C22.5384 1.31946 22.5384 1.95262 22.9289 2.34315L28.5858 8L22.9289 13.6569C22.5384 14.0474 22.5384 14.6805 22.9289 15.0711C23.3195 15.4616 23.9526 15.4616 24.3431 15.0711L30.7071 8.70711ZM0 9H30V7H0V9Z" fill="currentColor"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="cart__total">
+              <div class="cart__total_block">
+                <span>Итог:</span>
+                <span>25 748 ₽</span>
+              </div>
+              <span>Сумма НДС: 0 руб.</span>
+            </div>
+            <a class="btn cart__btn" href="#">
+              <span>
+                Офрормить заказ
+              </span>
+              <span></span>
+            </a>
+          </div>
+          <div class="cart__bottom">
+            <p class="cart__count">в корзине <span>4</span> товара</p>
+            <button class="cart__button">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.90155 16.1285C0.558858 16.4712 0.558858 17.0268 0.90155 17.3695C1.24424 17.7122 1.79986 17.7122 2.14255 17.3695L8.96855 10.5435L15.7947 17.3696C16.1374 17.7123 16.693 17.7123 17.0357 17.3696C17.3784 17.0269 17.3784 16.4713 17.0357 16.1286L10.2095 9.30248L17.0345 2.47751C17.3772 2.13482 17.3772 1.5792 17.0345 1.23651C16.6918 0.893819 16.1362 0.893819 15.7935 1.23651L8.96855 8.06148L2.14374 1.23667C1.80105 0.893978 1.24543 0.893978 0.90274 1.23667C0.560048 1.57936 0.560048 2.13498 0.902739 2.47767L7.72755 9.30248L0.90155 16.1285Z" fill="#6B6060"/>
+              </svg>
+              Очистить
+            </button>
+          </div>
+          <ul class="cart__list">
+            <li class="cart__item">
+              <a href="product.html" class="cart__link">
+                <div class="cart__image">
+                  <img src="img/product/product_1.webp" alt="">
+                </div>
+                <p class="cart__name">
+                  Анальная пробка маленькая со стразом Lola Toys Diamond Small
+                </p>
+              </a>
+              <div class="cart__item_right">
+                <div class="cart__totals">
+                  <span>745 ₽</span>
+                  <span>Цена за шт.</span>
+                </div>
+                <div class="cart__counts">
+                  <span class="cart__minus">-</span>
+                  <div class="cart__input">
+                    <input type="text" id="1" class="text" maxlength="18" min="0" step="1" value="12">
+                  </div>
+                  <span class="cart__plus">+</span>
+                </div>
+                <span class="cart__price">745 ₽</span>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
