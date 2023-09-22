@@ -203,7 +203,7 @@ if(blogSlider){
 const productsSlider = document.querySelector('.products__swiper');
 if(productsSlider){
   var aboutusThumbs = new Swiper('.products__swiper', {
-    loop: true,
+    loop: false,
     slidesPerView: 5,
     loopedSlides: 5,
     spaceBetween: 20,
