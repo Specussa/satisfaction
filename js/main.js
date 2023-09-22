@@ -80,20 +80,6 @@ burger.addEventListener('click', function() {
 })
 // end header__burger
 
-// start like
-let pfavorites = document.querySelectorAll(".products__favorites");
-for (let i = 0; i < pfavorites.length; i++) {
-  pfavorites[i].onclick = function(e) {
-    if (this.classList.contains("added")) {
-      this.classList.remove("added");
-    } else {
-      this.classList.add("added");
-    }
-    e.preventDefault();
-  }
-}
-// end like
-
 // start catalog__button
 var catalogb = document.getElementsByClassName("catalog__button");
 var i;
@@ -318,6 +304,20 @@ hover.forEach(hovers => {
   });
 })
 // end hover products
+
+// start like
+let pfavorites = document.querySelectorAll(".products__favorites");
+for (let i = 0; i < pfavorites.length; i++) {
+  pfavorites[i].onclick = function(e) {
+    if (this.classList.contains("added")) {
+      this.classList.remove("added");
+    } else {
+      this.classList.add("added");
+    }
+    e.preventDefault();
+  }
+}
+// end like
 
 // start btn
 var btndefault = document.querySelectorAll('.default__btn');
