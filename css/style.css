@@ -2324,8 +2324,8 @@ button {
 }
 
 .catalog__products.active .products__favorites {
-  top: 35px;
-  right: 30px;
+  top: 5px;
+  right: 5px;
 }
 
 .catalog__products.active .products__heading {
@@ -4802,8 +4802,8 @@ button {
     height: 70px;
   }
   .catalog__products.active .products__favorites {
-    top: 28px;
-    right: 30px;
+    top: 0;
+    right: 0;
   }
   .products__minus,
   .products__plus,
