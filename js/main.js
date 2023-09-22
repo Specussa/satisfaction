@@ -911,3 +911,44 @@ if(pinformation){
   })
 }
 // end accordion info
+
+
+// start personal
+const pbuttondata = document.querySelector(".personal__button_data");
+const pbuttonhistory = document.querySelector(".personal__button_history");
+const pbuttonchange = document.querySelector(".personal__button_change");
+const pbuttonexit = document.querySelector('.personal__button_exit');
+const pbuttons = document.querySelectorAll(".personal__block .personal__button");
+
+const pdata = document.querySelector('.personal__data');
+const phistory = document.querySelector('.personal__history');
+const pchange = document.querySelector('.personal__change');
+const pblocks = document.querySelectorAll(".personal__block .personal__blocks");
+
+if(pbuttondata){
+  pbuttondata.addEventListener('click', function() {
+    if (!this.classList.contains("active")) {
+      pbuttons.forEach(n => n.classList.remove('active'));
+      pblocks.forEach(n => n.classList.remove('active'));
+      pdata.classList.add("active");
+      this.classList.add("active");
+    }
+  })
+  pbuttonhistory.addEventListener('click', function() {
+    if (!this.classList.contains("active")) {
+      pbuttons.forEach(n => n.classList.remove('active'));
+      pblocks.forEach(n => n.classList.remove('active'));
+      phistory.classList.add("active");
+      this.classList.add("active");
+    }
+  })
+  pbuttonchange.addEventListener('click', function() {
+    if (!this.classList.contains("active")) {
+      pbuttons.forEach(n => n.classList.remove('active'));
+      pblocks.forEach(n => n.classList.remove('active'));
+      pchange.classList.add("active");
+      this.classList.add("active");
+    }
+  })
+}
+// end personal

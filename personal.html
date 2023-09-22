@@ -522,751 +522,169 @@
         </div>
       </div>
     </section>
-    <section class="product">
-      <div class="container product__container">
-        <div class="product__block">
-          <h1 class="product__head">Анальная пробка маленькая со стразом Lola Toys Diamond Small</h1>
-          <div class="product__flex">
-            <div class="product__top">
-              <div class="product__slider">
-                <div class="product__thumbs_swiper swiper-container">
-                  <ul class="product__thumbs swiper-wrapper">
-                    <div class="product__thumbs_image swiper-slide">
-                      <img class="lazyloaded" src="img/product/product_1.webp" alt="" title="">
+    <section class="personal">
+      <div class="container personal__container">
+        <div class="personal__block">
+          <h3 class="personal__head">Личный кабинет</h3>
+          <div class="personal__flex">
+            <div class="personal__left">
+              <button class="personal__button personal__button_data active">
+                Личные данные
+                <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5L0.5 9.33013L0.5 0.669873L8 5Z" fill="currentColor"/>
+                </svg>
+              </button>
+              <button class="personal__button personal__button_history">
+                История заказов
+                <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5L0.5 9.33013L0.5 0.669873L8 5Z" fill="currentColor"/>
+                </svg>
+              </button>
+              <button class="personal__button personal__button_change">
+                Сменить пароль
+                <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5L0.5 9.33013L0.5 0.669873L8 5Z" fill="currentColor"/>
+                </svg>
+              </button>
+              <button class="personal__button personal__button_exit" onclick="location.href='index.html'">
+                <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 5L7.5 9.33013L7.5 0.669873L0 5Z" fill="currentColor"/>
+                </svg>
+                Выйти
+              </button>
+            </div>
+            <div class="personal__right">
+              <div class="personal__blocks personal__data">
+                <form action="" class="personal__form">
+                  <label class="personal__label">
+                    Фамилия Имя Отчество *
+                    <div class="personal__label_flex">
+                      <div class="personal__label_left">
+                        <input type="text" class="personal__input" placeholder="Введите ФИО" required="">
+                      </div>
+                      <div class="personal__label_right">
+                        Заполните, чтобы мы знали, как к вам обращаться
+                      </div>
                     </div>
-                    <div class="product__thumbs_image swiper-slide">
-                      <img class="lazyloaded" src="img/product/product_2.webp" alt="" title="">
+                  </label>
+                  <label class="personal__label">
+                    Email *
+                    <div class="personal__label_flex">
+                      <div class="personal__label_left">
+                        <input type="email" class="personal__input" placeholder="Введите Email" required="">
+                      </div>
+                      <div class="personal__label_right">
+                        Для отправки уведомлений о статусе заказа. Используйте как логин для входа в личный кабинет
+                      </div>
                     </div>
-                    <div class="product__thumbs_image swiper-slide">
-                      <img class="lazyloaded" src="img/product/product_3.webp" alt="" title="">
+                  </label>
+                  <label class="personal__label">
+                    Телефон *
+                    <div class="personal__label_flex">
+                      <div class="personal__label_left">
+                        <input type="tel" class="personal__input" min="3" max="11" placeholder="+7 (___) ___-__-__" required="">
+                      </div>
+                      <div class="personal__label_right">
+                        Необходим для уточнения деталей заказа
+                      </div>
                     </div>
+                  </label>
+                  <label class="personal__label">
+                    Номер телефона для получения СМС с кодом
+                    <div class="personal__label_flex">
+                      <div class="personal__label_left">
+                        <input type="tel" class="personal__input" placeholder="+7 (___) ___-__-__" required="">
+                      </div>
+                      <div class="personal__label_right">
+                        Для восстановления доступа к сайту
+                      </div>
+                    </div>
+                  </label>
+                  <label class="personal__label">
+                    Адрес
+                    <div class="personal__label_flex">
+                      <div class="personal__label_left">
+                        <input type="text" class="personal__input" placeholder="Введите Адрес" required="">
+                      </div>
+                      <div class="personal__label_right">
+                        Для отправки Вам товаров
+                      </div>
+                    </div>
+                  </label>
+                  <button class="btn personal__btn">
+                    <span>
+                      Опубликовать
+                    </span>
+                    <span></span>
+                  </button>
+                </form>
+              </div>
+              <div class="personal__blocks personal__history active">
+                <div class="personal__history_flex">
+                  <div class="personal__history_block">
+                    <span>Номер заказа</span>
+                    <span>Дата</span>
+                    <span>Курьерская служба/ трек номер</span>
+                    <span>Статус</span>
+                  </div>
+                  <ul class="personal__history_list">
+                    <li class="personal__history_item">
+                      <button class="personal__history_button">
+                        <span>90342</span>
+                        <span>12.03.2023</span>
+                        <span>Курьер сервис эксперсс/496-0вап-5624-вапвап</span>
+                        <span>На доставке</span>
+                      </button>
+                      <div class="personal__history_info">
+                        <div class="personal__history_image">
+                          <img src="img/product/product_1.webp" alt="">
+                        </div>
+                        <div class="personal__history_price"><span>745 ₽</span></div>
+                        <div class="personal__history_delivery">
+                          <p>Адрес доставки</p>
+                          <p>
+                            <b>СДЭК</b><br><br>
+                            ГСК “Железняк” по улице Офицерской, поворот между рынокм Шины-Диски и ГСПК “Пламя” направо и далее 60 м налево вдоль здания ГСК.<br><br>
+                            <b>2-3 дня/ 215 ₽</b>
+                          </p>
+                        </div>
+                      </div>
+                    </li>
                   </ul>
                 </div>
-                <div class="product__swiper swiper-container">
-                  <ul class="product__big swiper-wrapper">
-                    <div class="product__image swiper-slide">
-                      <img class="lazyloaded" src="img/product/product_1.webp" alt="" title="">
-                    </div>
-                    <div class="product__image swiper-slide">
-                      <img class="lazyloaded" src="img/product/product_2.webp" alt="" title="">
-                    </div>
-                    <div class="product__image swiper-slide">
-                      <img class="lazyloaded" src="img/product/product_3.webp" alt="" title="">
-                    </div>
-                  </ul>
-                </div>
               </div>
-              <div class="product__order">
-                <div class="product__prices">
-                  <span class="product__price">745 ₽</span>
-                  <button class="products__favorites product__favorites">
-                    <svg viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
-                      <g fill="none" fill-rule="evenodd" transform="translate(467 392)">
-                        <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" class="favorites__heart" fill="currentColor"/>
-                        <circle class="favorites__circle" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
-                        <g class="favorites__seven" opacity="0" transform="translate(7 6)">
-                          <circle class="favorites__first" fill="#9CD8C3" cx="2" cy="6" r="2"/>
-                          <circle class="favorites__second" fill="#8CE8C3" cx="5" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__six" opacity="0" transform="translate(0 28)">
-                          <circle class="favorites__first" fill="#CC8EF5" cx="2" cy="7" r="2"/>
-                          <circle class="favorites__second" fill="#91D2FA" cx="3" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__three" opacity="0" transform="translate(52 28)">
-                          <circle class="favorites__second" fill="#9CD8C3" cx="2" cy="7" r="2"/>
-                          <circle class="favorites__first" fill="#8CE8C3" cx="4" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__two" opacity="0" transform="translate(44 6)">
-                          <circle class="favorites__second" fill="#CC8EF5" cx="5" cy="6" r="2"/>
-                          <circle class="favorites__first" fill="#CC8EF5" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__five" opacity="0" transform="translate(14 50)">
-                          <circle class="favorites__first" fill="#91D2FA" cx="6" cy="5" r="2"/>
-                          <circle class="favorites__second" fill="#91D2FA" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__four" opacity="0" transform="translate(35 50)">
-                          <circle class="favorites__first" fill="#F48EA7" cx="6" cy="5" r="2"/>
-                          <circle class="favorites__second" fill="#F48EA7" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__one" opacity="0" transform="translate(24)">
-                          <circle class="favorites__first" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
-                          <circle class="favorites__second" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
-                        </g>
-                      </g>
-                    </svg>
-                  </button>
-                </div>
-                <div class="product__stocks">
-                  <p class="product__stock stock">Есть в наличии</p>
-                  <p class="product__article">Артикул: 5781690000</p>
-                </div>
-                <div class="product__orders">
-                  <div class="product__buttons">
-                    <div class="product__count">
-                      <span class="product__minus">-</span>
-                      <div class="product__input">
-                        <input type="text" id="1" class="text" maxlength="18" min="0" step="1" value="12">
+              <div class="personal__blocks personal__change">
+                <form action="" class="personal__form">
+                  <label class="personal__label">
+                    Новый пароль *
+                    <div class="personal__label_flex">
+                      <div class="personal__label_left">
+                        <input type="text" class="personal__input" placeholder="Новый пароль" required="">
                       </div>
-                      <span class="product__plus">+</span>
+                      <div class="personal__label_right">
+                        Новый пароль на который хотите заменить
+                      </div>
                     </div>
-                    <button class="btn product__btn">
-                      <span>
-                        <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12.5305 9.96186C12.9852 10.541 13.1915 11.0911 13.2217 11.8049C13.2249 11.8789 13.2205 11.9447 13.2009 12.1147C13.1278 12.7495 12.772 13.5574 12.2334 13.9146C11.9604 14.0954 11.6324 14.2187 11.3189 14.2573C11.119 14.2826 11.003 14.2877 10.9096 14.2769C10.88 14.2731 10.8169 14.2662 10.7702 14.2611C10.1787 14.1947 9.63374 13.8754 9.26731 13.381C9.24145 13.3449 9.21433 13.3076 9.20865 13.2969C9.19415 13.2729 9.18027 13.2729 9.16577 13.2969C9.12036 13.3753 8.9898 13.5334 8.88448 13.6383C8.53886 13.9848 8.08098 14.2074 7.60418 14.2611C7.55751 14.2662 7.49444 14.2731 7.4648 14.2769C7.40299 14.2839 7.30208 14.2839 7.23207 14.2763C7.20622 14.2737 7.15198 14.2681 7.11224 14.2643C6.26396 14.1776 5.52984 13.3502 5.26495 12.5333C5.20693 12.3531 5.18296 12.2273 5.15647 11.9567C5.1426 11.8113 5.16846 11.4793 5.21134 11.2549C5.29995 10.7931 5.48526 10.3834 5.80397 9.96186" stroke="currentColor"></path>
-                          <path d="M1.20111 16.8171L2.04422 7.66325C2.13901 6.6341 3.0023 5.84668 4.03579 5.84668H13.9344C14.948 5.84668 15.8013 6.60492 15.9205 7.61148L17.0045 16.7653C17.1454 17.9548 16.2162 19.0005 15.0184 19.0005H3.19268C2.01567 19.0005 1.09315 17.9891 1.20111 16.8171Z" stroke="currentColor"></path>
-                          <path d="M11 4C11 2.75736 10.2426 1 9 1C7.75736 1 7 2.75736 7 4" stroke="currentColor"></path>
-                        </svg>
-                        В корзину
-                      </span>
-                      <span></span>
-                    </button>
-                  </div>
-                  <div class="product__info">
-                    <p class="product__desc">Доставка: Москва и МО - Круглосуточно 24/7 <br>Россия - 2-4</p>
-                    <p class="product__desc">Самовывоз - бесплатно</p>
-                    <p class="product__desc">Цена действительна только для интернет-магазина и может отличаться от цен в розничных магазина</p>
-                  </div>
-                </div>
+                  </label>
+                  <label class="personal__label">
+                    Повторите пароль *
+                    <div class="personal__label_flex">
+                      <div class="personal__label_left">
+                        <input type="text" class="personal__input" placeholder="Повторите пароль" required="">
+                      </div>
+                      <div class="personal__label_right">
+                        Подтверждение корректности ввода
+                      </div>
+                    </div>
+                  </label>
+                  <button class="btn personal__btn">
+                    <span>
+                      Сохранить
+                    </span>
+                    <span></span>
+                  </button>
+                </form>
               </div>
-            </div>
-            <div class="product__bottom">
-              <div class="product__blocks">
-                <div class="product__blocks_buttons">
-                  <button class="product__button product__descr_button active">Описание</button>
-                  <button class="product__button product__character_button ">Характеристики</button>
-                  <button class="product__button product__delivery_button">Оплата и доставка</button>
-                  <button class="product__button product__reviews_button">Отзывы</button>
-                </div>
-                <div class="product__informations">
-                  <div class="product__informations_blocks">
-                    <div class="product__information product__descr active">
-                      <h4 class="product__information_head">Описание товара</h4>
-                      <p class="product__information_desc">
-                        Warryor- многофункциональный мастурбатор нового поколения. Игрушка имеет 8 режимов пенетрации, 9 режимов бесшумной вибрации и двухуровневый нагрев до 42 градусов. Каждая функция автономных моторов отображается на экране, позволяя отслеживать выбранные режимы. Функция пенетрации в мастурбаторе Warryor отличается тем, что она осуществляется с помощью фигурных колец с бусинами, что делает стимуляцию еще более яркой.ПрименениеРукав изготовлен из эластичного и мягкого 3D ТПЕ материала (менее пористый чем обычный ТПЕ). Он не содержит фталатов и обеспечивет приятные тактильные ощущения. Использовать мастурбатор рекомендуется только с лубрикантом на водной основе. Включить игрушку можно трехсекундным нажатием на кнопку включения. Все режимы отображаются на экране.
-                      </p>
-                    </div>
-                    <div class="product__information product__character">
-                      <h4 class="product__information_head">Характеристики</h4>
-                      <ul class="product__information_list">
-                        <li class="product__information_item"><p>Материал</p><p>Медицинский силикон, ABS пластик</p></li>
-                        <li class="product__information_item"><p>Цвет</p><p>Чёрный</p></li>
-                        <li class="product__information_item"><p>Длина, см</p><p>15,5</p></li>
-                        <li class="product__information_item"><p>1 насадка</p><p>1,2 х 1,4</p></li>
-                        <li class="product__information_item"><p>2 насадка</p><p>1,9 х 2</p></li>
-                        <li class="product__information_item"><p>Тип питания</p><p>Встроенный аккумулятор</p></li>
-                        <li class="product__information_item"><p>Водонепроницаемый</p><p>Да</p></li>
-                      </ul>
-                    </div>
-                    <div class="product__information product__delivery">
-                      <h4 class="product__information_head">Оплата и доставка</h4>
-                      <p class="product__information_desc">
-                        Оплата и доставка
-                      </p>
-                    </div>
-                  </div>
-                  <div class="product__information product__reviews">
-                    <div class="product__reviews_flex">
-                      <div class="product__reviews_top">
-                        <h4 class="product__information_head">Отзывы</h4>
-                        <button class="product__information_button">Оставить отзыв</button>
-                      </div>
-                      <div class="product__reviews_block active">
-                        <div class="product__review_flex">
-                          <!-- показать если нет отзывов -->
-                          <div class="product__review">
-                            <p class="product__review_clear">
-                              Помогите другим пользователям с выбором - будьте первым, кто поделится своим мнением об этом товаре
-                            </p>
-                          </div>
-                          <!-- показать если есть отзывы -->
-                          <div class="product__review">
-                            <div class="product__review_top">
-                              <div class="product__review_left">
-                                <div class="product__review_image"><img src="img/user/userid_1.svg" alt=""></div>
-                                <h5 class="product__review_name">Yaroslav</h5>
-                                <p class="product__review_date">12.09.2023</p>
-                              </div>
-                              <div class="product__review_right">
-                                <span class="product__review_count">16</span>
-                                <button class="product__review_like">
-                                  <svg width="155" height="155" viewBox="0 0 155 155" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M129.167 0H25.8333C11.5389 0 0 10.3139 0 23.0319V107.637C0 120.355 11.5389 130.669 25.8333 130.669H32.3778C39.2667 130.669 45.8111 133.073 50.6333 137.416L65.3583 150.522C72.075 156.493 83.0111 156.493 89.7278 150.522L104.453 137.416C109.275 133.073 115.906 130.669 122.708 130.669H129.167C143.461 130.669 155 120.355 155 107.637V23.0319C155 10.3139 143.461 0 129.167 0ZM79.9111 100.503C78.6194 100.891 76.4667 100.891 75.0889 100.503C63.8944 97.0131 38.75 82.6667 38.75 58.2389C38.8361 47.4597 48.3944 38.7742 60.2778 38.7742C67.3389 38.7742 73.5389 41.7986 77.5 46.5291C81.4611 41.7986 87.6611 38.7742 94.7222 38.7742C106.606 38.7742 116.25 47.4597 116.25 58.2389C116.164 82.6667 91.1055 97.0131 79.9111 100.503Z" fill="currentColor"/>
-                                  </svg>
-                                </button>
-                              </div>
-                            </div>
-                            <div class="product__review_text">
-                              <div class="product__review_block">
-                                <span class="product__review_head">Достоинства</span>
-                                <p class="product__review_desc">Очень крутое устройство, мне нравится, вошло вышло и хорошо.  </p>
-                              </div>
-                              <div class="product__review_block">
-                                <span class="product__review_head">Недостатки</span>
-                                <p class="product__review_desc">Не живое, грею в микроволновке</p>
-                              </div>
-                              <div class="product__review_block">
-                                <span class="product__review_head">Комментарий</span>
-                                <p class="product__review_desc">Возможно закажу еще раз</p>
-                              </div>
-                              <div class="product__review_buttons">
-                                <button class="product__review_button product__review_edit">Редактировать</button>
-                                <button class="product__review_button product__review_del">Удалить</button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="product__review">
-                            <div class="product__review_top">
-                              <div class="product__review_left">
-                                <div class="product__review_image"><img src="img/user/userid_1.svg" alt=""></div>
-                                <h5 class="product__review_name">Yaroslav Yaroslavvovich Yaroslavskiy Yaroslav Yaroslavvovich Yaroslavskiy</h5>
-                                <p class="product__review_date">12.09.2023</p>
-                              </div>
-                              <div class="product__review_right">
-                                <span class="product__review_count">17</span>
-                                <button class="product__review_like liked">
-                                  <svg width="155" height="155" viewBox="0 0 155 155" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M129.167 0H25.8333C11.5389 0 0 10.3139 0 23.0319V107.637C0 120.355 11.5389 130.669 25.8333 130.669H32.3778C39.2667 130.669 45.8111 133.073 50.6333 137.416L65.3583 150.522C72.075 156.493 83.0111 156.493 89.7278 150.522L104.453 137.416C109.275 133.073 115.906 130.669 122.708 130.669H129.167C143.461 130.669 155 120.355 155 107.637V23.0319C155 10.3139 143.461 0 129.167 0ZM79.9111 100.503C78.6194 100.891 76.4667 100.891 75.0889 100.503C63.8944 97.0131 38.75 82.6667 38.75 58.2389C38.8361 47.4597 48.3944 38.7742 60.2778 38.7742C67.3389 38.7742 73.5389 41.7986 77.5 46.5291C81.4611 41.7986 87.6611 38.7742 94.7222 38.7742C106.606 38.7742 116.25 47.4597 116.25 58.2389C116.164 82.6667 91.1055 97.0131 79.9111 100.503Z" fill="currentColor"/>
-                                  </svg>
-                                </button>
-                              </div>
-                            </div>
-                            <div class="product__review_text">
-                              <div class="product__review_block">
-                                <span class="product__review_head">Достоинства</span>
-                                <p class="product__review_desc">Очень крутое устройство, мне нравится, вошло вышло и хорошо.  </p>
-                              </div>
-                              <div class="product__review_block">
-                                <span class="product__review_head">Недостатки</span>
-                                <p class="product__review_desc">Не живое, грею в микроволновке</p>
-                              </div>
-                              <div class="product__review_block">
-                                <span class="product__review_head">Комментарий</span>
-                                <p class="product__review_desc">Возможно закажу еще раз</p>
-                              </div>
-                              <div class="product__review_buttons">
-                                <button class="product__review_button product__review_edit">Редактировать</button>
-                                <button class="product__review_button product__review_del">Удалить</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="product__reviews_forms">
-                        <form action="" class="product__reviews_form">
-                          <div class="product__reviews_form_top">
-                            <label class="product__reviews_label">
-                              Ваше имя*
-                              <input type="text" class="product__reviews_input" required>
-                            </label>
-                            <label class="product__reviews_label">
-                              E-mail
-                              <input type="email" class="product__reviews_input" required>
-                            </label>
-                          </div>
-                          <label class="product__reviews_label">
-                            Достоинства
-                            <input type="email" class="product__reviews_input" required>
-                          </label>
-                          <label class="product__reviews_label">
-                            Недоставтки
-                            <input type="email" class="product__reviews_input" required>
-                          </label>
-                          <label class="product__reviews_label">
-                            Комментарий
-                            <input type="email" class="product__reviews_input" required>
-                          </label>
-                          <button class="btn product__reviews_btn">
-                            <span>
-                              Опубликовать
-                            </span>
-                            <span></span>
-                          </button>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="product__recommended">
-                <h2 class="product__recommended_head">Рекомендации для Вас</h2>
-                <ul class="product__recommended_list">
-                  <li class="product__recommended_item">
-                    <a href="product.html" class="product__recommended_link">
-                      <div class="product__recommended_image">
-                        <img src="img/product/product_1.webp" alt="">
-                      </div>
-                      <div class="product__recommended_info">
-                        <p class="product__recommended_name">Анальная пробка маленькая со стразом Lola Toys Diamond Small Анальная пробка маленькая со стразом Lola Toys Diamond Small</p>
-                        <span class="product__recommended_count">1 шт</span>
-                      </div>
-                      <span class="product__recommended_price">745 ₽</span>
-                    </a>
-                  </li>
-                  <li class="product__recommended_item">
-                    <a href="product.html" class="product__recommended_link">
-                      <div class="product__recommended_image">
-                        <img src="img/product/product_1.webp" alt="">
-                      </div>
-                      <div class="product__recommended_info">
-                        <p class="product__recommended_name">Анальная пробка маленькая со стразом Lola Toys Diamond Small</p>
-                        <span class="product__recommended_count">1 шт</span>
-                      </div>
-                      <span class="product__recommended_price">745 ₽</span>
-                    </a>
-                  </li>
-                  <li class="product__recommended_item">
-                    <a href="product.html" class="product__recommended_link">
-                      <div class="product__recommended_image">
-                        <img src="img/product/product_1.webp" alt="">
-                      </div>
-                      <div class="product__recommended_info">
-                        <p class="product__recommended_name">Анальная пробка маленькая со стразом Lola Toys Diamond Small</p>
-                        <span class="product__recommended_count">1 шт</span>
-                      </div>
-                      <span class="product__recommended_price">745 ₽</span>
-                    </a>
-                  </li>
-                  <li class="product__recommended_item">
-                    <a href="product.html" class="product__recommended_link">
-                      <div class="product__recommended_image">
-                        <img src="img/product/product_1.webp" alt="">
-                      </div>
-                      <div class="product__recommended_info">
-                        <p class="product__recommended_name">Анальная пробка маленькая со стразом Lola Toys Diamond Small</p>
-                        <span class="product__recommended_count">1 шт</span>
-                      </div>
-                      <span class="product__recommended_price">745 ₽</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="products">
-      <div class="container products__container">
-        <div class="products__block">
-          <h3 class="products__head">Последнее что вы смотрели</h3>
-          <div class="products__slider">
-            <div class="products__swiper swiper-container">
-              <ul class="products__list swiper-wrapper">
-                <li class="products__item swiper-slide">
-                  <button class="products__favorites">
-                    <svg viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
-                      <g fill="none" fill-rule="evenodd" transform="translate(467 392)">
-                        <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" class="favorites__heart" fill="currentColor"/>
-                        <circle class="favorites__circle" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
-                        <g class="favorites__seven" opacity="0" transform="translate(7 6)">
-                          <circle class="favorites__first" fill="#9CD8C3" cx="2" cy="6" r="2"/>
-                          <circle class="favorites__second" fill="#8CE8C3" cx="5" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__six" opacity="0" transform="translate(0 28)">
-                          <circle class="favorites__first" fill="#CC8EF5" cx="2" cy="7" r="2"/>
-                          <circle class="favorites__second" fill="#91D2FA" cx="3" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__three" opacity="0" transform="translate(52 28)">
-                          <circle class="favorites__second" fill="#9CD8C3" cx="2" cy="7" r="2"/>
-                          <circle class="favorites__first" fill="#8CE8C3" cx="4" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__two" opacity="0" transform="translate(44 6)">
-                          <circle class="favorites__second" fill="#CC8EF5" cx="5" cy="6" r="2"/>
-                          <circle class="favorites__first" fill="#CC8EF5" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__five" opacity="0" transform="translate(14 50)">
-                          <circle class="favorites__first" fill="#91D2FA" cx="6" cy="5" r="2"/>
-                          <circle class="favorites__second" fill="#91D2FA" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__four" opacity="0" transform="translate(35 50)">
-                          <circle class="favorites__first" fill="#F48EA7" cx="6" cy="5" r="2"/>
-                          <circle class="favorites__second" fill="#F48EA7" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__one" opacity="0" transform="translate(24)">
-                          <circle class="favorites__first" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
-                          <circle class="favorites__second" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
-                        </g>
-                      </g>
-                    </svg>
-                  </button>
-                  <div class="products__top">
-                    <a href="product.html" class="products__item_link">
-                      <div class="products__images">
-                        <div class="products__image active">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_1.webp" alt="" title="">
-                        </div>
-                        <div class="products__image">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_2.webp" alt="" title="">
-                        </div>
-                        <div class="products__image">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_3.webp" alt="" title="">
-                        </div>
-                      </div>
-                      <div class="products__image_block"></div>
-                    </a>
-                    <a href="product.html" class="products__heading">Анальная пробка маленькая со стразом Lola Toys Diamond Small Анальная пробка маленькая со стразом Lola Toys Diamond Small Анальная пробка маленькая со стразом Lola Toys Diamond Small</a>
-                  </div>
-                  <div class="products__bottom">
-                    <span class="products__price">745 ₽</span>
-                    <button class="products__cart">
-                      <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.5305 9.96186C12.9852 10.541 13.1915 11.0911 13.2217 11.8049C13.2249 11.8789 13.2205 11.9447 13.2009 12.1147C13.1278 12.7495 12.772 13.5574 12.2334 13.9146C11.9604 14.0954 11.6324 14.2187 11.3189 14.2573C11.119 14.2826 11.003 14.2877 10.9096 14.2769C10.88 14.2731 10.8169 14.2662 10.7702 14.2611C10.1787 14.1947 9.63374 13.8754 9.26731 13.381C9.24145 13.3449 9.21433 13.3076 9.20865 13.2969C9.19415 13.2729 9.18027 13.2729 9.16577 13.2969C9.12036 13.3753 8.9898 13.5334 8.88448 13.6383C8.53886 13.9848 8.08098 14.2074 7.60418 14.2611C7.55751 14.2662 7.49444 14.2731 7.4648 14.2769C7.40299 14.2839 7.30208 14.2839 7.23207 14.2763C7.20622 14.2737 7.15198 14.2681 7.11224 14.2643C6.26396 14.1776 5.52984 13.3502 5.26495 12.5333C5.20693 12.3531 5.18296 12.2273 5.15647 11.9567C5.1426 11.8113 5.16846 11.4793 5.21134 11.2549C5.29995 10.7931 5.48526 10.3834 5.80397 9.96186" stroke="currentColor"></path>
-                        <path d="M1.20111 16.8171L2.04422 7.66325C2.13901 6.6341 3.0023 5.84668 4.03579 5.84668H13.9344C14.948 5.84668 15.8013 6.60492 15.9205 7.61148L17.0045 16.7653C17.1454 17.9548 16.2162 19.0005 15.0184 19.0005H3.19268C2.01567 19.0005 1.09315 17.9891 1.20111 16.8171Z" stroke="currentColor"></path>
-                        <path d="M11 4C11 2.75736 10.2426 1 9 1C7.75736 1 7 2.75736 7 4" stroke="currentColor"></path>
-                      </svg>
-                      <span>В корзину</span>
-                    </button>
-                  </div>
-                </li>
-                <li class="products__item swiper-slide">
-                  <button class="products__favorites added">
-                    <svg viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
-                      <g fill="none" fill-rule="evenodd" transform="translate(467 392)">
-                        <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" class="favorites__heart" fill="currentColor"/>
-                        <circle class="favorites__circle" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
-                        <g class="favorites__seven" opacity="0" transform="translate(7 6)">
-                          <circle class="favorites__first" fill="#9CD8C3" cx="2" cy="6" r="2"/>
-                          <circle class="favorites__second" fill="#8CE8C3" cx="5" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__six" opacity="0" transform="translate(0 28)">
-                          <circle class="favorites__first" fill="#CC8EF5" cx="2" cy="7" r="2"/>
-                          <circle class="favorites__second" fill="#91D2FA" cx="3" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__three" opacity="0" transform="translate(52 28)">
-                          <circle class="favorites__second" fill="#9CD8C3" cx="2" cy="7" r="2"/>
-                          <circle class="favorites__first" fill="#8CE8C3" cx="4" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__two" opacity="0" transform="translate(44 6)">
-                          <circle class="favorites__second" fill="#CC8EF5" cx="5" cy="6" r="2"/>
-                          <circle class="favorites__first" fill="#CC8EF5" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__five" opacity="0" transform="translate(14 50)">
-                          <circle class="favorites__first" fill="#91D2FA" cx="6" cy="5" r="2"/>
-                          <circle class="favorites__second" fill="#91D2FA" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__four" opacity="0" transform="translate(35 50)">
-                          <circle class="favorites__first" fill="#F48EA7" cx="6" cy="5" r="2"/>
-                          <circle class="favorites__second" fill="#F48EA7" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__one" opacity="0" transform="translate(24)">
-                          <circle class="favorites__first" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
-                          <circle class="favorites__second" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
-                        </g>
-                      </g>
-                    </svg>
-                  </button>
-                  <div class="products__top">
-                    <a href="product.html" class="products__item_link">
-                      <div class="products__images">
-                        <div class="products__image active">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_1.webp" alt="" title="">
-                        </div>
-                        <div class="products__image">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_2.webp" alt="" title="">
-                        </div>
-                        <div class="products__image">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_3.webp" alt="" title="">
-                        </div>
-                      </div>
-                      <div class="products__image_block"></div>
-                    </a>
-                    <a href="product.html" class="products__heading">Анальная пробка маленькая со стразом Lola Toys Diamond Small</a>
-                  </div>
-                  <div class="products__bottom">
-                    <span class="products__price">745 ₽</span>
-                    <button class="products__cart added">
-                      <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.5305 9.96186C12.9852 10.541 13.1915 11.0911 13.2217 11.8049C13.2249 11.8789 13.2205 11.9447 13.2009 12.1147C13.1278 12.7495 12.772 13.5574 12.2334 13.9146C11.9604 14.0954 11.6324 14.2187 11.3189 14.2573C11.119 14.2826 11.003 14.2877 10.9096 14.2769C10.88 14.2731 10.8169 14.2662 10.7702 14.2611C10.1787 14.1947 9.63374 13.8754 9.26731 13.381C9.24145 13.3449 9.21433 13.3076 9.20865 13.2969C9.19415 13.2729 9.18027 13.2729 9.16577 13.2969C9.12036 13.3753 8.9898 13.5334 8.88448 13.6383C8.53886 13.9848 8.08098 14.2074 7.60418 14.2611C7.55751 14.2662 7.49444 14.2731 7.4648 14.2769C7.40299 14.2839 7.30208 14.2839 7.23207 14.2763C7.20622 14.2737 7.15198 14.2681 7.11224 14.2643C6.26396 14.1776 5.52984 13.3502 5.26495 12.5333C5.20693 12.3531 5.18296 12.2273 5.15647 11.9567C5.1426 11.8113 5.16846 11.4793 5.21134 11.2549C5.29995 10.7931 5.48526 10.3834 5.80397 9.96186" stroke="currentColor"></path>
-                        <path d="M1.20111 16.8171L2.04422 7.66325C2.13901 6.6341 3.0023 5.84668 4.03579 5.84668H13.9344C14.948 5.84668 15.8013 6.60492 15.9205 7.61148L17.0045 16.7653C17.1454 17.9548 16.2162 19.0005 15.0184 19.0005H3.19268C2.01567 19.0005 1.09315 17.9891 1.20111 16.8171Z" stroke="currentColor"></path>
-                        <path d="M11 4C11 2.75736 10.2426 1 9 1C7.75736 1 7 2.75736 7 4" stroke="currentColor"></path>
-                      </svg>
-                      <span>В корзину</span>
-                    </button>
-                  </div>
-                </li>
-                <li class="products__item swiper-slide">
-                  <button class="products__favorites">
-                    <svg viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
-                      <g fill="none" fill-rule="evenodd" transform="translate(467 392)">
-                        <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" class="favorites__heart" fill="currentColor"/>
-                        <circle class="favorites__circle" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
-                        <g class="favorites__seven" opacity="0" transform="translate(7 6)">
-                          <circle class="favorites__first" fill="#9CD8C3" cx="2" cy="6" r="2"/>
-                          <circle class="favorites__second" fill="#8CE8C3" cx="5" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__six" opacity="0" transform="translate(0 28)">
-                          <circle class="favorites__first" fill="#CC8EF5" cx="2" cy="7" r="2"/>
-                          <circle class="favorites__second" fill="#91D2FA" cx="3" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__three" opacity="0" transform="translate(52 28)">
-                          <circle class="favorites__second" fill="#9CD8C3" cx="2" cy="7" r="2"/>
-                          <circle class="favorites__first" fill="#8CE8C3" cx="4" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__two" opacity="0" transform="translate(44 6)">
-                          <circle class="favorites__second" fill="#CC8EF5" cx="5" cy="6" r="2"/>
-                          <circle class="favorites__first" fill="#CC8EF5" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__five" opacity="0" transform="translate(14 50)">
-                          <circle class="favorites__first" fill="#91D2FA" cx="6" cy="5" r="2"/>
-                          <circle class="favorites__second" fill="#91D2FA" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__four" opacity="0" transform="translate(35 50)">
-                          <circle class="favorites__first" fill="#F48EA7" cx="6" cy="5" r="2"/>
-                          <circle class="favorites__second" fill="#F48EA7" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__one" opacity="0" transform="translate(24)">
-                          <circle class="favorites__first" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
-                          <circle class="favorites__second" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
-                        </g>
-                      </g>
-                    </svg>
-                  </button>
-                  <div class="products__top">
-                    <a href="product.html" class="products__item_link">
-                      <div class="products__images">
-                        <div class="products__image active">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_1.webp" alt="" title="">
-                        </div>
-                        <div class="products__image">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_2.webp" alt="" title="">
-                        </div>
-                        <div class="products__image">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_3.webp" alt="" title="">
-                        </div>
-                      </div>
-                      <div class="products__image_block"></div>
-                    </a>
-                    <a href="product.html" class="products__heading">Анальная пробка маленькая со стразом Lola Toys Diamond Small</a>
-                  </div>
-                  <div class="products__bottom">
-                    <span class="products__price">745 ₽</span>
-                    <button class="products__cart" disabled>
-                      <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.5305 9.96186C12.9852 10.541 13.1915 11.0911 13.2217 11.8049C13.2249 11.8789 13.2205 11.9447 13.2009 12.1147C13.1278 12.7495 12.772 13.5574 12.2334 13.9146C11.9604 14.0954 11.6324 14.2187 11.3189 14.2573C11.119 14.2826 11.003 14.2877 10.9096 14.2769C10.88 14.2731 10.8169 14.2662 10.7702 14.2611C10.1787 14.1947 9.63374 13.8754 9.26731 13.381C9.24145 13.3449 9.21433 13.3076 9.20865 13.2969C9.19415 13.2729 9.18027 13.2729 9.16577 13.2969C9.12036 13.3753 8.9898 13.5334 8.88448 13.6383C8.53886 13.9848 8.08098 14.2074 7.60418 14.2611C7.55751 14.2662 7.49444 14.2731 7.4648 14.2769C7.40299 14.2839 7.30208 14.2839 7.23207 14.2763C7.20622 14.2737 7.15198 14.2681 7.11224 14.2643C6.26396 14.1776 5.52984 13.3502 5.26495 12.5333C5.20693 12.3531 5.18296 12.2273 5.15647 11.9567C5.1426 11.8113 5.16846 11.4793 5.21134 11.2549C5.29995 10.7931 5.48526 10.3834 5.80397 9.96186" stroke="currentColor"></path>
-                        <path d="M1.20111 16.8171L2.04422 7.66325C2.13901 6.6341 3.0023 5.84668 4.03579 5.84668H13.9344C14.948 5.84668 15.8013 6.60492 15.9205 7.61148L17.0045 16.7653C17.1454 17.9548 16.2162 19.0005 15.0184 19.0005H3.19268C2.01567 19.0005 1.09315 17.9891 1.20111 16.8171Z" stroke="currentColor"></path>
-                        <path d="M11 4C11 2.75736 10.2426 1 9 1C7.75736 1 7 2.75736 7 4" stroke="currentColor"></path>
-                      </svg>
-                      <span>В корзину</span>
-                    </button>
-                  </div>
-                </li>
-                <li class="products__item swiper-slide">
-                  <button class="products__favorites">
-                    <svg viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
-                      <g fill="none" fill-rule="evenodd" transform="translate(467 392)">
-                        <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" class="favorites__heart" fill="currentColor"/>
-                        <circle class="favorites__circle" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
-                        <g class="favorites__seven" opacity="0" transform="translate(7 6)">
-                          <circle class="favorites__first" fill="#9CD8C3" cx="2" cy="6" r="2"/>
-                          <circle class="favorites__second" fill="#8CE8C3" cx="5" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__six" opacity="0" transform="translate(0 28)">
-                          <circle class="favorites__first" fill="#CC8EF5" cx="2" cy="7" r="2"/>
-                          <circle class="favorites__second" fill="#91D2FA" cx="3" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__three" opacity="0" transform="translate(52 28)">
-                          <circle class="favorites__second" fill="#9CD8C3" cx="2" cy="7" r="2"/>
-                          <circle class="favorites__first" fill="#8CE8C3" cx="4" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__two" opacity="0" transform="translate(44 6)">
-                          <circle class="favorites__second" fill="#CC8EF5" cx="5" cy="6" r="2"/>
-                          <circle class="favorites__first" fill="#CC8EF5" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__five" opacity="0" transform="translate(14 50)">
-                          <circle class="favorites__first" fill="#91D2FA" cx="6" cy="5" r="2"/>
-                          <circle class="favorites__second" fill="#91D2FA" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__four" opacity="0" transform="translate(35 50)">
-                          <circle class="favorites__first" fill="#F48EA7" cx="6" cy="5" r="2"/>
-                          <circle class="favorites__second" fill="#F48EA7" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__one" opacity="0" transform="translate(24)">
-                          <circle class="favorites__first" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
-                          <circle class="favorites__second" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
-                        </g>
-                      </g>
-                    </svg>
-                  </button>
-                  <div class="products__top">
-                    <a href="product.html" class="products__item_link">
-                      <div class="products__images">
-                        <div class="products__image active">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_1.webp" alt="" title="">
-                        </div>
-                        <div class="products__image">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_2.webp" alt="" title="">
-                        </div>
-                        <div class="products__image">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_3.webp" alt="" title="">
-                        </div>
-                      </div>
-                      <div class="products__image_block"></div>
-                    </a>
-                    <a href="product.html" class="products__heading">Анальная пробка маленькая со стразом Lola Toys Diamond Small</a>
-                  </div>
-                  <div class="products__bottom">
-                    <span class="products__price">745 ₽</span>
-                    <button class="products__cart">
-                      <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.5305 9.96186C12.9852 10.541 13.1915 11.0911 13.2217 11.8049C13.2249 11.8789 13.2205 11.9447 13.2009 12.1147C13.1278 12.7495 12.772 13.5574 12.2334 13.9146C11.9604 14.0954 11.6324 14.2187 11.3189 14.2573C11.119 14.2826 11.003 14.2877 10.9096 14.2769C10.88 14.2731 10.8169 14.2662 10.7702 14.2611C10.1787 14.1947 9.63374 13.8754 9.26731 13.381C9.24145 13.3449 9.21433 13.3076 9.20865 13.2969C9.19415 13.2729 9.18027 13.2729 9.16577 13.2969C9.12036 13.3753 8.9898 13.5334 8.88448 13.6383C8.53886 13.9848 8.08098 14.2074 7.60418 14.2611C7.55751 14.2662 7.49444 14.2731 7.4648 14.2769C7.40299 14.2839 7.30208 14.2839 7.23207 14.2763C7.20622 14.2737 7.15198 14.2681 7.11224 14.2643C6.26396 14.1776 5.52984 13.3502 5.26495 12.5333C5.20693 12.3531 5.18296 12.2273 5.15647 11.9567C5.1426 11.8113 5.16846 11.4793 5.21134 11.2549C5.29995 10.7931 5.48526 10.3834 5.80397 9.96186" stroke="currentColor"></path>
-                        <path d="M1.20111 16.8171L2.04422 7.66325C2.13901 6.6341 3.0023 5.84668 4.03579 5.84668H13.9344C14.948 5.84668 15.8013 6.60492 15.9205 7.61148L17.0045 16.7653C17.1454 17.9548 16.2162 19.0005 15.0184 19.0005H3.19268C2.01567 19.0005 1.09315 17.9891 1.20111 16.8171Z" stroke="currentColor"></path>
-                        <path d="M11 4C11 2.75736 10.2426 1 9 1C7.75736 1 7 2.75736 7 4" stroke="currentColor"></path>
-                      </svg>
-                      <span>В корзину</span>
-                    </button>
-                  </div>
-                </li>
-                <li class="products__item swiper-slide">
-                  <button class="products__favorites">
-                    <svg viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
-                      <g fill="none" fill-rule="evenodd" transform="translate(467 392)">
-                        <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" class="favorites__heart" fill="currentColor"/>
-                        <circle class="favorites__circle" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
-                        <g class="favorites__seven" opacity="0" transform="translate(7 6)">
-                          <circle class="favorites__first" fill="#9CD8C3" cx="2" cy="6" r="2"/>
-                          <circle class="favorites__second" fill="#8CE8C3" cx="5" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__six" opacity="0" transform="translate(0 28)">
-                          <circle class="favorites__first" fill="#CC8EF5" cx="2" cy="7" r="2"/>
-                          <circle class="favorites__second" fill="#91D2FA" cx="3" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__three" opacity="0" transform="translate(52 28)">
-                          <circle class="favorites__second" fill="#9CD8C3" cx="2" cy="7" r="2"/>
-                          <circle class="favorites__first" fill="#8CE8C3" cx="4" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__two" opacity="0" transform="translate(44 6)">
-                          <circle class="favorites__second" fill="#CC8EF5" cx="5" cy="6" r="2"/>
-                          <circle class="favorites__first" fill="#CC8EF5" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__five" opacity="0" transform="translate(14 50)">
-                          <circle class="favorites__first" fill="#91D2FA" cx="6" cy="5" r="2"/>
-                          <circle class="favorites__second" fill="#91D2FA" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__four" opacity="0" transform="translate(35 50)">
-                          <circle class="favorites__first" fill="#F48EA7" cx="6" cy="5" r="2"/>
-                          <circle class="favorites__second" fill="#F48EA7" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__one" opacity="0" transform="translate(24)">
-                          <circle class="favorites__first" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
-                          <circle class="favorites__second" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
-                        </g>
-                      </g>
-                    </svg>
-                  </button>
-                  <div class="products__top">
-                    <a href="product.html" class="products__item_link">
-                      <div class="products__images">
-                        <div class="products__image active">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_1.webp" alt="" title="">
-                        </div>
-                        <div class="products__image">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_2.webp" alt="" title="">
-                        </div>
-                        <div class="products__image">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_3.webp" alt="" title="">
-                        </div>
-                      </div>
-                      <div class="products__image_block"></div>
-                    </a>
-                    <a href="product.html" class="products__heading">Анальная пробка маленькая со стразом Lola Toys Diamond Small</a>
-                  </div>
-                  <div class="products__bottom">
-                    <span class="products__price">745 ₽</span>
-                    <button class="products__cart">
-                      <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.5305 9.96186C12.9852 10.541 13.1915 11.0911 13.2217 11.8049C13.2249 11.8789 13.2205 11.9447 13.2009 12.1147C13.1278 12.7495 12.772 13.5574 12.2334 13.9146C11.9604 14.0954 11.6324 14.2187 11.3189 14.2573C11.119 14.2826 11.003 14.2877 10.9096 14.2769C10.88 14.2731 10.8169 14.2662 10.7702 14.2611C10.1787 14.1947 9.63374 13.8754 9.26731 13.381C9.24145 13.3449 9.21433 13.3076 9.20865 13.2969C9.19415 13.2729 9.18027 13.2729 9.16577 13.2969C9.12036 13.3753 8.9898 13.5334 8.88448 13.6383C8.53886 13.9848 8.08098 14.2074 7.60418 14.2611C7.55751 14.2662 7.49444 14.2731 7.4648 14.2769C7.40299 14.2839 7.30208 14.2839 7.23207 14.2763C7.20622 14.2737 7.15198 14.2681 7.11224 14.2643C6.26396 14.1776 5.52984 13.3502 5.26495 12.5333C5.20693 12.3531 5.18296 12.2273 5.15647 11.9567C5.1426 11.8113 5.16846 11.4793 5.21134 11.2549C5.29995 10.7931 5.48526 10.3834 5.80397 9.96186" stroke="currentColor"></path>
-                        <path d="M1.20111 16.8171L2.04422 7.66325C2.13901 6.6341 3.0023 5.84668 4.03579 5.84668H13.9344C14.948 5.84668 15.8013 6.60492 15.9205 7.61148L17.0045 16.7653C17.1454 17.9548 16.2162 19.0005 15.0184 19.0005H3.19268C2.01567 19.0005 1.09315 17.9891 1.20111 16.8171Z" stroke="currentColor"></path>
-                        <path d="M11 4C11 2.75736 10.2426 1 9 1C7.75736 1 7 2.75736 7 4" stroke="currentColor"></path>
-                      </svg>
-                      <span>В корзину</span>
-                    </button>
-                  </div>
-                </li>
-                <li class="products__item swiper-slide">
-                  <button class="products__favorites">
-                    <svg viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
-                      <g fill="none" fill-rule="evenodd" transform="translate(467 392)">
-                        <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" class="favorites__heart" fill="currentColor"/>
-                        <circle class="favorites__circle" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
-                        <g class="favorites__seven" opacity="0" transform="translate(7 6)">
-                          <circle class="favorites__first" fill="#9CD8C3" cx="2" cy="6" r="2"/>
-                          <circle class="favorites__second" fill="#8CE8C3" cx="5" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__six" opacity="0" transform="translate(0 28)">
-                          <circle class="favorites__first" fill="#CC8EF5" cx="2" cy="7" r="2"/>
-                          <circle class="favorites__second" fill="#91D2FA" cx="3" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__three" opacity="0" transform="translate(52 28)">
-                          <circle class="favorites__second" fill="#9CD8C3" cx="2" cy="7" r="2"/>
-                          <circle class="favorites__first" fill="#8CE8C3" cx="4" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__two" opacity="0" transform="translate(44 6)">
-                          <circle class="favorites__second" fill="#CC8EF5" cx="5" cy="6" r="2"/>
-                          <circle class="favorites__first" fill="#CC8EF5" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__five" opacity="0" transform="translate(14 50)">
-                          <circle class="favorites__first" fill="#91D2FA" cx="6" cy="5" r="2"/>
-                          <circle class="favorites__second" fill="#91D2FA" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__four" opacity="0" transform="translate(35 50)">
-                          <circle class="favorites__first" fill="#F48EA7" cx="6" cy="5" r="2"/>
-                          <circle class="favorites__second" fill="#F48EA7" cx="2" cy="2" r="2"/>
-                        </g>
-                        <g class="favorites__one" opacity="0" transform="translate(24)">
-                          <circle class="favorites__first" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
-                          <circle class="favorites__second" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
-                        </g>
-                      </g>
-                    </svg>
-                  </button>
-                  <div class="products__top">
-                    <a href="product.html" class="products__item_link">
-                      <div class="products__images">
-                        <div class="products__image active">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_1.webp" alt="" title="">
-                        </div>
-                        <div class="products__image">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_2.webp" alt="" title="">
-                        </div>
-                        <div class="products__image">
-                          <div class="products__slide"></div>
-                          <img class="lazyloaded" src="img/product/product_3.webp" alt="" title="">
-                        </div>
-                      </div>
-                      <div class="products__image_block"></div>
-                    </a>
-                    <a href="product.html" class="products__heading">Анальная пробка маленькая со стразом Lola Toys Diamond Small</a>
-                  </div>
-                  <div class="products__bottom">
-                    <span class="products__price">745 ₽</span>
-                    <button class="products__cart">
-                      <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.5305 9.96186C12.9852 10.541 13.1915 11.0911 13.2217 11.8049C13.2249 11.8789 13.2205 11.9447 13.2009 12.1147C13.1278 12.7495 12.772 13.5574 12.2334 13.9146C11.9604 14.0954 11.6324 14.2187 11.3189 14.2573C11.119 14.2826 11.003 14.2877 10.9096 14.2769C10.88 14.2731 10.8169 14.2662 10.7702 14.2611C10.1787 14.1947 9.63374 13.8754 9.26731 13.381C9.24145 13.3449 9.21433 13.3076 9.20865 13.2969C9.19415 13.2729 9.18027 13.2729 9.16577 13.2969C9.12036 13.3753 8.9898 13.5334 8.88448 13.6383C8.53886 13.9848 8.08098 14.2074 7.60418 14.2611C7.55751 14.2662 7.49444 14.2731 7.4648 14.2769C7.40299 14.2839 7.30208 14.2839 7.23207 14.2763C7.20622 14.2737 7.15198 14.2681 7.11224 14.2643C6.26396 14.1776 5.52984 13.3502 5.26495 12.5333C5.20693 12.3531 5.18296 12.2273 5.15647 11.9567C5.1426 11.8113 5.16846 11.4793 5.21134 11.2549C5.29995 10.7931 5.48526 10.3834 5.80397 9.96186" stroke="currentColor"></path>
-                        <path d="M1.20111 16.8171L2.04422 7.66325C2.13901 6.6341 3.0023 5.84668 4.03579 5.84668H13.9344C14.948 5.84668 15.8013 6.60492 15.9205 7.61148L17.0045 16.7653C17.1454 17.9548 16.2162 19.0005 15.0184 19.0005H3.19268C2.01567 19.0005 1.09315 17.9891 1.20111 16.8171Z" stroke="currentColor"></path>
-                        <path d="M11 4C11 2.75736 10.2426 1 9 1C7.75736 1 7 2.75736 7 4" stroke="currentColor"></path>
-                      </svg>
-                      <span>В корзину</span>
-                    </button>
-                  </div>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
