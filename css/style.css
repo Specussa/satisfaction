@@ -1801,33 +1801,27 @@ button {
 }
 
 .products__favorites {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
-  top: 20px;
-  right: 20px;
-  color: var(--pink);
+  top: 0;
+  right: 0;
+  color: var(--border);
   z-index: 2;
   -webkit-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: transform 0.2s linear;
-  transition: transform 0.2s linear;
+  -webkit-transition: transform 0.2s linear, color 0.2s linear;
+  transition: transform 0.2s linear, color 0.2s linear;
+}
+
+.products__favorites.added {
+  color: var(--pink);
 }
 
 .products__favorites:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
-}
-
-.products__favorites svg {
-  width: 40px;
-  height: 35.8px;
-  fill: transparent;
-  -webkit-transition: fill 0.2s linear;
-  transition: fill 0.2s linear;
-}
-
-.products__favorites:hover svg,
-.products__favorites.added svg {
-  fill: var(--pink);
 }
 
 .products__image_block {
@@ -3440,35 +3434,6 @@ button {
   gap: 15px;
 }
 
-.product__favorites {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: transform 0.2s linear;
-  transition: transform 0.2s linear;
-}
-
-.product__favorites:hover {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.product__favorites svg {
-  width: 40px;
-  height: 35.8px;
-  color: var(--pink);
-  fill: transparent;
-  -webkit-transition: fill 0.2s linear;
-  transition: fill 0.2s linear;
-}
-
-.product__favorites:hover svg,
-.product__favorites.added svg {
-  fill: var(--pink);
-}
-
 .product__info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3895,6 +3860,10 @@ button {
 
 .product__information_item p:last-child {
   text-align: right;
+}
+
+.product__favorites {
+  position: relative;
 }
 
 /* end product */
@@ -4357,6 +4326,222 @@ button {
 
 /* end cart */
 
+/* start like */
+
+.products__favorites svg {
+  width: 80px;
+  height: 80px;
+}
+
+.favorites__heart {
+  transform-origin: center;
+  animation: animateHeartOut 0.3s linear forwards;
+}
+
+.favorites__circle {
+  transform-origin: 29.5px 29.5px;
+}
+
+.products__favorites.added .favorites__heart {
+  transform: scale(0.2);
+  fill: #E2264D;
+  animation: animateHeart 0.3s linear forwards 0.25s;
+}
+.products__favorites.added .favorites__circle {
+  transition: all 2s;
+  animation: animateCircle 0.3s linear forwards;
+  opacity: 1;
+}
+.products__favorites.added .favorites__one {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+.products__favorites.added .favorites__one .favorites__first {
+  transform: scale(0) translate(0, -30px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+.products__favorites.added .favorites__one .favorites__second {
+  transform: scale(0) translate(10px, -50px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+.products__favorites.added .favorites__two {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+.products__favorites.added .favorites__two .favorites__first {
+  transform: scale(0) translate(30px, -15px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+.products__favorites.added .favorites__two .favorites__second {
+  transform: scale(0) translate(60px, -15px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+.products__favorites.added .favorites__three {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+.products__favorites.added .favorites__three .favorites__first {
+  transform: scale(0) translate(30px, 0px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+.products__favorites.added .favorites__three .favorites__second {
+  transform: scale(0) translate(60px, 10px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+.products__favorites.added .favorites__four {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+.products__favorites.added .favorites__four .favorites__first {
+  transform: scale(0) translate(30px, 15px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+.products__favorites.added .favorites__four .favorites__second {
+  transform: scale(0) translate(40px, 50px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+.products__favorites.added .favorites__five {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+.products__favorites.added .favorites__five .favorites__first {
+  transform: scale(0) translate(-10px, 20px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+.products__favorites.added .favorites__five .favorites__second {
+  transform: scale(0) translate(-60px, 30px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+.products__favorites.added .favorites__six {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+.products__favorites.added .favorites__six .favorites__first {
+  transform: scale(0) translate(-30px, 0px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+.products__favorites.added .favorites__six .favorites__second {
+  transform: scale(0) translate(-60px, -5px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+.products__favorites.added .favorites__seven {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+.products__favorites.added .favorites__seven .favorites__first {
+  transform: scale(0) translate(-30px, -15px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+.products__favorites.added .favorites__seven .favorites__second {
+  transform: scale(0) translate(-55px, -30px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+.products__favorites.added .favorites__two {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+.products__favorites.added .favorites__three {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+.products__favorites.added .favorites__four {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+.products__favorites.added .favorites__five {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+.products__favorites.added .favorites__six {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+.products__favorites.added .favorites__seven {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+
+@keyframes animateCircle {
+  40% {
+    transform: scale(10);
+    opacity: 1;
+    fill: #DD4688;
+  }
+  55% {
+    transform: scale(11);
+    opacity: 1;
+    fill: #D46ABF;
+  }
+  65% {
+    transform: scale(12);
+    opacity: 1;
+    fill: #CC8EF5;
+  }
+  75% {
+    transform: scale(13);
+    opacity: 1;
+    fill: transparent;
+    stroke: #CC8EF5;
+    stroke-width: 0.5;
+  }
+  85% {
+    transform: scale(17);
+    opacity: 1;
+    fill: transparent;
+    stroke: #CC8EF5;
+    stroke-width: 0.2;
+  }
+  95% {
+    transform: scale(18);
+    opacity: 1;
+    fill: transparent;
+    stroke: #CC8EF5;
+    stroke-width: 0.1;
+  }
+  100% {
+    transform: scale(19);
+    opacity: 1;
+    fill: transparent;
+    stroke: #CC8EF5;
+    stroke-width: 0;
+  }
+}
+@keyframes animateHeart {
+  0% {
+    transform: scale(0.2);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes animateHeartOut {
+  0% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* end like */
+
 /* media 1600px */
 @media (max-width: 1600px) {
   .error__head {
@@ -4613,8 +4798,8 @@ button {
     padding: 30px;
   }
   .products__favorites svg {
-    width: 30px;
-    height: 26.84px;
+    width: 70px;
+    height: 70px;
   }
   .catalog__products.active .products__favorites {
     top: 28px;
@@ -4762,10 +4947,6 @@ button {
   .product__block {
     padding: 30px 0 0;
     gap: 30px;
-  }
-  .product__favorites svg {
-    width: 30px;
-    height: 26.84px;
   }
   .product__review_like svg {
     width: 25px;
@@ -5242,6 +5423,10 @@ button {
   .cart__price,
   .cart__totals {
     width: calc(33.333% - 5px);
+  }
+  .products__favorites svg {
+    width: 60px;
+    height: 60px;
   }
   .footer__block {
     margin: 40px auto 0;
@@ -5850,6 +6035,10 @@ button {
   }
   .cart__bottom {
     display: none;
+  }
+  .products__favorites svg {
+    width: 50px;
+    height: 50px;
   }
   .footer__logo {
     display: -webkit-box;
