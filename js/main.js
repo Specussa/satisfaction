@@ -82,9 +82,11 @@ burger.addEventListener('click', function() {
 // start overlaypopup
 const cfpopup = document.querySelector('.catalog__filter_popup');
 const personalpopup = document.querySelector(".personal__popup");
+const articlepopup = document.querySelector(".article__popup");
 overlaypopup.addEventListener('click', function() {
   if(cfpopup){cfpopup.classList.remove("active")};
   if(personalpopup){personalpopup.classList.remove("active")};
+  if(articlepopup){articlepopup.classList.remove("active")};
   overlaypopup.classList.remove("active");
   document.body.style.overflow = "visible";
   document.body.style.height = "100%";
@@ -166,7 +168,7 @@ if(shopSlider){
     slidesPerView: 1,
     loopedSlides: 1,
     spaceBetween: 40,
-    speed: 1000,
+    speed: 5000,
     slideToClickedSlide: false,
     allowTouchMove: true,
     navigation: {
@@ -268,22 +270,25 @@ if(productSlider){
 // end product
 
 // start product
-var swiper = new Swiper('#js-carousel', {  
-  slidesPerView: 'auto',
-  spaceBetween: 10,
-  speed: 3000,
-  loop: true,
-  allowTouchMove: false, // можно ещё отключить свайп
-  autoplay: {
-    delay: 0,
-    disableOnInteraction: false // или сделать так, чтобы восстанавливался autoplay после взаимодействия
-  },
-  breakpoints: {
-    1600: {
-      spaceBetween: 5,
+const shopsSlider = document.querySelector('.shop__page_swiper');
+if(shopsSlider){
+  var shopsSlide = new Swiper('.shop__page_swiper', {  
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    speed: 6000,
+    loop: true,
+    allowTouchMove: false,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false
     },
-  },
-});
+    breakpoints: {
+      1600: {
+        spaceBetween: 5,
+      },
+    },
+  });
+}
 // end product
 
 // start hover products
@@ -907,6 +912,30 @@ if(pinformation){
   })
 }
 // end product accordion
+
+// start blogs popup
+const articlebuttonpopup = document.querySelector(".article__button_popup");
+const articlepopupclose = document.querySelector(".article__popup_close");
+if(articlepopup) {
+  var articlerb = document.getElementsByClassName("article__right_button");
+  for (i = 0; i < articlerb.length; i++) {
+    articlerb[i].onclick = function(e) {
+      var articlerbActive = document.getElementsByClassName("article__right_button active");
+      for (var q = 0; q < articlerbActive.length; q++) {
+        articlerbActive[q].classList.remove("active");
+      }
+      this.classList.add("active");
+      if (articlepopup.classList.contains("active")) {
+        articlebuttonpopup.innerHTML = this.innerHTML;
+        articlepopup.classList.remove("active");
+        overlaypopup.classList.remove("active");
+        document.body.style.overflow = null;
+        document.body.style.height = null;
+      }
+    };
+  }
+}
+// end personal popup
 
 // start personal popup
 const personalbuttonpopup = document.querySelector(".personal__button_popup");
