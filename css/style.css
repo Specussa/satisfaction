@@ -333,19 +333,11 @@ h4,
 }
 
 .header__bottom_link,
-.footer__top_link {
-  font-family: var(--text-font);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 22px;
-  letter-spacing: 0.05em;
-  color: var(--text);
-}
-
+.footer__top_link,
 .header__nav_link {
   font-family: var(--text-font);
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 22px;
   letter-spacing: 0.05em;
   color: var(--text);
@@ -363,31 +355,14 @@ label,
 .filter__count span:first-child,
 .product__recommended_count,
 .cart__totals span:last-child,
-.personal__history_name span,
-.personal__history_block span,
-.personal__history_button span,
-.personal__history_info_button {
+.personal__history_info_button,
+.header__top_link,
+.header__nav_desctop_link {
   font-family: var(--text-font);
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0.02em;
-  color: var(--text);
-}
-
-.header__nav_desctop_link {
-  font-family: var(--text-font);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
-  color: var(--text);
-}
-
-.header__top_link {
-  font-family: var(--title-font);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 17px;
   color: var(--text);
 }
 
@@ -398,7 +373,10 @@ label,
 .header__subnav_link,
 .breadcrumbs__link,
 .breadcrumbs__sublink,
-.product__review_head {
+.product__review_head,
+.personal__history_name span,
+.personal__history_block span,
+.personal__history_button span {
   font-family: var(--text-font);
   font-size: 14px;
   font-weight: 500;
@@ -1173,6 +1151,10 @@ button {
   gap: 60px;
 }
 
+.header__nav_link {
+  font-weight: 600;
+}
+
 .header__label {
   display: block;
   width: 100%;
@@ -1334,6 +1316,10 @@ button {
 
 .header__nav_image {
   display: none;
+}
+
+.header__nav_desctop_link {
+  font-weight: 500;
 }
 
 /* end header__nav */
@@ -4720,14 +4706,18 @@ button {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  padding: 30px;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
 
+.personal__history_block {
+  padding: 0 30px 30px;
+}
+
 .personal__history_button {
   position: relative;
+  padding: 30px;
 }
 
 .personal__history_button span.delivered {
@@ -4817,6 +4807,7 @@ button {
   width: 110px;
   height: 140px;
   padding: 10px 20px;
+  flex: 0 0 auto;
 }
 
 .personal__history_image img {
@@ -4875,10 +4866,7 @@ button {
   color: var(--green);
 }
 
-.personal__history_info_total {
-  width: calc(25% - 15px);
-}
-
+.personal__history_info_total,
 .personal__history_info_buttons {
   width: calc(25% - 15px);
 }
@@ -4886,7 +4874,6 @@ button {
 .personal__history_info_icon {
   width: 25px;
   height: 25px;
-  color: var(--pink);
 }
 
 .personal__history_info_button {
@@ -4901,7 +4888,7 @@ button {
   transition: color 0.2s linear;
 }
 
-.personal__history_info_button {
+.personal__history_info_button:hover {
   color: var(--pink);
 }
 
@@ -5378,6 +5365,14 @@ button {
   .cart__top {
     padding: 20px;
   }
+  .personal__history_image {
+    width: 80px;
+    height: 100px;
+    padding: 10px 15px;
+  }
+  .personal__history_delivery_block {
+    max-width: 100%;
+  }
   .footer__top_button {
     width: 50px;
     height: 50px;
@@ -5413,7 +5408,13 @@ button {
     font-size: 12px;
     line-height: 15px;
   }
-  .products__price {
+  .personal__history_name p {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .products__price,
+  .product__recommended_price,
+  .personal__history_price {
     font-size: 27px;
     line-height: 29px;
   }
@@ -5795,6 +5796,43 @@ button {
     width: 60px;
     height: 60px;
   }
+  .personal__flex {
+    flex-direction: column;
+  }
+  .personal__right,
+  .personal__history_products,
+  .personal__history_delivery {
+    width: 100%;
+  }
+  .personal__history_price {
+    margin: 0 0 0 auto;
+  }
+  .personal__history_block {
+    padding: 7.5px 20px;
+  }
+  .personal__history_info_block {
+    flex-direction: column;
+  }
+  .personal__history_button,
+  .personal__history_info_order {
+    padding: 20px;
+  }
+  .personal__history_info_block {
+    padding: 10px;
+  }
+  .personal__history_block span,
+  .personal__history_button span {
+    width: calc(33.333% - 14px);
+  }
+  .personal__history_block span:nth-child(3),
+  .personal__history_button span:nth-child(3) {
+    display: none;
+  }
+  .personal__history_info_delivery,
+  .personal__history_info_total,
+  .personal__history_info_buttons {
+    width: calc(33.333% - 14px);
+  }
   .footer__block {
     margin: 40px auto 0;
     padding: 20px 0;
@@ -6115,9 +6153,16 @@ button {
   label,
   .footer__bottom_link,
   .footer__bottom_flex_link,
-  .header__bottom_link {
+  .header__bottom_link,
+  .personal__history_name p {
     font-size: 12px;
     line-height: 14px;
+  }
+  .products__price,
+  .product__recommended_price,
+  .personal__history_price {
+    font-size: 18px;
+    line-height: 19px;
   }
   .btn {
     width: 100%;
