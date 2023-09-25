@@ -4883,7 +4883,6 @@ button {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 380px;
   padding: 30px;
   flex-direction: column;
   border: 1px solid var(--border-pink);
@@ -5411,9 +5410,6 @@ button {
     width: 80px;
     height: 100px;
     padding: 10px 15px;
-  }
-  .personal__history_delivery_block {
-    max-width: 100%;
   }
   .personal__flex,
   .personal__label_flex {
