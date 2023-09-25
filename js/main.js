@@ -916,24 +916,61 @@ if(pinformation){
 // start blogs popup
 const articlebuttonpopup = document.querySelector(".article__button_popup");
 const articlepopupclose = document.querySelector(".article__popup_close");
+
+const articleball = document.querySelector(".article__right_button_all");
+const articlebfaq = document.querySelector(".article__right_button_faq");
+const articlebreview = document.querySelector(".article__right_button_review");
+const articlebeducation = document.querySelector('.article__right_button_education');
+const articleb = document.querySelectorAll(".blogs__block .article__right_button");
 if(articlepopup) {
-  var articlerb = document.getElementsByClassName("article__right_button");
-  for (i = 0; i < articlerb.length; i++) {
-    articlerb[i].onclick = function(e) {
-      var articlerbActive = document.getElementsByClassName("article__right_button active");
-      for (var q = 0; q < articlerbActive.length; q++) {
-        articlerbActive[q].classList.remove("active");
-      }
+  articleball.addEventListener('click', function() {
+    if (!this.classList.contains("active")) {
+      articleb.forEach(n => n.classList.remove('active'));
       this.classList.add("active");
       if (articlepopup.classList.contains("active")) {
-        articlebuttonpopup.innerHTML = this.innerHTML;
         articlepopup.classList.remove("active");
         overlaypopup.classList.remove("active");
         document.body.style.overflow = null;
         document.body.style.height = null;
       }
-    };
-  }
+    }
+  })
+  articlebfaq.addEventListener('click', function() {
+    if (!this.classList.contains("active")) {
+      articleb.forEach(n => n.classList.remove('active'));
+      this.classList.add("active");
+      if (articlepopup.classList.contains("active")) {
+        articlepopup.classList.remove("active");
+        overlaypopup.classList.remove("active");
+        document.body.style.overflow = null;
+        document.body.style.height = null;
+      }
+    }
+  })
+  articlebreview.addEventListener('click', function() {
+    if (!this.classList.contains("active")) {
+      articleb.forEach(n => n.classList.remove('active'));
+      this.classList.add("active");
+      if (articlepopup.classList.contains("active")) {
+        articlepopup.classList.remove("active");
+        overlaypopup.classList.remove("active");
+        document.body.style.overflow = null;
+        document.body.style.height = null;
+      }
+    }
+  })
+  articlebeducation.addEventListener('click', function() {
+    if (!this.classList.contains("active")) {
+      articleb.forEach(n => n.classList.remove('active'));
+      this.classList.add("active");
+      if (articlepopup.classList.contains("active")) {
+        articlepopup.classList.remove("active");
+        overlaypopup.classList.remove("active");
+        document.body.style.overflow = null;
+        document.body.style.height = null;
+      }
+    }
+  })
 }
 // end personal popup
 
