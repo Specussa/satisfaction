@@ -948,8 +948,8 @@ if(articlepopup) {
     if (!this.classList.contains("active")) {
       articleb.forEach(n => n.classList.remove('active'));
       this.classList.add("active");
-      articlebuttonpopup.classList.add("active");
-      articlept.classList.add("active");
+      articlebuttonpopup.classList.remove("active");
+      articlept.classList.remove("active");
       if (articlepopup.classList.contains("active")) {
         articlepopup.classList.remove("active");
         overlaypopup.classList.remove("active");
