@@ -5,7 +5,6 @@ docheight.style.setProperty('--height', `${window.innerHeight}px`);
 const appHeight = () => {
   var newWidth = window.innerWidth;
   if (newWidth != oldWidth) {
-    let oldWidth = window.innerWidth;
     docheight.style.setProperty('--height', `${window.innerHeight}px`);
   }
   oldWidth = window.innerWidth;
@@ -77,6 +76,18 @@ burger.addEventListener('click', function() {
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
   }
+})
+// end header__burger
+
+// start overlaypopup
+const cfpopup = document.querySelector('.catalog__filter_popup');
+const personalpopup = document.querySelector(".personal__popup");
+overlaypopup.addEventListener('click', function() {
+  if(cfpopup){cfpopup.classList.remove("active")};
+  if(personalpopup){personalpopup.classList.remove("active")};
+  overlaypopup.classList.remove("active");
+  document.body.style.overflow = "visible";
+  document.body.style.height = "100%";
 })
 // end header__burger
 
@@ -507,24 +518,23 @@ if(!catalogp){} else {
 // start range slider
 const rangeslider = document.getElementById('filterPrice');
 const filterInputs = document.querySelectorAll('.filter__input');
-var frb = document.querySelector('.filter__range_button');
-var minValue = document.querySelector('.filter__range_min');
-var maxValue = document.querySelector('.filter__range_max');
-var frprice = document.querySelector('.filter__range_price');
-var frcount = document.querySelector('.filter__range_count');
-var frclear = document.querySelector('.filter__range_clear');
-var frbuttons = document.querySelector('.filter__range_buttons');
-var fcb = document.querySelector('.filter__check_button');
-var fcbs = document.querySelector('.filter__checked');
-var frbs = document.querySelector('.filter__ranges');
-var fcbuttons = document.querySelector('.filter__check_buttons');
-var fcclear = document.querySelector('.filter__check_clear');
+const frb = document.querySelector('.filter__range_button');
+const minValue = document.querySelector('.filter__range_min');
+const maxValue = document.querySelector('.filter__range_max');
+const frprice = document.querySelector('.filter__range_price');
+const frcount = document.querySelector('.filter__range_count');
+const frclear = document.querySelector('.filter__range_clear');
+const frbuttons = document.querySelector('.filter__range_buttons');
+const fcb = document.querySelector('.filter__check_button');
+const fcbs = document.querySelector('.filter__checked');
+const frbs = document.querySelector('.filter__ranges');
+const fcbuttons = document.querySelector('.filter__check_buttons');
+const fcclear = document.querySelector('.filter__check_clear');
 const uncheck = [...document.querySelectorAll('.filter__check_hidden')];
-var fbutton = document.querySelector('.filter__button');
-var cfpopup = document.querySelector('.catalog__filter_popup');
-var fpopen = document.querySelector('.filter__popup_open');
-var fpclose = document.querySelector('.filter__popup_close');
-var cfclear = document.querySelector('.catalog__filter_clear');
+const fbutton = document.querySelector('.filter__button');
+const fpopen = document.querySelector('.filter__popup_open');
+const fpclose = document.querySelector('.filter__popup_close');
+const cfclear = document.querySelector('.catalog__filter_clear');
 
 if(!rangeslider){} else {
   const rangeMin = parseInt(rangeslider.dataset.min);
@@ -620,7 +630,6 @@ if(!frb){} else {
       fcbs.classList.remove("active");
     }
   })
-
   fcb.addEventListener('click', function() {
     if (!fcb.classList.contains("active")) {
       fcb.classList.add("active");
@@ -634,7 +643,6 @@ if(!frb){} else {
       fcbs.classList.remove("active");
     }
   })
-
   const onChecked = () => {
     if(document.querySelector('.filter__check_label.checked')) {
       fbutton.classList.add("checked");
@@ -656,7 +664,6 @@ if(!frb){} else {
     }
     onChecked()
   }))
-
   fcclear.addEventListener('click', function() {
     for(var i = 0;i < uncheck.length; i++) {uncheck[i].checked = false;};
     frb.classList.remove("active");
@@ -668,7 +675,6 @@ if(!frb){} else {
     fpopen.classList.remove("checked");
     cfclear.classList.remove("checked");
   })
-
   cfclear.addEventListener('click', function() {
     rangeslider.noUiSlider.reset();
     for(var i = 0;i < uncheck.length; i++) {uncheck[i].checked = false;};
@@ -684,7 +690,6 @@ if(!frb){} else {
     cfclear.classList.remove("active");
     cfclear.classList.remove("checked");
   })
-
   window.addEventListener('click', e => {
     const target = e.target
     if (!target.closest('.filter__ranges') && !target.closest('.filter__range_buttons') && !target.closest('.filter__checked') && !target.closest('.filter__check_buttons')) {
@@ -694,22 +699,13 @@ if(!frb){} else {
       fcbs.classList.remove("active");
     }
   })
-
   fpopen.addEventListener('click', function() {
     cfpopup.classList.add("active");
     overlaypopup.classList.add("active");
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
   })
-
   fpclose.addEventListener('click', function() {
-    cfpopup.classList.remove("active");
-    overlaypopup.classList.remove("active");
-    document.body.style.overflow = "visible";
-    document.body.style.height = "100%";
-  })
-
-  overlaypopup.addEventListener('click', function() {
     cfpopup.classList.remove("active");
     overlaypopup.classList.remove("active");
     document.body.style.overflow = "visible";
@@ -912,6 +908,28 @@ if(pinformation){
 }
 // end product accordion
 
+// start personal popup
+const personalbuttonpopup = document.querySelector(".personal__button_popup");
+const personalpopupclose = document.querySelector(".personal__popup_close");
+if(personalpopup) {
+  personalbuttonpopup.addEventListener('click', function() {
+    if (!personalpopup.classList.contains("active")) {
+      personalpopup.classList.add("active");
+      overlaypopup.classList.add("active");
+      document.body.style.overflow = "hidden";
+      document.body.style.height = "100vh";
+    }
+  })
+  personalpopupclose.addEventListener('click', function() {
+    if (personalpopup.classList.contains("active")) {
+      personalpopup.classList.remove("active");
+      overlaypopup.classList.remove("active");
+      document.body.style.overflow = null;
+      document.body.style.height = null;
+    }
+  })
+}
+// end personal popup
 
 // start personal buttons
 const pbuttondata = document.querySelector(".personal__button_data");
@@ -932,6 +950,13 @@ if(pbuttondata){
       pblocks.forEach(n => n.classList.remove('active'));
       pdata.classList.add("active");
       this.classList.add("active");
+      if (personalpopup.classList.contains("active")) {
+        personalbuttonpopup.innerHTML = this.innerHTML;
+        personalpopup.classList.remove("active");
+        overlaypopup.classList.remove("active");
+        document.body.style.overflow = null;
+        document.body.style.height = null;
+      }
     }
   })
   pbuttonhistory.addEventListener('click', function() {
@@ -940,6 +965,13 @@ if(pbuttondata){
       pblocks.forEach(n => n.classList.remove('active'));
       phistory.classList.add("active");
       this.classList.add("active");
+      if (personalpopup.classList.contains("active")) {
+        personalbuttonpopup.innerHTML = this.innerHTML;
+        personalpopup.classList.remove("active");
+        overlaypopup.classList.remove("active");
+        document.body.style.overflow = null;
+        document.body.style.height = null;
+      }
     }
   })
   pbuttonchange.addEventListener('click', function() {
@@ -948,6 +980,13 @@ if(pbuttondata){
       pblocks.forEach(n => n.classList.remove('active'));
       pchange.classList.add("active");
       this.classList.add("active");
+      if (personalpopup.classList.contains("active")) {
+        personalbuttonpopup.innerHTML = this.innerHTML;
+        personalpopup.classList.remove("active");
+        overlaypopup.classList.remove("active");
+        document.body.style.overflow = null;
+        document.body.style.height = null;
+      }
     }
   })
 }

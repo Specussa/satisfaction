@@ -4557,8 +4557,44 @@ button {
   display: -ms-flexbox;
   display: flex;
   width: 345px;
+}
+
+.personal__popup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
   flex-direction: column;
   gap: 10px;
+}
+
+.personal__popup_top {
+  display: none;
+  width: 100%;
+  padding: 0 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.personal__popup_top p {
+  padding: 0 0 5px;
+  border-bottom: 1px solid var(--text);
+}
+
+.personal__popup_close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.personal__popup_close svg {
+  width: 15.5px;
+  height: 15.5px;
 }
 
 .personal__button {
@@ -4567,6 +4603,7 @@ button {
   display: flex;
   height: 60px;
   padding: 0 40px;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
@@ -4579,7 +4616,8 @@ button {
 }
 
 .personal__button.active,
-.personal__button:hover {
+.personal__button:hover,
+.personal__button_popup {
   color: var(--bg);
   background-color: var(--pink);
   border: 1px solid var(--pink);
@@ -4588,6 +4626,10 @@ button {
 .personal__button svg {
   width: 8px;
   height: 10px;
+}
+
+.personal__button_popup {
+  display: none;
 }
 
 .personal__right {
@@ -5373,6 +5415,21 @@ button {
   .personal__history_delivery_block {
     max-width: 100%;
   }
+  .personal__flex,
+  .personal__label_flex {
+    gap: 10px;
+  }
+  .personal__right,
+  .personal__label_left {
+    width: calc(100% - 266px);
+  }
+  .personal__left,
+  .personal__label_right {
+    width: 256px;
+  }
+  .personal__input {
+    height: 50px;
+  }
   .footer__top_button {
     width: 50px;
     height: 50px;
@@ -5833,6 +5890,58 @@ button {
   .personal__history_info_buttons {
     width: calc(33.333% - 14px);
   }
+  .personal__history_arrow {
+    right: 20px;
+  }
+  .personal__label_left {
+    width: calc(100% - 245px);
+  }
+  .personal__label_right {
+    width: 235px;
+  }
+  .personal__flex {
+    padding: 20px 0 0;
+    gap: 40px;
+  }
+  .personal__button_popup {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+  .personal__popup {
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 110;
+    background-color: var(--bg);
+    gap: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-transform: translateX(calc(-100% - 1px));
+    transform: translateX(calc(-100% - 1px));
+    -webkit-transition: -webkit-transform 1.4s cubic-bezier(0.77, 0, 0.175, 1) 0.15s, left 0s linear;
+    transition: transform 1.4s cubic-bezier(0.77, 0, 0.175, 1) 0.15s, left 0s linear;
+    -webkit-transition-delay: 0s, 1.4s;
+    transition-delay: 0s, 1.4s;
+  }
+  .personal__popup.active {
+    left: 0;
+    -webkit-transition: -webkit-transform 1.1s cubic-bezier(0.77, 0, 0.175, 1) 0s, left 0s linear;
+    transition: transform 1.1s cubic-bezier(0.77, 0, 0.175, 1) 0s, left 0s linear;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transition-delay: 0s, 0s;
+    transition-delay: 0s, 0s;
+  }
+  .personal__popup_top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .footer__block {
     margin: 40px auto 0;
     padding: 20px 0;
@@ -5965,6 +6074,9 @@ button {
     position: absolute;
     top: 20px;
     left: 20px;
+    border-bottom: 1px solid var(--text);
+  }
+  .filter__button:hover {
     border-bottom: 1px solid var(--text);
   }
   .filter__button p {
@@ -6451,6 +6563,39 @@ button {
   .products__favorites svg {
     width: 50px;
     height: 50px;
+  }
+  .personal__history_info_order {
+    flex-wrap: wrap;
+  }
+  .personal__history_info_delivery,
+  .personal__history_info_total {
+    width: calc(50% - 10px);
+  }
+  .personal__history_info_total {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .personal__history_info_buttons,
+  .personal__label_left {
+    width: 100%;
+  }
+  .personal__history_info_button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    border: 1px solid var(--pink);
+    border-radius: 10px;
+  }
+  .personal__label_right {
+    display: none;
+  }
+  .personal__form {
+    gap: 20px;
   }
   .footer__logo {
     display: -webkit-box;

@@ -528,33 +528,49 @@
           <h3 class="personal__head">Личный кабинет</h3>
           <div class="personal__flex">
             <div class="personal__left">
-              <button class="personal__button personal__button_data active">
+              <button class="personal__button personal__button_popup">
                 Личные данные
                 <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 5L0.5 9.33013L0.5 0.669873L8 5Z" fill="currentColor"/>
                 </svg>
               </button>
-              <button class="personal__button personal__button_history">
-                История заказов
-                <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 5L0.5 9.33013L0.5 0.669873L8 5Z" fill="currentColor"/>
-                </svg>
-              </button>
-              <button class="personal__button personal__button_change">
-                Сменить пароль
-                <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 5L0.5 9.33013L0.5 0.669873L8 5Z" fill="currentColor"/>
-                </svg>
-              </button>
-              <button class="personal__button personal__button_exit" onclick="location.href='index.html'">
-                <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 5L7.5 9.33013L7.5 0.669873L0 5Z" fill="currentColor"/>
-                </svg>
-                Выйти
-              </button>
+              <div class="personal__popup">
+                <div class="personal__popup_top">
+                  <p>Личный кабинет</p>
+                  <button class="personal__popup_close">
+                    <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.677238 12.1401C0.420219 12.3971 0.420219 12.8138 0.677238 13.0708C0.934257 13.3278 1.35097 13.3278 1.60799 13.0708L6.72705 7.95175L11.8461 13.0708C12.1031 13.3278 12.5198 13.3278 12.7769 13.0708C13.0339 12.8138 13.0339 12.3971 12.7769 12.1401L7.6578 7.021L12.777 1.90183C13.034 1.64481 13.034 1.2281 12.777 0.971084C12.5199 0.714065 12.1032 0.714066 11.8462 0.971085L6.72705 6.09025L1.60789 0.971091C1.35087 0.714072 0.934158 0.714072 0.677139 0.971091C0.42012 1.22811 0.42012 1.64482 0.677139 1.90184L5.7963 7.021L0.677238 12.1401Z" fill="currentColor"></path>
+                    </svg>
+                  </button>
+                </div>
+                <button class="personal__button personal__button_data active">
+                  Личные данные
+                  <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5L0.5 9.33013L0.5 0.669873L8 5Z" fill="currentColor"/>
+                  </svg>
+                </button>
+                <button class="personal__button personal__button_history">
+                  История заказов
+                  <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5L0.5 9.33013L0.5 0.669873L8 5Z" fill="currentColor"/>
+                  </svg>
+                </button>
+                <button class="personal__button personal__button_change">
+                  Сменить пароль
+                  <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5L0.5 9.33013L0.5 0.669873L8 5Z" fill="currentColor"/>
+                  </svg>
+                </button>
+                <button class="personal__button personal__button_exit" onclick="location.href='index.html'">
+                  <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 5L7.5 9.33013L7.5 0.669873L0 5Z" fill="currentColor"/>
+                  </svg>
+                  Выйти
+                </button>
+              </div>
             </div>
             <div class="personal__right">
-              <div class="personal__blocks personal__data">
+              <div class="personal__blocks personal__data active">
                 <form action="" class="personal__form">
                   <label class="personal__label">
                     Фамилия Имя Отчество *
@@ -619,7 +635,7 @@
                   </button>
                 </form>
               </div>
-              <div class="personal__blocks personal__history active">
+              <div class="personal__blocks personal__history">
                 <div class="personal__history_flex">
                   <div class="personal__history_block">
                     <span>Номер заказа</span>
