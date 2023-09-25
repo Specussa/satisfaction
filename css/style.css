@@ -285,7 +285,8 @@ h3,
 }
 
 .products__price,
-.product__recommended_price {
+.product__recommended_price,
+.personal__history_price {
   font-family: var(--title-font);
   font-size: 30px;
   font-weight: 400;
@@ -321,7 +322,8 @@ h4,
 .article__info,
 .cart__count,
 .cart__button,
-.cart__name {
+.cart__name,
+.personal__history_name p {
   font-family: var(--text-font);
   font-size: 20px;
   font-weight: 400;
@@ -360,7 +362,8 @@ label,
 .header__nav_counter,
 .filter__count span:first-child,
 .product__recommended_count,
-.cart__totals span:last-child {
+.cart__totals span:last-child,
+.personal__history_name span {
   font-family: var(--text-font);
   font-size: 16px;
   font-weight: 400;
@@ -4699,16 +4702,52 @@ button {
   gap: 10px;
 }
 
+.personal__history_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-pink);
+  border-radius: 10px;
+}
+
 .personal__history_block,
 .personal__history_button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  padding: 5px 0;
+  padding: 30px;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+}
+
+.personal__history_button {
+  position: relative;
+}
+
+.personal__history_arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  -webkit-transform: translateY(-50%) rotate(0deg);
+  transform: translateY(-50%) rotate(0deg);
+  -webkit-transition: transform 0.5s linear;
+  transition: transform 0.5s linear;
+}
+
+.personal__history_button.active .personal__history_arrow {
+  -webkit-transform: translateY(-50%) rotate(-90deg);
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.personal__history_arrow svg {
+  width: 10px;
+  height: 8px;
 }
 
 .personal__history_block span,
@@ -4721,7 +4760,132 @@ button {
 }
 
 .personal__history_info {
-  display: none;
+  height: 100%;
+  max-height: 0px;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear, max-height 0.5s linear;
+  transition: opacity 0.5s linear, max-height 0.5s linear;
+  overflow: hidden;
+}
+
+.personal__history_info.active {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.personal__history_info_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 10px 30px 30px;
+  gap: 20px;
+}
+
+.personal__history_products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(50% - 10px);
+  flex-direction: column;
+  gap: 10px;
+}
+
+.personal__history_product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.personal__history_image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 110px;
+  height: 140px;
+  padding: 10px 20px;
+}
+
+.personal__history_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.personal__history_price {
+  flex: 0 0 auto;
+}
+
+.personal__history_name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.personal__history_delivery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(50% - 10px);
+  justify-content: flex-end;
+}
+
+.personal__history_delivery_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 380px;
+  padding: 30px;
+  flex-direction: column;
+  border: 1px solid var(--border-pink);
+  border-radius: 10px;
+}
+
+.personal__history_info_order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid var(--border-pink);
+}
+
+.personal__history_info_delivery {
+  width: calc(50% - 10px);
+}
+
+.personal__history_info_delivery span {
+  color: var(--green);
+}
+
+.personal__history_info_total {
+  width: calc(25% - 15px);
+}
+
+.personal__history_info_buttons {
+  width: calc(25% - 15px);
+}
+
+.personal__history_info_icon {
+  width: 25px;
+  height: 25px;
+  color: var(--pink);
+}
+
+.personal__history_info_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 0 0 auto;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-dgray);
 }
 
 /* end personal */

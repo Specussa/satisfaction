@@ -784,7 +784,7 @@ class Select {
 Select.attach()
 // end select
 
-// start accordion info
+// start product accordion
 const pdescrbutton = document.querySelector(".product__descr_button");
 const pcharacterbutton = document.querySelector(".product__character_button");
 const pdeliverybutton = document.querySelector(".product__delivery_button");
@@ -910,10 +910,10 @@ if(pinformation){
     }
   })
 }
-// end accordion info
+// end product accordion
 
 
-// start personal
+// start personal buttons
 const pbuttondata = document.querySelector(".personal__button_data");
 const pbuttonhistory = document.querySelector(".personal__button_history");
 const pbuttonchange = document.querySelector(".personal__button_change");
@@ -951,4 +951,36 @@ if(pbuttondata){
     }
   })
 }
-// end personal
+// end personal buttons
+
+// start personal accordion
+if(phistory) {
+  var phistoryb = document.getElementsByClassName("personal__history_button");
+  for (i = 0; i < phistoryb.length; i++) {
+    phistoryb[i].onclick = function(e) {
+      var phistoryAccordion = this.nextElementSibling;
+      var coursephistoryAccordion = document.getElementsByClassName("personal__history_info");
+      var coursephistoryAccordionActive = document.getElementsByClassName("personal__history_button active");
+
+      if (phistoryAccordion.style.maxHeight) {
+        phistoryAccordion.style.maxHeight = null;
+        this.classList.remove("active");
+        phistoryAccordion.classList.remove("active");
+      } else {
+        for (var q = 0; q < coursephistoryAccordionActive.length; q++) {
+          coursephistoryAccordionActive[q].classList.remove("active");
+          coursephistoryAccordion[q].classList.remove("active");
+        }
+        for (var p = 0; p < coursephistoryAccordion.length; p++) {
+          this.classList.remove("active");
+          coursephistoryAccordion[p].classList.remove("active");
+          coursephistoryAccordion[p].style.maxHeight = null;
+        }
+        phistoryAccordion.style.maxHeight = (phistoryAccordion.scrollHeight * 2) + "px";
+        phistoryAccordion.classList.add("active");
+        this.classList.add("active");
+      }
+    };
+  }
+}
+// end personal accordion
