@@ -3952,9 +3952,7 @@ button {
 
 .article__popup_top p,
 .article__button_popup {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   align-items: center;
   gap: 15px;
 }
@@ -6011,6 +6009,12 @@ button {
   }
   .article__popup_top,
   .personal__popup_top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .article__popup_top p,
+  .article__button_popup {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
