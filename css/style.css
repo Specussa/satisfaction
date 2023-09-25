@@ -363,7 +363,10 @@ label,
 .filter__count span:first-child,
 .product__recommended_count,
 .cart__totals span:last-child,
-.personal__history_name span {
+.personal__history_name span,
+.personal__history_block span,
+.personal__history_button span,
+.personal__history_info_button {
   font-family: var(--text-font);
   font-size: 16px;
   font-weight: 400;
@@ -4727,6 +4730,14 @@ button {
   position: relative;
 }
 
+.personal__history_button span.delivered {
+  color: var(--green);
+}
+
+.personal__history_button span.canceled {
+  color: var(--pink);
+}
+
 .personal__history_arrow {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4886,6 +4897,12 @@ button {
   align-items: center;
   gap: 10px;
   color: var(--text-dgray);
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+
+.personal__history_info_button {
+  color: var(--pink);
 }
 
 /* end personal */
