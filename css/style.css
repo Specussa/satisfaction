@@ -4335,7 +4335,7 @@ button {
 
 .products__favorites.added .favorites__heart {
   transform: scale(0.2);
-  fill: #E2264D;
+  fill: var(--pink);
   animation: animateHeart 0.3s linear forwards 0.25s;
 }
 .products__favorites.added .favorites__circle {
@@ -5375,7 +5375,7 @@ button {
   .cart__block,
   .personal__block {
     padding: 30px 0;
-    gap: 30px;
+    gap: 60px;
   }
   .shop__page_item {
     max-width: 480px;
@@ -5788,7 +5788,7 @@ button {
   .cart__block,
   .personal__block {
     padding: 20px 0;
-    gap: 20px;
+    gap: 40px;
   }
   .shop__page_item {
     max-width: 480px;
