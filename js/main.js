@@ -916,17 +916,40 @@ if(pinformation){
 // start blogs popup
 const articlebuttonpopup = document.querySelector(".article__button_popup");
 const articlepopupclose = document.querySelector(".article__popup_close");
+const articlept = document.querySelector(".article__popup_top");
+
+if(articlepopup) {
+  articlebuttonpopup.addEventListener('click', function() {
+    if (!articlepopup.classList.contains("active")) {
+      articlepopup.classList.add("active");
+      overlaypopup.classList.add("active");
+      document.body.style.overflow = "hidden";
+      document.body.style.height = "100vh";
+    }
+  })
+  articlepopupclose.addEventListener('click', function() {
+    if (articlepopup.classList.contains("active")) {
+      articlepopup.classList.remove("active");
+      overlaypopup.classList.remove("active");
+      document.body.style.overflow = null;
+      document.body.style.height = null;
+    }
+  })
+}
 
 const articleball = document.querySelector(".article__right_button_all");
 const articlebfaq = document.querySelector(".article__right_button_faq");
 const articlebreview = document.querySelector(".article__right_button_review");
 const articlebeducation = document.querySelector('.article__right_button_education');
 const articleb = document.querySelectorAll(".blogs__block .article__right_button");
+
 if(articlepopup) {
   articleball.addEventListener('click', function() {
     if (!this.classList.contains("active")) {
       articleb.forEach(n => n.classList.remove('active'));
       this.classList.add("active");
+      articlebuttonpopup.classList.add("active");
+      articlept.classList.add("active");
       if (articlepopup.classList.contains("active")) {
         articlepopup.classList.remove("active");
         overlaypopup.classList.remove("active");
@@ -939,6 +962,8 @@ if(articlepopup) {
     if (!this.classList.contains("active")) {
       articleb.forEach(n => n.classList.remove('active'));
       this.classList.add("active");
+      articlebuttonpopup.classList.add("active");
+      articlept.classList.add("active");
       if (articlepopup.classList.contains("active")) {
         articlepopup.classList.remove("active");
         overlaypopup.classList.remove("active");
@@ -951,6 +976,8 @@ if(articlepopup) {
     if (!this.classList.contains("active")) {
       articleb.forEach(n => n.classList.remove('active'));
       this.classList.add("active");
+      articlebuttonpopup.classList.add("active");
+      articlept.classList.add("active");
       if (articlepopup.classList.contains("active")) {
         articlepopup.classList.remove("active");
         overlaypopup.classList.remove("active");
@@ -963,6 +990,8 @@ if(articlepopup) {
     if (!this.classList.contains("active")) {
       articleb.forEach(n => n.classList.remove('active'));
       this.classList.add("active");
+      articlebuttonpopup.classList.add("active");
+      articlept.classList.add("active");
       if (articlepopup.classList.contains("active")) {
         articlepopup.classList.remove("active");
         overlaypopup.classList.remove("active");

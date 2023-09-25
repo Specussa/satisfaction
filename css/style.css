@@ -3893,6 +3893,7 @@ button {
   width: 100%;
   height: 60px;
   padding: 0 40px;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
@@ -3947,6 +3948,33 @@ button {
 .article__popup_close svg {
   width: 15.5px;
   height: 15.5px;
+}
+
+.article__popup_top p,
+.article__button_popup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.article__popup_top p svg,
+.article__button_popup svg {
+  width: 20px;
+  height: 19.56px;
+}
+
+.article__popup_top p svg circle,
+.article__button_popup svg circle {
+  fill: var(--bg);
+  stroke: var(--text);
+}
+
+.article__popup_top.active p svg circle,
+.article__button_popup.active svg circle {
+  fill: var(--pink);
+  stroke: var(--pink);
 }
 
 .article__top {
