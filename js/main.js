@@ -168,7 +168,7 @@ if(shopSlider){
     slidesPerView: 1,
     loopedSlides: 1,
     spaceBetween: 40,
-    speed: 5000,
+    speed: 1000,
     slideToClickedSlide: false,
     allowTouchMove: true,
     navigation: {

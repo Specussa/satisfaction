@@ -1473,11 +1473,20 @@ button {
   background-size: 25px 23.03px;
   border-radius: 0;
   opacity: 1;
+  transition: background 0.2s linear;
+}
+
+.hero__slider .swiper-pagination-bullet:hover,
+.shop__slider .swiper-pagination-bullet:hover {
+  background: url('../img/icon/heart_filled.svg') center center no-repeat;
+  background-size: 25px 23.03px;
 }
 
 .hero__slider .swiper-pagination-bullet-active,
-.shop__slider .swiper-pagination-bullet-active {
-  background: url('../img/icon/heart_filled.svg') center center no-repeat;
+.shop__slider .swiper-pagination-bullet-active,
+.hero__slider .swiper-pagination-bullet-active:hover,
+.shop__slider .swiper-pagination-bullet-active:hover {
+  background: url('../img/icon/heart_active.svg') center center no-repeat;
   background-size: 25px 23.03px;
   opacity: 1;
 }
