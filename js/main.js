@@ -135,7 +135,7 @@ for (i = 0; i < catalogb.length; i++) {
 const heroSlider = document.querySelector('.hero__swiper');
 if(heroSlider){
   var aboutusThumbs = new Swiper('.hero__swiper', {
-    loop: false,
+    loop: true,
     slidesPerView: 1,
     loopedSlides: 1,
     spaceBetween: 40,
