@@ -32,7 +32,11 @@
   box-sizing: border-box;
 }
 
-*::-moz-selection,
+*::-moz-selection {
+  background-color: var(--text);
+  color: var(--bg);
+}
+
 *::selection {
   background-color: var(--text);
   color: var(--bg);
@@ -2398,6 +2402,12 @@ button {
   -webkit-transition: color 0.2s linear, background-color 0.2s linear, border 0.2s linear;
   transition: color 0.2s linear, background-color 0.2s linear, border 0.2s linear;
   cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .products__minus:hover,
@@ -3315,6 +3325,12 @@ button {
   -webkit-transition: color 0.2s linear, background-color 0.2s linear, border 0.2s linear;
   transition: color 0.2s linear, background-color 0.2s linear, border 0.2s linear;
   cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .product__minus:hover,
