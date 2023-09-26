@@ -463,9 +463,16 @@ button {
   background-color: var(--border-pink);
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
-  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+  -webkit-transition: width 0.3s ease-in-out, height 0.3s ease-in-out, background-color 0.2s linear;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out, background-color 0.2s linear;
   z-index: 0;
+}
+
+.btn.added,
+.btn.added span:nth-child(2),
+.blockbtn.added span:nth-child(2) {
+  color: var(--bg);
+  background-color: var(--green);
 }
 
 .btn:hover span:nth-child(2),
@@ -1090,19 +1097,23 @@ button {
   left: 0;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
+  opacity: 0;
   -webkit-transform: translateY(calc(-100% - 1px));
   transform: translateY(calc(-100% - 1px));
-  -webkit-transition: -webkit-transform 1.4s cubic-bezier(0.77, 0, 0.175, 1) 0.15s;
-  transition: transform 1.4s cubic-bezier(0.77, 0, 0.175, 1) 0.15s;
+  -webkit-transition: -webkit-transform 1.4s cubic-bezier(0.77, 0, 0.175, 1) 0.15s, opacity 0s linear;
+  transition: transform 1.4s cubic-bezier(0.77, 0, 0.175, 1) 0.15s, opacity 0s linear;
+  transition-delay: 0s, 1.4s;
   z-index: 99;
   overflow: hidden;
 }
 
 .header__nav.active {
+  opacity: 1;
   -webkit-transition: -webkit-transform 1.1s cubic-bezier(0.77, 0, 0.175, 1) 0s;
   transition: transform 1.1s cubic-bezier(0.77, 0, 0.175, 1) 0s;
   -webkit-transform: translateY(0);
   transform: translateY(0);
+  transition-delay: 0s, 0s;
 }
 
 .header__nav_scroll {
@@ -1860,12 +1871,10 @@ button {
   background-color: var(--border-pink);
 }
 
+.products__cart:hover.added,
 .products__cart.added {
+  color: var(--bg);
   background-color: var(--green);
-}
-
-.products__cart:hover.added {
-  background-color: var(--border-pink);
 }
 
 .products__cart:disabled,
@@ -3367,6 +3376,10 @@ button {
   border: 1px solid var(--border-pink);
   border-radius: 5px;
   cursor: pointer;
+}
+
+.product__thumbs_image.swiper-slide-thumb-active {
+  border: 1px solid var(--pink);
 }
 
 .product__image img,
@@ -5493,6 +5506,9 @@ button {
   }
   .personal__input {
     height: 50px;
+  }
+  .product__head {
+    max-width: 830px;
   }
   .footer__top_button {
     width: 50px;

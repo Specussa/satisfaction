@@ -1118,3 +1118,39 @@ if(phistory) {
   }
 }
 // end personal accordion
+
+// start product btn
+const productbtn = document.querySelector('.product__btn');
+if(productbtn) {
+  var productb = document.getElementsByClassName("product__btn");
+  for (i = 0; i < productb.length; i++) {
+    productb[i].onclick = function(e) {
+      if (this.classList.contains("added")) {
+        this.classList.remove("added");
+        this.children[0].children[1].innerText = "В корзину";
+      } else {
+        this.classList.add("added");
+        this.children[0].children[1].innerText = "Добавлен";
+      }
+    };
+  }
+}
+// end product btn
+
+// start product btn
+const productsbtn = document.querySelector('.products__cart');
+if(productsbtn) {
+  var productsb = document.getElementsByClassName("products__cart");
+  for (i = 0; i < productsb.length; i++) {
+    productsb[i].onclick = function(e) {
+      if (this.classList.contains("added")) {
+        this.classList.remove("added");
+        this.children[1].innerText = "В корзину";
+      } else {
+        this.classList.add("added");
+        this.children[1].innerText = "Добавлен";
+      }
+    };
+  }
+}
+// end product btn
