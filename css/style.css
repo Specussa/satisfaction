@@ -6331,9 +6331,13 @@ button {
   .map__yandex {
     height: 650px;
   }
+  .map__point,
   .map__icon svg {
     width: 50px;
     height: 77px;
+  }
+  .map__point_block {
+    left: -67.5px;
   }
   .contacts__flex {
     gap: 20px;
