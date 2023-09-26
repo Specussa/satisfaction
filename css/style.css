@@ -2105,6 +2105,10 @@ button {
   gap: 20px;
 }
 
+.catalog__flex_search {
+  flex-direction: row-reverse;
+}
+
 .card__list {
   width: calc(100% - 365px);
 }
@@ -2251,8 +2255,24 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: 60px;
+}
+
+.catalog__search_clear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px 0 0;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.catalog__search_clear_image svg {
+  width: 216px;
+  height: 194.59px;  
 }
 
 .catalog__products {
@@ -5800,6 +5820,10 @@ button {
   }
   .map__zoom {
     right: 40px;
+  }
+  .catalog__search_clear_image svg {
+    width: 199.81px;
+    height: 180px;    
   }
   .footer__top_button {
     width: 50px;

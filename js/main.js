@@ -517,7 +517,7 @@ var catalogit = document.querySelector('.catalog__image_tiles');
 var catalogil = document.querySelector('.catalog__image_list');
 var catalogp = document.querySelector('.catalog__products');
 
-if(!catalogp){} else {
+if(!catalogil){} else {
   catalogit.addEventListener('click', function() {
     if (!catalogit.classList.contains("active")) {
       catalogit.classList.add("active");
