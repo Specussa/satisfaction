@@ -1169,3 +1169,100 @@ if(productsbtn) {
   }
 }
 // end products btn
+
+// start yandex map
+const maps = document.getElementById("map");
+if(maps) {
+  var myMap,ymaps;
+  function init() {
+    myMap = document.getElementById("map");
+    if (!myMap) return;
+    myMap = new ymaps.Map(myMap, {
+      center: [55.753215, 37.622504],
+      zoom: 9, 
+      controls: []
+      },{
+      zoomControlPosition: { right: 0, top: 0 },
+      zoomControlSize: 'auto'
+    });
+
+    if(oldWidth <= 1200){
+      myMap.behaviors.disable('drag');
+    }
+
+    const zoomInBtn = document.getElementById('zoom-in');
+    const zoomOutBtn = document.getElementById('zoom-out');
+
+    zoomInBtn.addEventListener('click', zoomIn);
+    zoomOutBtn.addEventListener('click', zoomOut);
+
+    function zoomIn() {
+      const currentZoom = myMap.getZoom();
+      myMap.setZoom(currentZoom + 1);
+    }
+  
+    function zoomOut() {
+      const currentZoom = myMap.getZoom();
+      myMap.setZoom(currentZoom - 1);
+    }
+
+    var data = {
+      'points': [{
+        "infoPoint": '<div id="mapmoscow" class="map__point{% if properties.active %} map__active{% endif %}">\
+        <span class="map__icon"><svg width="65" height="102" viewBox="0 0 65 102" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M63.8393 32.5C63.8393 36.7317 61.8977 43.07 58.8514 50.3394C55.8262 57.5585 51.7844 65.5313 47.7309 72.9656C43.6794 80.3962 39.6264 87.27 36.5855 92.2873C35.0653 94.7955 33.7988 96.8386 32.9127 98.254C32.7642 98.4911 32.6265 98.7106 32.5 98.9116C32.3735 98.7106 32.2358 98.4911 32.0873 98.254C31.2012 96.8386 29.9347 94.7955 28.4145 92.2873C25.3736 87.27 21.3206 80.3962 17.2691 72.9656C13.2156 65.5313 9.17384 57.5585 6.14864 50.3394C3.10235 43.07 1.16071 36.7317 1.16071 32.5C1.16071 15.1918 15.1918 1.16071 32.5 1.16071C49.8082 1.16071 63.8393 15.1918 63.8393 32.5Z" fill="currentColor" stroke="currentColor" stroke-width="2.32143"/><path d="M26.3302 47.4792C26.3305 47.4891 26.3306 47.4991 26.3307 47.5092L26.3302 47.4792ZM30.2476 14.7983L30.2431 14.7969C30.2091 14.7866 30.1524 14.7696 30.0862 14.7497C29.9763 14.7168 29.8404 14.676 29.74 14.6452C26.52 13.6815 22.9263 14.7593 20.7139 17.357C20.2321 17.9253 19.9585 18.3358 19.4155 19.3525C19.1712 19.8132 18.739 21.1092 18.5429 22.0483C17.9863 24.7263 18.3191 27.3431 19.7655 30.8896C20.2532 32.0837 20.5432 32.7112 22.1733 36.0808C24.1466 40.157 25.1089 42.5835 25.8772 45.4543C25.9625 45.7739 26.0712 46.2196 26.1579 46.5925C26.1622 46.6114 26.1666 46.6301 26.1709 46.6488C26.5542 46.401 27.0237 46.1059 27.2995 45.9399C29.0188 44.9064 30.9243 43.98 33.0389 43.1433C34.4038 42.6026 35.3362 42.2647 38.1868 41.2657C41.4182 40.132 43.0602 39.4367 44.5718 38.5818C47.2221 37.0836 48.8455 35.3376 50.0871 32.67C50.1912 32.4464 50.2677 32.2334 50.4748 31.5125C51.1738 29.076 50.7573 26.415 49.3329 24.2829C48.6103 23.2033 47.5973 22.253 46.5252 21.6439L46.5225 21.6424C45.7744 21.214 45.3932 21.0449 45.1093 20.9631C44.9713 20.9254 44.702 20.8471 44.511 20.7911C42.2657 20.1434 39.7918 20.4832 37.6902 21.7475C37.6691 21.7607 37.6484 21.7735 37.6283 21.786C37.5685 21.8232 37.5138 21.8573 37.4662 21.8875C37.434 21.9079 37.4104 21.9232 37.3947 21.9337L37.393 21.9347L37.3779 21.946C37.3096 21.9964 37.1963 22.0708 37.0456 22.1189C36.8869 22.1696 36.6387 22.2046 36.3707 22.0934C36.1027 21.9821 35.9522 21.7816 35.8761 21.6334C35.8038 21.4927 35.7764 21.3599 35.764 21.276L35.7628 21.2678L35.7617 21.2595C35.7255 20.9803 35.4987 20.2047 35.2632 19.6331L35.2622 19.6306C34.5282 17.8334 33.1949 16.3239 31.5458 15.4087C31.372 15.3133 31.1276 15.1786 31.0032 15.1073C30.8264 15.0102 30.4858 14.8681 30.2522 14.7997L30.2476 14.7983Z" fill="white"/></svg></span>\
+          <div class="map__point_block">\
+            <div class="map__point_temp">“Satisfaction”<br> ул. Орджоникидзе, д. 1</div>\
+          </div>\
+        </div>',
+        "latitude": 55.710839,
+        "longitude": 37.605068,
+        },
+      ],
+    };
+
+    var mapCoordinates = new ymaps.GeoObjectCollection();
+
+    var results = [];
+    data.points.forEach(function(item, index){
+      results.push(createPlacemark(item));
+    });
+    myMap.geoObjects.add(mapCoordinates);
+    myMap.behaviors.disable('scrollZoom');
+
+    function createPlacemark(item) {
+      var options = Object();
+      var squareLayout = ymaps.templateLayoutFactory.createClass(item.infoPoint);
+      var place = new ymaps.Placemark([item.latitude, item.longitude],{hintContent: false}, {
+        iconLayout: squareLayout,
+        iconShape: {   
+          type: 'Rectangle',
+          coordinates: [
+            [-55, -50], [30, 50]
+          ]
+        }
+      });
+      mapCoordinates.add(place);
+    }
+    var thatCoordinates;
+    mapCoordinates.events.add('click', function (e) {
+      var that = e.get('target').properties.get('active');
+      mapCoordinates.each(function(item, index){
+        item.properties.set('active', false);
+        if(e.get('target') == item && !that){
+          e.get('target').properties.set('active', true);
+          thatCoordinates = e.get('coords');
+        }
+      });
+
+      var mapmoscow = document.getElementById('mapmoscow');
+      if (mapmoscow.classList.contains("map__active")) {
+        myMap.setCenter([55.710839,37.605068],17);
+      } else {
+        myMap.setCenter([55.753215,37.622504],9);
+      };
+    });
+  }
+  if (ymaps != undefined) ymaps.ready(init);
+}
+// end yandex map
+// end map

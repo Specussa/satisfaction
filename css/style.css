@@ -19,7 +19,7 @@
   --bg: #fff;
   --text: #1c1717;
   --text-gray: #c5b8b8;
-  --text-dgray: #5a5a5a;
+  --text-dgray: #6b6060;
   --border: #d9d9d9;
   --border-pink: #ffe7e7;
   --pink: #af5954;
@@ -327,7 +327,9 @@ h4,
 .cart__count,
 .cart__button,
 .cart__name,
-.personal__history_name p {
+.personal__history_name p,
+.contacts__metro,
+.contacts__tel {
   font-family: var(--text-font);
   font-size: 20px;
   font-weight: 400;
@@ -5041,6 +5043,237 @@ button {
 
 /* end personal */
 
+/* start contacts */
+
+.contacts__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px 0 60px;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.contacts__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contacts__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px;
+  border: 1px solid var(--border-pink);
+  border-radius: 10px;
+}
+
+.contacts__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 60px;
+}
+
+.contacts__image {
+  width: 350px;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.contacts__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.contacts__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(100% - 410px);
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.contacts__desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contacts__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 420px;
+  flex-wrap: wrap;
+  gap: 10px 40px;
+}
+
+.contacts__metro,
+.contacts__time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contacts__metro img {
+  width: 35px;
+  height: 23.18px;  
+}
+
+.contacts__time {
+  color: var(--text-dgray);
+}
+
+.contacts__time svg {
+  width: 23px;
+  height: 23px;
+}
+
+.contacts__numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contacts__tel:hover {
+  color: var(--pink);
+}
+
+/* end contacts */
+
+/* start map */
+
+.map {
+  margin: 0 0 -60px;
+  background-color: var(--bg);
+}
+
+.map__yandex {
+  width: 100%;
+  height: 850px;
+  position: relative;
+  z-index: 2;
+}
+
+.map__point {
+  width: 65px;
+  height: 100px;
+  position: absolute;
+  top: -65px;
+  left: -50px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.map__icon svg {
+  width: 65px;
+  height: 100px;
+  color: var(--pink);
+}
+
+.map__active .map__icon svg {
+  color: var(--pink);
+}
+
+.map__point_block {
+  display: none;
+  position: relative;
+  width: 190px;
+  height: 50px;
+  left: -60px;
+  top: 0;
+  color: var(--bg);
+  font-size: 14px;
+  line-height: 14px;
+  background-color: rgb(175, 89, 84, 0.9);
+  text-align: center;
+}
+
+.map__active .map__point_block {
+  display: block;
+}
+
+.map__point_temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.map__point_temp:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 80px;
+  top: -9px;
+  border-top: 15px solid rgb(175, 89, 84, 0.8);
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.map__zoom {
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  z-index: 1;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.map__zoom_plus,
+.map__zoom_minus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90px;
+  height: 90px;
+  margin: 0 0 20px;
+  align-items: center;
+  justify-content: center;
+  color: var(--pink);
+  background-color: var(--bg);
+  border: 1px solid var(--pink);
+  border-radius: 10px;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+.map__zoom_plus svg,
+.map__zoom_minus svg {
+  width: 24px;
+  height: 24px;
+}
+
+.map__zoom_plus:hover,
+.map__zoom_minus:hover {
+  color: var(--bg);
+  background-color: var(--pink);
+}
+
+/* end map */
+
 /* media 1600px */
 @media (max-width: 1600px) {
   .error__head {
@@ -5093,7 +5326,10 @@ button {
   .article__info,
   .cart__count,
   .cart__button,
-  .cart__name {
+  .cart__name,
+  .contacts__metro,
+  .contacts__tel,
+  .personal__history_name p {
     font-size: 14px;
     line-height: 17px;
   }
@@ -5539,6 +5775,32 @@ button {
   .product__head {
     max-width: 830px;
   }
+  .contacts__image {
+    width: 256px;
+  }
+  .contacts__info {
+    width: calc(100% - 316px);
+  }
+  .contacts__metro img {
+    width: 25px;
+    height: 17px;
+  }
+  .contacts__time svg {
+    width: 17.5px;
+    height: 17.5px;
+  }
+  .contacts__block {
+    padding: 30px 0;
+  }
+  .map {
+    margin: 0 0 -40px;
+  }
+  .map__yandex {
+    height: 600px;
+  }
+  .map__zoom {
+    right: 40px;
+  }
   .footer__top_button {
     width: 50px;
     height: 50px;
@@ -5573,10 +5835,6 @@ button {
   .header__nav_link {
     font-size: 12px;
     line-height: 15px;
-  }
-  .personal__history_name p {
-    font-size: 14px;
-    line-height: 17px;
   }
   .products__price,
   .product__recommended_price,
@@ -6063,6 +6321,33 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .contacts__item {
+    padding: 20px;
+  }
+  .map__zoom {
+    right: 20px;
+  }
+  .map__yandex {
+    height: 650px;
+  }
+  .map__icon svg {
+    width: 50px;
+    height: 77px;
+  }
+  .contacts__flex {
+    gap: 20px;
+  }
+  .contacts__info {
+    width: calc(100% - 290px);
+    flex-direction: column;
+    gap: 20px;
+  }
+  .contacts__bottom {
+    flex-direction: column;
+  }
+  .contacts__image {
+    width: 270px;
   }
   .footer__block {
     margin: 40px auto 0;
@@ -6708,7 +6993,8 @@ button {
     justify-content: flex-end;
   }
   .personal__history_info_buttons,
-  .personal__label_left {
+  .personal__label_left,
+  .contacts__info {
     width: 100%;
   }
   .personal__history_info_button {
@@ -6726,6 +7012,16 @@ button {
   }
   .personal__form {
     gap: 20px;
+  }
+  .contacts__flex {
+    flex-direction: column;
+  }
+  .contacts__image {
+    width: 100%;
+    height: 200px;
+  }
+  .map__yandex {
+    height: 390px;
   }
   .footer__logo {
     display: -webkit-box;
