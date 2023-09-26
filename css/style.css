@@ -5196,12 +5196,16 @@ button {
     height: 450px;
   }
   .hero__slider .swiper-pagination-bullet-active,
-  .shop__slider .swiper-pagination-bullet-active {
+  .shop__slider .swiper-pagination-bullet-active,
+  .hero__slider .swiper-pagination-bullet-active:hover,
+  .shop__slider .swiper-pagination-bullet-active:hover {
     background-size: 18.74px 17.27px;
     opacity: 1;
   }
   .hero__slider .swiper-pagination-bullet,
-  .shop__slider .swiper-pagination-bullet {
+  .shop__slider .swiper-pagination-bullet,
+  .hero__slider .swiper-pagination-bullet:hover,
+  .shop__slider .swiper-pagination-bullet:hover {
     width: 18.74px;
     height: 17.27px;
     background-size: 18.74px 17.27px;
@@ -6430,7 +6434,13 @@ button {
     gap: 20px;
   }
   .hero__slider .swiper-pagination-bullet,
-  .shop__slider .swiper-pagination-bullet {
+  .shop__slider .swiper-pagination-bullet,
+  .hero__slider .swiper-pagination-bullet:hover,
+  .shop__slider .swiper-pagination-bullet:hover,
+  .hero__slider .swiper-pagination-bullet-active,
+  .shop__slider .swiper-pagination-bullet-active,
+  .hero__slider .swiper-pagination-bullet-active:hover,
+  .shop__slider .swiper-pagination-bullet-active:hover {
     width: 10px;
     height: 9.21px;
     background-size: 10px 9.21px;
