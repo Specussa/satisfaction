@@ -495,6 +495,21 @@ btncart.forEach(btns => {
     this.children[1].style.setProperty('--relx', `${relX}px`);
   };
 })
+var btnpersonal = document.querySelectorAll('.personal__btn');
+btnpersonal.forEach(btns => { 
+  btns.onmousemove = function (e) {
+    var relX = e.pageX - this.offsetLeft - 
+    this.offsetParent.offsetLeft - 
+    this.offsetParent.offsetParent.offsetLeft;
+    var relY = e.pageY - this.offsetTop - 
+    this.offsetParent.offsetTop - 
+    this.offsetParent.offsetParent.offsetTop - 
+    this.offsetParent.offsetParent.offsetParent.offsetTop;
+    this.children[1].style.setProperty('--rely', `${relY}px`);
+    this.children[1].style.setProperty('--relx', `${relX}px`);
+    console.log(this.offsetParent.offsetParent.offsetParent.offsetTop)
+  };
+})
 // end btn
 
 // start catalog__image
@@ -1137,7 +1152,7 @@ if(productbtn) {
 }
 // end product btn
 
-// start product btn
+// start products btn
 const productsbtn = document.querySelector('.products__cart');
 if(productsbtn) {
   var productsb = document.getElementsByClassName("products__cart");
@@ -1153,4 +1168,4 @@ if(productsbtn) {
     };
   }
 }
-// end product btn
+// end products btn
