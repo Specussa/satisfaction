@@ -1017,7 +1017,14 @@ button,
   display: flex;
   width: 425px;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 20px;
+}
+
+.footer__bottom_flex_link:last-child {
+  width: 100%;
+  padding: 10px 0 0;
+  color: var(--text-dgray);
 }
 
 .footer__bottom_flex_link {
@@ -1474,6 +1481,18 @@ button,
   position: relative;
   top: auto;
   margin-top: 0;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+}
+
+.hero__slider .swiper-button-next:hover,
+.hero__slider .swiper-button-prev:hover,
+.shop__slider .swiper-button-next:hover,
+.shop__slider .swiper-button-prev:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .hero__slider .swiper-button-next,
@@ -3325,7 +3344,7 @@ button,
 .favorites__clear_image svg {
   width: 200px;
   height: 186.05px;
-  color: var(--text-dgray);
+  color: var(--pink);
 }
 
 /* end favorites */
@@ -6126,6 +6145,9 @@ button,
   .adult__popup {
     max-width: 520px;
   }
+  .footer__block {
+    margin: 40px auto 0;
+  }
   .footer__top_button {
     width: 50px;
     height: 50px;
@@ -6680,7 +6702,6 @@ button,
     width: 270px;
   }
   .footer__block {
-    margin: 40px auto 0;
     padding: 20px 0;
   }
   .footer__container {
