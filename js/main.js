@@ -13,8 +13,37 @@ window.addEventListener('resize', appHeight);
 appHeight();
 // end height
 
-// start header scroll active
+// start adult
 const header = document.querySelector('.header');
+const main = document.querySelector('.main');
+const adultpopup = document.querySelector(".adult__popup");
+const adultagree = document.querySelector(".adult__agree");
+const overlayblur = document.querySelector(".overlay__blur");
+
+const executeCodes = () => {
+  if (document.cookie.includes("codinglab")) return;
+  adultpopup.classList.add("active");
+  overlayblur.classList.add("active");
+  document.body.style.overflow = "hidden";
+  document.body.style.height = "100vh";
+  header.style.filter = "blur(5px)";
+  main.style.filter = "blur(5px)";
+
+  adultagree.addEventListener("click", () => {
+    adultpopup.classList.remove("active");
+    overlayblur.classList.remove("active");
+    document.body.style.overflow = null;
+    document.body.style.height = null;
+    header.style.filter = null;
+    main.style.filter = null;
+    //set cookies (60 sec * 60 hours * 24 hours) = 1 day
+    document.cookie = "cookieBy= codinglab; max-age=" + (60 * 60 * 1) * 1;
+  });
+};
+window.addEventListener("load", executeCodes);
+// end adult
+
+// start header scroll active
 const headertop = document.querySelector('.header__top');
 if (oldWidth > 1280) {
   window.addEventListener("scroll", () => {
@@ -67,8 +96,8 @@ burger.addEventListener('click', function() {
     overlay.classList.remove("active");
     menu.classList.remove("active");
     burger.classList.remove("active");
-    document.body.style.overflow = "visible";
-    document.body.style.height = "100%";
+    document.body.style.overflow = null;
+    document.body.style.height = null;
   } else {
     overlay.classList.add("active");
     menu.classList.add("active");
@@ -88,8 +117,8 @@ overlaypopup.addEventListener('click', function() {
   if(personalpopup){personalpopup.classList.remove("active")};
   if(articlepopup){articlepopup.classList.remove("active")};
   overlaypopup.classList.remove("active");
-  document.body.style.overflow = "visible";
-  document.body.style.height = "100%";
+  document.body.style.overflow = null;
+  document.body.style.height = null;
 })
 // end header__burger
 
@@ -405,7 +434,6 @@ btnheader.forEach(btns => {
     Math.round(window.pageYOffset) - Math.round(this.getBoundingClientRect().top);
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
-    console.log(this.parentElement.offsetTop)
   };
 })
 var btnbrands = document.querySelectorAll('.brands__btn');
@@ -507,7 +535,6 @@ btnpersonal.forEach(btns => {
     this.offsetParent.offsetParent.offsetParent.offsetTop;
     this.children[1].style.setProperty('--rely', `${relY}px`);
     this.children[1].style.setProperty('--relx', `${relX}px`);
-    console.log(this.offsetParent.offsetParent.offsetParent.offsetTop)
   };
 })
 // end btn
@@ -728,8 +755,8 @@ if(!frb){} else {
   fpclose.addEventListener('click', function() {
     cfpopup.classList.remove("active");
     overlaypopup.classList.remove("active");
-    document.body.style.overflow = "visible";
-    document.body.style.height = "100%";
+    document.body.style.overflow = null;
+    document.body.style.height = null;
   })
 }
 // end filter buttons
