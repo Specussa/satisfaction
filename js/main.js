@@ -20,7 +20,7 @@ const adultpopup = document.querySelector(".adult__popup");
 const adultagree = document.querySelector(".adult__agree");
 const overlayblur = document.querySelector(".overlay__blur");
 
-const executeCodes = () => {
+const adultCodes = () => {
   if (document.cookie.includes("codinglab")) return;
   adultpopup.classList.add("active");
   overlayblur.classList.add("active");
@@ -36,11 +36,11 @@ const executeCodes = () => {
     document.body.style.height = null;
     header.style.filter = null;
     main.style.filter = null;
-    //set cookies (60 sec * 60 hours * 24 hours) = 1 day
+    //set cookies (60 sec * 60 min * 24 hours) = 1 day (86 400 mc)
     document.cookie = "cookieBy= codinglab; max-age=" + (60 * 60 * 1) * 1;
   });
 };
-window.addEventListener("load", executeCodes);
+window.addEventListener("load", adultCodes);
 // end adult
 
 // start header scroll active
@@ -87,9 +87,6 @@ const headerbuttons = document.querySelector('.header__buttons');
 const menu = document.querySelector('.header__nav');
 const burger = document.querySelector('.header__burger');
 
-const menu_c = document.querySelector('.header__consultation');
-const burger_c = document.querySelector('.button__project');
-
 // кнопка header__burger
 burger.addEventListener('click', function() {
   if (burger.classList.contains("active")) {
@@ -108,6 +105,48 @@ burger.addEventListener('click', function() {
 })
 // end header__burger
 
+// start login__popup
+const headerpersonal = document.querySelector('.header__personal');
+const loginpopup = document.querySelector('.login__popup');
+const loginclose = document.querySelector('.login__close');
+const loginreg = document.querySelector('.login__button_reg');
+const loginback = document.querySelector('.login__button_back');
+const loginform = document.querySelector('.login__form');
+const regform = document.querySelector('.reg__form');
+const loginlogged = document.querySelector('.login__logged');
+
+headerpersonal.addEventListener('click', function() {
+  if (!loginpopup.classList.contains("active")) {
+    loginform.classList.remove("hidden");
+    regform.classList.remove("active");
+    loginlogged.classList.remove("active");
+    overlaypopup.classList.add("active");
+    loginpopup.classList.add("active");
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+  }
+})
+
+loginclose.addEventListener('click', function() {
+  if (loginpopup.classList.contains("active")) {
+    overlaypopup.classList.remove("active");
+    loginpopup.classList.remove("active");
+    document.body.style.overflow = null;
+    document.body.style.height = null;
+  }
+})
+
+loginreg.addEventListener('click', function() {
+  loginform.classList.add("hidden");
+  regform.classList.add("active");
+})
+
+loginback.addEventListener('click', function() {
+  loginform.classList.remove("hidden");
+  regform.classList.remove("active");
+})
+// end header__burger
+
 // start overlaypopup
 const cfpopup = document.querySelector('.catalog__filter_popup');
 const personalpopup = document.querySelector(".personal__popup");
@@ -116,6 +155,7 @@ overlaypopup.addEventListener('click', function() {
   if(cfpopup){cfpopup.classList.remove("active")};
   if(personalpopup){personalpopup.classList.remove("active")};
   if(articlepopup){articlepopup.classList.remove("active")};
+  if(loginpopup.classList.contains("active")){loginpopup.classList.remove("active")};
   overlaypopup.classList.remove("active");
   document.body.style.overflow = null;
   document.body.style.height = null;

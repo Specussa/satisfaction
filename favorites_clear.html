@@ -129,12 +129,12 @@
               </svg>
               <span class="header__counter header__counter_favorites">10</span>
             </a>
-            <a href="personal.html" class="header__personal">
+            <button class="header__personal">
               <svg width="74" height="82" viewBox="0 0 74 82" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.46081 62.6274C3.05028 57.5143 5.92039 52.8463 10.2787 49.9553C12.4883 48.4923 15.1456 47.499 17.6378 47.1924L17.6455 47.1914C19.4213 46.9668 20.2542 46.9508 20.8195 47.0144C21.1205 47.0525 21.7027 47.1166 22.1129 47.161C26.848 47.6935 31.2496 50.2538 34.2284 54.2656C34.2584 54.3075 34.2877 54.3481 34.316 54.3875C34.4011 54.5059 34.478 54.6129 34.5446 54.7072C34.5876 54.7681 34.6181 54.8121 34.6378 54.8412L34.6534 54.8671C34.7558 55.0367 34.9395 55.307 35.2347 55.5556C35.5457 55.8174 36.0791 56.1319 36.7989 56.1319C37.5186 56.1319 38.0521 55.8174 38.3631 55.5556C38.6583 55.307 38.842 55.0367 38.9444 54.8671L38.9551 54.8494L38.9655 54.8314C39.2348 54.3664 40.2663 53.0876 41.1673 52.1898L41.1721 52.1849C43.965 49.3851 47.6627 47.593 51.485 47.161C51.8934 47.1168 52.4721 47.0531 52.7742 47.0149C53.1638 46.973 53.9037 46.9713 54.3823 47.0232L54.3942 47.0245L54.406 47.0257C54.4761 47.0325 54.5971 47.0448 54.7392 47.0593C54.9788 47.0836 55.2786 47.1141 55.4963 47.135C62.3193 47.8347 68.257 52.6527 70.3977 59.2485C70.8613 60.6881 71.0565 61.6641 71.288 64.0283C71.3852 65.0573 71.1875 67.8438 70.8176 69.7803C70.1432 73.2942 68.8012 76.4562 66.4948 79.7218H7.43902C4.04479 75.1289 2.52395 70.757 2.28386 65.096M2.46081 62.6274C2.28324 64.1723 2.26343 64.6167 2.28386 65.096M2.46081 62.6274L2.28386 65.096M53.6501 19.3711C53.6501 28.8384 46.0771 36.4649 36.7946 36.4649C27.512 36.4649 19.939 28.8384 19.939 19.3711C19.939 9.90383 27.512 2.27734 36.7946 2.27734C46.0771 2.27734 53.6501 9.90382 53.6501 19.3711Z" stroke="currentColor" stroke-width="4.6"/>
                 <defs><rect width="74" height="82" fill="currentColor"/></defs>
               </svg>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -900,6 +900,66 @@
           </span>
         </button>
       </div>
+    </div>
+  </div>
+  <div class="login__popup">
+    <div class="login__block">
+      <button class="login__close">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.989959 15.987C0.643972 16.333 0.643972 16.894 0.989959 17.24C1.33595 17.586 1.8969 17.586 2.24289 17.24L9.13453 10.3483L16.0263 17.2401C16.3723 17.5861 16.9333 17.5861 17.2793 17.2401C17.6252 16.8941 17.6252 16.3332 17.2793 15.9872L10.3875 9.0954L17.2781 2.2048C17.624 1.85882 17.624 1.29786 17.2781 0.951873C16.9321 0.605886 16.3711 0.605886 16.0251 0.951873L9.13453 7.84247L2.24409 0.952034C1.8981 0.606047 1.33715 0.606046 0.99116 0.952034C0.645173 1.29802 0.645173 1.85898 0.991161 2.20496L7.8816 9.0954L0.989959 15.987Z" fill="currentColor"/>
+        </svg>
+      </button>
+      <div class="login__logged">
+        <p class="login__head">Добро пожаловать</p>
+        <p class="login__desc">В мир удовольсвтия</p>
+      </div>
+      <form class="login__form" id="loginform">
+        <p class="login__head">Вход</p>
+        <div class="login__labels">
+          <label class="login__label">
+            Телефон *
+            <input type="number" class="login__input" id="loginnumber" placeholder="Введите телефон" minlength="6" maxlength="10">
+          </label>
+          <label class="login__label">
+            Пароль *
+            <input type="password" class="login__input" id="loginpassword" placeholder="Введите пароль">
+          </label>
+        </div>
+        <div class="login__buttons">
+          <button class="login__button login__button_log">
+            <span>
+              Войти
+            </span>
+          </button>
+          <a class="login__button login__button_reg">
+            <span>
+              Регистрация
+            </span>
+          </a>
+        </div>
+      </form>
+      <form class="reg__form">
+        <p class="login__head">Регистрация</p>
+        <div class="login__labels">
+          <label class="login__label">
+            Телефон *
+            <input type="number" class="login__input" placeholder="Введите телефон" required>
+          </label>
+        </div>
+        <p class="login__desc">На указанный  Вами номер телефона  мы отправим письмо с кодом подтверждения</p>
+        <div class="login__buttons">
+          <a class="login__button login__button_back">
+            <span>
+              Назад
+            </span>
+          </a>
+          <button class="login__button reg__button">
+            <span>
+              Выслать код
+            </span>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
   <script src="js/nouislider.js"></script>

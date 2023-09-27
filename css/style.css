@@ -51,7 +51,11 @@ textarea {
   resize: none;
 } 
 
-input::-moz-selection,
+input::-moz-selection {
+  background-color: yellow;
+  color: var(--text);
+}
+
 input::selection {
   background-color: yellow;
   color: var(--text);
@@ -272,7 +276,8 @@ section {
 }
 
 h1,
-.adult__head {
+.adult__head,
+.login__head {
   font-family: var(--title-font);
   font-size: 50px;
   font-weight: 400;
@@ -410,7 +415,8 @@ label,
 .product__article,
 .filter__select_selected-title,
 .filter__select_list_item,
-button {
+button,
+.login__button {
   font-family: var(--text-font);
   font-size: 12px;
   font-weight: 500;
@@ -514,6 +520,16 @@ button {
   background-color: transparent;
 }
 
+.input__error input {
+  color: var(--pink);
+  border: 1px solid var(--pink);
+}
+
+.input__success input {
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
 /* end buttons */
 
 /* start header */
@@ -602,7 +618,8 @@ button {
   height: 18px;
 }
 
-.header__right_buttons a {
+.header__right_buttons a,
+.header__right_buttons button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -618,7 +635,8 @@ button {
   transition: background-color .2s linear, color .2s linear;
 }
 
-.header__right_buttons a:hover {
+.header__right_buttons a:hover,
+.header__right_buttons button:hover {
   color: var(--pink);
   background-color: var(--border-pink);
 }
@@ -642,7 +660,8 @@ button {
   transition: background-color .2s linear, color .2s linear;
 }
 
-.header__right_buttons a:hover .header__counter {
+.header__right_buttons a:hover .header__counter,
+.header__right_buttons button:hover .header__counter {
   color: var(--bg);
   background-color: var(--pink);
 }
@@ -5313,10 +5332,13 @@ button {
 
 /* end map */
 
-/* start adult */
-.adult__popup {
+/* start popup */
+
+.adult__popup,
+.login__popup {
   width: 100%;
   max-width: 700px;
+  max-height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -5329,16 +5351,32 @@ button {
               0px 20px 12px 0px rgba(175, 89, 84, 0.05),
               0px 35px 14px 0px rgba(175, 89, 84, 0.01),
               0px 55px 15px 0px rgba(175, 89, 84, 0);
-  -webkit-transform: translateY(-100% - 1px);
-  transform: translateY(-100% - 1px);
+  -webkit-transform: translateY(calc(-100% - 1px));
+  transform: translateY(calc(-100% - 1px));
   -webkit-transition: opacity 0.5s linear, -webkit-transform 0s linear, top 0s linear, left 0s linear;
   transition: opacity 0.5s linear, transform 0s linear, top 0s linear, left 0s linear;
   -webkit-transition-delay: 0s, 0.5s, 0.5s, 0.5s;
   transition-delay: 0s, 0.5s, 0.5s, 0.5s;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
-.adult__popup.active {
+.adult__popup::-webkit-scrollbar,
+.login__popup::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  background: transparent;
+}
+
+.adult__popup::-webkit-scrollbar-thumb,
+.login__popup::-webkit-scrollbar-thumb {
+  display: none;
+  width: 0px;
+  background: transparent;
+}
+
+.adult__popup.active,
+.login__popup.active {
   top: 50%;
   left: 50%;
   opacity: 1;
@@ -5348,7 +5386,8 @@ button {
   transition-delay: 0s, 0s, 0s, 0s;
 }
 
-.adult__popup::after {
+.adult__popup::after,
+.login__popup::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -5360,7 +5399,8 @@ button {
   opacity: 0.2;
 }
 
-.adult__block {
+.adult__block,
+.login__block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5397,12 +5437,11 @@ button {
 }
 
 .adult__agree {
-  width: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 50px;
+  height: 70px;
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -5419,7 +5458,128 @@ button {
   background-color: var(--border-pink);
 }
 
-/* end adult */
+.login__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.reg__form,
+.login__form.hidden {
+  display: none;
+}
+
+.reg__form.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.login__labels,
+.login__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.login__input {
+  width: 100%;
+  height: 70px;
+  padding: 0 15px;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+  cursor: pointer;
+}
+
+.login__input:focus {
+  background-color: var(--border-pink);
+}
+
+.login__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.login__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--bg);
+  border-radius: 10px;
+  -webkit-transition: background-color 0.2s linear, color 0.2s linear;
+  transition: background-color 0.2s linear, color 0.2s linear;
+  overflow: hidden;
+}
+
+.login__button_log,
+.login__button_back {
+  background-color: var(--pink);
+}
+
+.login__button_reg,
+.reg__button {
+  background-color: var(--green);
+}
+
+.login__button:hover {
+  color: var(--pink);
+  background-color: var(--border-pink);
+}
+
+.login__close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  padding: 20px;
+}
+
+.login__close svg {
+  width: 17px;
+  height: 17px;
+  -webkit-transition: transform 0.2s linear;
+  transition: transform 0.2s linear;
+}
+
+.login__close:hover svg {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.login__logged {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.login__logged.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* end popup */
 
 /* media 1600px */
 @media (max-width: 1600px) {
@@ -5434,7 +5594,8 @@ button {
   .cart__total_block span:last-child,
   .cart__price,
   .cart__totals span:first-child,
-  .adult__head {
+  .adult__head,
+  .login__head {
     font-size: 37px;
     line-height: 40px;
   }
@@ -5489,6 +5650,7 @@ button {
     line-height: 15px;
   }
   button,
+  .login__button,
   .products__heading,
   .footer__bottom_link,
   .footer__top_address,
@@ -5989,7 +6151,8 @@ button {
   label,
   .footer__bottom_link,
   .footer__bottom_flex_link,
-  .header__bottom_link {
+  .header__bottom_link,
+  .login__button {
     font-size: 12px;
     line-height: 14px;
   }
@@ -6810,7 +6973,8 @@ button {
   .cart__total_block span:last-child,
   .cart__price,
   .cart__totals span:first-child,
-  .adult__head {
+  .adult__head,
+  .login__head {
     font-size: 29px;
     line-height: 31px;
   }
@@ -6841,7 +7005,8 @@ button {
   .footer__bottom_link,
   .footer__bottom_flex_link,
   .header__bottom_link,
-  .personal__history_name p {
+  .personal__history_name p,
+  .login__button {
     font-size: 12px;
     line-height: 14px;
   }
@@ -7199,7 +7364,8 @@ button {
     width: 70px;
     height: 70px;
   }
-  .adult__block {
+  .adult__block,
+  .login__popup {
     padding: 30px 20px;
   }
   .adult__popup {
