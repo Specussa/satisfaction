@@ -5320,6 +5320,7 @@ button {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 110;
   background: var(--bg);
   border-radius: 10px;
   opacity: 0;
@@ -5330,9 +5331,10 @@ button {
               0px 55px 15px 0px rgba(175, 89, 84, 0);
   -webkit-transform: translateY(-100% - 1px);
   transform: translateY(-100% - 1px);
-  -webkit-transition: opacity 0.5s linear;
-  transition: opacity 0.5s linear;
-  z-index: 110;
+  -webkit-transition: opacity 0.5s linear, -webkit-transform 0s linear, top 0s linear, left 0s linear;
+  transition: opacity 0.5s linear, transform 0s linear, top 0s linear, left 0s linear;
+  -webkit-transition-delay: 0s, 0.5s, 0.5s, 0.5s;
+  transition-delay: 0s, 0.5s, 0.5s, 0.5s;
   overflow: hidden;
 }
 
@@ -5342,6 +5344,8 @@ button {
   opacity: 1;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  -webkit-transition-delay: 0s, 0s, 0s, 0s;
+  transition-delay: 0s, 0s, 0s, 0s;
 }
 
 .adult__popup::after {
