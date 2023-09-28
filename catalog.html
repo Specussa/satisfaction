@@ -1538,7 +1538,7 @@
         <p class="login__head">Добро пожаловать</p>
         <p class="login__desc">В мир удовольсвтия</p>
       </div>
-      <form class="login__form" id="loginform">
+      <form class="login__form hidden" id="loginform">
         <p class="login__head">Вход</p>
         <div class="login__labels">
           <label class="login__label">
@@ -1563,12 +1563,12 @@
           </a>
         </div>
       </form>
-      <form class="reg__form">
+      <form class="reg__form" id="regform">
         <p class="login__head">Регистрация</p>
         <div class="login__labels">
           <label class="login__label">
             Телефон *
-            <input type="number" class="login__input" placeholder="Введите телефон" required>
+            <input type="number" class="login__input" id="regnumber" placeholder="Введите телефон">
           </label>
         </div>
         <p class="login__desc">На указанный  Вами номер телефона  мы отправим письмо с кодом подтверждения</p>
@@ -1581,6 +1581,45 @@
           <button class="login__button reg__button">
             <span>
               Выслать код
+            </span>
+          </button>
+        </div>
+      </form>
+      <form class="registration__form" id="registrationform">
+        <p class="login__head">Регистрация</p>
+        <p class="registration__desc">Код подтверждения выслан на указанный телефон</p>
+        <div class="login__labels">
+          <label class="login__label">
+            <input type="number" class="login__input" id="registrationnumber" placeholder="Телефон *" disabled>
+          </label>
+          <label class="login__label">
+            <input type="number" class="login__input" id="registrationcode" placeholder="Код подтверждения *">
+          </label>
+          <div class="login__code">
+            <div class="login__code_times">
+              <span class="minutes login__code_time"></span>:<span class="seconds login__code_time"></span>
+            </div>
+            <div class="login__code_message">
+              <span>Дождитесь таймер</span>
+              <a class="login__code_reload">Отправить код повторно</a>
+            </div>
+          </div>
+          <label class="login__label">
+            <input type="password" class="login__input" id="registrationpassword" placeholder="Пароль *">
+          </label>
+          <label class="login__label">
+            <input type="password" class="login__input" id="registrationpassword2" placeholder="Повторите пароль *">
+          </label>
+        </div>
+        <div class="login__buttons">
+          <a class="login__button registration__button_back">
+            <span>
+              Назад
+            </span>
+          </a>
+          <button class="login__button reg__button">
+            <span>
+              Зарегистрироваться
             </span>
           </button>
         </div>
