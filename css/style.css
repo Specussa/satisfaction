@@ -6224,6 +6224,9 @@ button,
   .adult__popup {
     max-width: 520px;
   }
+  .login__input {
+    height: 50px;
+  }
   .footer__block {
     margin: 40px auto 0;
   }
