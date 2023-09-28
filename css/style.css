@@ -149,6 +149,12 @@ a {
   transition: color 0.15s linear;
   text-decoration: none;
   cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 a:hover {
@@ -222,7 +228,7 @@ section {
 .overlay.active,
 .overlay__popup.active,
 .overlay__blur.active {
-  background-color: var(--text);
+  background-color: var(--pink);
   opacity: 0.2;
   visibility: visible;
   -webkit-transition-delay: 0s;
@@ -286,11 +292,13 @@ h1,
   color: var(--text);
 }
 
-h2 {
+h2,
+.login__code_times {
   font-family: var(--text-font);
   font-size: 31px;
   font-weight: 500;
   line-height: 38px;
+  color: var(--text);
 }
 
 h3,
@@ -5487,11 +5495,13 @@ button,
 }
 
 .reg__form,
+.registration__form,
 .login__form.hidden {
   display: none;
 }
 
-.reg__form.active {
+.reg__form.active,
+.registration__form.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5508,6 +5518,9 @@ button,
   width: 100%;
   flex-direction: column;
   gap: 10px;
+}
+
+.login__label {
   cursor: pointer;
 }
 
@@ -5521,6 +5534,16 @@ button,
   -webkit-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
   cursor: pointer;
+}
+
+.login__input:disabled,
+.login__input[disabled]{
+  color: var(--text);
+  background-color: var(--border);
+}
+
+.login__input:disabled::placeholder {
+  color: var(--text);
 }
 
 .login__input:focus {
@@ -5552,7 +5575,8 @@ button,
 }
 
 .login__button_log,
-.login__button_back {
+.login__button_back,
+.registration__button_back {
   background-color: var(--pink);
 }
 
@@ -5598,6 +5622,60 @@ button,
   display: flex;
 }
 
+.login__code {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.login__code_times {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(50% - 10px);
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.login__code_message {
+  width: calc(50% - 10px);
+  text-align: center;
+}
+
+.login__code_times.active {
+  color: var(--bg);
+}
+
+.login__code_times.active span,
+.login__code_message.active span,
+.login__code_message .login__code_reload {
+  display: none;
+  color: var(--bg);
+}
+
+.login__code_message.active .login__code_reload {
+  display: block;
+  color: var(--pink);
+}
+
+.registration__desc {
+  color: var(--green);
+}
+
 /* end popup */
 
 /* media 1600px */
@@ -5618,7 +5696,8 @@ button,
     font-size: 37px;
     line-height: 40px;
   }
-  h2 {
+  h2,
+  .login__code_times {
     font-size: 23px;
     line-height: 28px;
   }

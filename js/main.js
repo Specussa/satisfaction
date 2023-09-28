@@ -114,10 +114,14 @@ const loginback = document.querySelector('.login__button_back');
 const loginform = document.querySelector('.login__form');
 const regform = document.querySelector('.reg__form');
 const loginlogged = document.querySelector('.login__logged');
+const registrationform = document.querySelector('.registration__form');
+const registrationback = document.querySelector('.registration__button_back');
 
 headerpersonal.addEventListener('click', function() {
   if (!loginpopup.classList.contains("active")) {
-    loginform.classList.remove("hidden");
+    if (!registrationform.classList.contains("active")) {
+      loginform.classList.remove("hidden");
+    }
     regform.classList.remove("active");
     loginlogged.classList.remove("active");
     overlaypopup.classList.add("active");
@@ -144,6 +148,11 @@ loginreg.addEventListener('click', function() {
 loginback.addEventListener('click', function() {
   loginform.classList.remove("hidden");
   regform.classList.remove("active");
+})
+
+registrationback.addEventListener('click', function() {
+  registrationform.classList.remove("active");
+  regform.classList.add("active");
 })
 // end header__burger
 
