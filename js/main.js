@@ -427,7 +427,7 @@ btndefault.forEach(btns => {
   };
 })
 var btnheader = document.querySelectorAll('.header__blockbtn');
-btnheader.forEach(btns => { 
+btnheader.forEach(btns => {
   btns.onmousemove = function (e) {
     var relX = e.pageX - this.offsetLeft - 
     this.parentElement.parentElement.parentElement.offsetLeft;

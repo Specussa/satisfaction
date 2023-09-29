@@ -6225,7 +6225,8 @@ button,
     max-width: 520px;
   }
   .login__input,
-  .login__button {
+  .login__button,
+  .adult__agree {
     height: 50px;
   }
   .footer__block {
