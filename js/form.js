@@ -89,13 +89,12 @@ if(!idloginform){} else {
           headers: {
             "Content-type": "application/json; charset=UTF-8"
           }
-        })
+        });
+        window.location.href = 'personal.html';
       }, 1000);
       loginformdouble.classList.add("hidden");
       regformdouble.classList.remove("active");
       loginloggeddouble.classList.add("active");
-      loginnumber.value = '';
-      loginpassword.value = '';
     }
   }
   
@@ -178,7 +177,7 @@ if(!idregistrationform){} else {
     if(registrationpasswordValue !== '' && registrationpasswordValue.length > 5 && registrationpasswordValue.length <= 30) {setSuccessFor(registrationpassword);} else {setErrorFor(registrationpassword);}
     if(registrationpassword2Value !== '' && registrationpassword2Value.length > 5 && registrationpassword2Value.length <= 30 && registrationpasswordValue === registrationpassword2Value) {setSuccessFor(registrationpassword2);} else {setErrorFor(registrationpassword2);}
 
-    if(registrationnumberValue !== '' && registrationnumberValue.length > 5 && registrationnumberValue.length <= 30 && registrationcodeValue === '0000' && registrationpasswordValue !== '' && registrationpasswordValue > 5 && registrationpasswordValue <= 30 && registrationpasswordValue === registrationpassword2Value){
+    if(registrationnumberValue !== '' && registrationnumberValue.length > 5 && registrationnumberValue.length <= 30 && registrationcodeValue === '0000' && registrationpasswordValue !== '' && registrationpasswordValue.length > 5 && registrationpasswordValue.length <= 30 && registrationpasswordValue === registrationpassword2Value){
       window.setTimeout(function () {
         fetch('/ajax/sendMail.php', {
           method: 'POST',
@@ -190,12 +189,13 @@ if(!idregistrationform){} else {
           headers: {
             "Content-type": "application/json; charset=UTF-8"
           }
-        })
+        });
+        window.location.href = 'personal.html';
       }, 1000);
       loginformdouble.classList.add("hidden");
       regformdouble.classList.remove("active");
+      registrationformdouble.classList.remove("active");
       loginloggeddouble.classList.add("active");
-      loginnumber.value = '';
     }
   }
   
@@ -210,3 +210,27 @@ if(!idregistrationform){} else {
   }
 }
 // end validate form registration
+
+// start show hide password
+var shp = document.getElementsByClassName("show_hide_password");
+var i;
+
+for (i = 0; i < shp.length; i++) {
+  shp[i].onclick = function(e) {
+    if (this.previousElementSibling.getAttribute('type') == 'password') {
+      this.classList.add('view');
+      this.previousElementSibling.setAttribute('type', 'text');
+    } else {
+      this.classList.remove('view');
+      this.previousElementSibling.setAttribute('type', 'password');
+    }
+    if (this.parentElement.nextElementSibling) {
+      if (this.parentElement.nextElementSibling.children[0].getAttribute('type') == 'password') {
+        this.parentElement.nextElementSibling.children[0].setAttribute('type', 'text');
+      } else {
+        this.parentElement.nextElementSibling.children[0].setAttribute('type', 'password');
+      }
+    }
+  };
+}
+// end show hide password

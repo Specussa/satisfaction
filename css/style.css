@@ -5521,6 +5521,7 @@ button,
 }
 
 .login__label {
+  position: relative;
   cursor: pointer;
 }
 
@@ -5611,6 +5612,7 @@ button,
 
 .login__logged {
   display: none;
+  width: 100%;
   flex-direction: column;
   gap: 20px;
   text-align: center;
@@ -5674,6 +5676,23 @@ button,
 
 .registration__desc {
   color: var(--green);
+}
+
+.show_hide_password {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background: url('../img/icon/hide.svg') center center no-repeat;
+  background-size: 16px 16px;
+}
+
+.show_hide_password.view {
+  transform: rotate(-180deg);
+  background: url('../img/icon/show.svg') center center no-repeat;
+  background-size: 16px 16px;
 }
 
 /* end popup */
@@ -6227,6 +6246,10 @@ button,
   .login__input,
   .login__button,
   .adult__agree {
+    height: 50px;
+  }
+  .show_hide_password {
+    width: 50px;
     height: 50px;
   }
   .footer__block {
