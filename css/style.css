@@ -1534,7 +1534,6 @@ button,
   background-size: 25px 23.03px;
   border-radius: 0;
   opacity: 1;
-  transition: background 0.2s linear;
 }
 
 .hero__slider .swiper-pagination-bullet:hover,
