@@ -279,7 +279,6 @@ if(blogSlider){
     allowTouchMove: true,
     breakpoints: {
       580: {
-        slidesPerView: 1,
         spaceBetween: 10,
       },
       1280: {
