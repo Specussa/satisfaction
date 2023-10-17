@@ -14,34 +14,73 @@ appHeight();
 // end height
 
 // start adult
+const adultpopup = document.querySelector(".adult__popup");
 const header = document.querySelector('.header');
 const main = document.querySelector('.main');
-const adultpopup = document.querySelector(".adult__popup");
-const adultagree = document.querySelector(".adult__agree");
 const overlayblur = document.querySelector(".overlay__blur");
-
-const adultCodes = () => {
-  if (document.cookie.includes("codinglab")) return;
-  adultpopup.classList.add("active");
-  overlayblur.classList.add("active");
-  document.body.style.overflow = "hidden";
-  document.body.style.height = "100vh";
-  header.style.filter = "blur(5px)";
-  main.style.filter = "blur(5px)";
-
-  adultagree.addEventListener("click", () => {
-    adultpopup.classList.remove("active");
-    overlayblur.classList.remove("active");
-    document.body.style.overflow = null;
-    document.body.style.height = null;
-    header.style.filter = null;
-    main.style.filter = null;
-    //set cookies (60 sec * 60 min * 24 hours) = 1 day (86 400 mc)
-    document.cookie = "cookieBy= codinglab; max-age=" + (60 * 60 * 1) * 1;
-  });
-};
-window.addEventListener("load", adultCodes);
+const adultagree = document.querySelector(".adult__agree");
+if(adultpopup){
+  const adultCodes = () => {
+    if (document.cookie.includes("codinglab")) return;
+    adultpopup.classList.add("active");
+    overlayblur.classList.add("active");
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+    header.style.filter = "blur(5px)";
+    main.style.filter = "blur(5px)";
+  
+    adultagree.addEventListener("click", () => {
+      adultpopup.classList.remove("active");
+      overlayblur.classList.remove("active");
+      document.body.style.overflow = null;
+      document.body.style.height = null;
+      header.style.filter = null;
+      main.style.filter = null;
+      //set cookies (60 sec * 60 min * 24 hours) = 1 day (86 400 mc)
+      document.cookie = "cookieBy= codinglab; max-age=" + (60 * 60 * 1) * 1;
+    });
+  };
+  window.addEventListener("load", adultCodes);
+}
 // end adult
+
+// start plus minus
+var productinput = document.querySelector(".product__input input");
+if(productinput){
+  document.querySelectorAll('.product__count .product__minus').forEach(function (element) {
+    element.addEventListener('click', function(event) {
+      event.preventDefault();
+      let input = this.parentElement.querySelector('.product__input input');
+      let count = parseInt(input.value) - 1;
+      count = count < 1 ? 1 : count;
+      input.value = count;
+    });
+  });
+  document.querySelectorAll('.product__count .product__plus').forEach(function (element) {
+    element.addEventListener('click', function(event) {
+      event.preventDefault();
+      let input = this.parentElement.querySelector('.product__input input');
+      let count = parseInt(input.value) + 1;
+      count = count > parseInt(input.dataset.maxCount) ? parseInt(input.dataset.maxCount) : count;
+      input.value = parseInt(count);
+    });
+  });
+  document.querySelectorAll('.product__count .product__input input').forEach(function (element) {
+    element.addEventListener("change", function(event) {
+      event.preventDefault();
+      if (this.value.match(/[^0-9]/g)) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+      }
+      if (this.value == "") {
+        this.value = 1;
+      }
+      if (this.value > parseInt(this.dataset.maxCount)) {
+        this.value = parseInt(this.dataset.maxCount);
+      }
+    });
+  });
+}
+// end plus minus
 
 // start header scroll active
 const headertop = document.querySelector('.header__top');
@@ -70,10 +109,10 @@ window.onresize = function () {
 
 // start year
 const year = document.querySelector('.footer__year');
-if(!year){} else {
-const currentYear = new Date().getFullYear();
-year.insertAdjacentText('beforebegin', currentYear);
-year.remove();
+if(year){
+  const currentYear = new Date().getFullYear();
+  year.insertAdjacentText('beforebegin', currentYear);
+  year.remove();
 }
 // end year
 
@@ -106,55 +145,57 @@ burger.addEventListener('click', function() {
 // end header__burger
 
 // start login__popup
-const headerpersonal = document.querySelector('.header__personal');
 const loginpopup = document.querySelector('.login__popup');
-const loginclose = document.querySelector('.login__close');
-const loginreg = document.querySelector('.login__button_reg');
-const loginback = document.querySelector('.login__button_back');
-const loginform = document.querySelector('.login__form');
-const regform = document.querySelector('.reg__form');
-const loginlogged = document.querySelector('.login__logged');
-const registrationform = document.querySelector('.registration__form');
-const registrationback = document.querySelector('.registration__button_back');
-
-headerpersonal.addEventListener('click', function() {
-  if (!loginpopup.classList.contains("active")) {
-    if (!registrationform.classList.contains("active")) {
-      loginform.classList.remove("hidden");
+if(loginpopup){
+  const headerpersonal = document.querySelector('.header__personal');
+  const loginclose = document.querySelector('.login__close');
+  const loginreg = document.querySelector('.login__button_reg');
+  const loginback = document.querySelector('.login__button_back');
+  const loginform = document.querySelector('.login__form');
+  const regform = document.querySelector('.reg__form');
+  const loginlogged = document.querySelector('.login__logged');
+  const registrationform = document.querySelector('.registration__form');
+  const registrationback = document.querySelector('.registration__button_back');
+  
+  headerpersonal.addEventListener('click', function() {
+    if (!loginpopup.classList.contains("active")) {
+      if (!registrationform.classList.contains("active")) {
+        loginform.classList.remove("hidden");
+      }
+      regform.classList.remove("active");
+      loginlogged.classList.remove("active");
+      overlaypopup.classList.add("active");
+      loginpopup.classList.add("active");
+      document.body.style.overflow = "hidden";
+      document.body.style.height = "100vh";
     }
+  })
+  
+  loginclose.addEventListener('click', function() {
+    if (loginpopup.classList.contains("active")) {
+      overlaypopup.classList.remove("active");
+      loginpopup.classList.remove("active");
+      document.body.style.overflow = null;
+      document.body.style.height = null;
+    }
+  })
+  
+  loginreg.addEventListener('click', function() {
+    loginform.classList.add("hidden");
+    regform.classList.add("active");
+  })
+  
+  loginback.addEventListener('click', function() {
+    loginform.classList.remove("hidden");
     regform.classList.remove("active");
-    loginlogged.classList.remove("active");
-    overlaypopup.classList.add("active");
-    loginpopup.classList.add("active");
-    document.body.style.overflow = "hidden";
-    document.body.style.height = "100vh";
-  }
-})
-
-loginclose.addEventListener('click', function() {
-  if (loginpopup.classList.contains("active")) {
-    overlaypopup.classList.remove("active");
-    loginpopup.classList.remove("active");
-    document.body.style.overflow = null;
-    document.body.style.height = null;
-  }
-})
-
-loginreg.addEventListener('click', function() {
-  loginform.classList.add("hidden");
-  regform.classList.add("active");
-})
-
-loginback.addEventListener('click', function() {
-  loginform.classList.remove("hidden");
-  regform.classList.remove("active");
-})
-
-registrationback.addEventListener('click', function() {
-  registrationform.classList.remove("active");
-  regform.classList.add("active");
-})
-// end header__burger
+  })
+  
+  registrationback.addEventListener('click', function() {
+    registrationform.classList.remove("active");
+    regform.classList.add("active");
+  })
+}
+// end login__popup
 
 // start overlaypopup
 const cfpopup = document.querySelector('.catalog__filter_popup');
@@ -992,10 +1033,12 @@ if(pinformation){
       preview.classList.remove("active");
       preview.style.maxHeight = null;
       previewform.classList.add("active");
-      previewform.style.maxHeight = (preview.scrollHeight * 1) + "px";
+      previews.style.maxHeight = null;
+      previewform.style.maxHeight = (previewform.scrollHeight * 1) + "px";
     } else {
       previewform.classList.remove("active");
       previewform.style.maxHeight = null;
+      previews.style.maxHeight = null;
       preview.classList.add("active");
       preview.style.maxHeight = (preview.scrollHeight * 1) + "px";
     }
