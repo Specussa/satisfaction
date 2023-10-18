@@ -4008,8 +4008,20 @@ button,
 
 /* start article */
 
+.article__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(100% - 375px);
+}
+
+.article__right {
+  width: 345px;
+}
+
 .article__right,
-.article__right_buttons {
+.article__right_buttons,
+.article__right_buttons .arrFilter_form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4256,6 +4268,7 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   gap: 40px 20px;
 }
@@ -6177,6 +6190,12 @@ button,
   .product__review_name {
     margin: 0 10px 0 0;
   }
+  .article__left {
+    width: calc(100% - 266px);
+  }
+  .article__right {
+    width: 256px;
+  }
   .article__image {
    width: 338px;
    height: 450px;
@@ -6642,12 +6661,9 @@ button,
     flex-direction: column-reverse;
     gap: 40px;
   }
-  .article__left {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  .article__left,
+  .article__right {
+    width: 100%;
   }
   .article__image {
     width: 100%;
