@@ -4009,9 +4009,6 @@ button,
 /* start article */
 
 .article__left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   width: calc(100% - 375px);
 }
 
@@ -4180,6 +4177,10 @@ button,
   display: flex;
   justify-content: space-between;
   gap: 30px;
+}
+
+.article__flex_reverse {
+  flex-direction: row-reverse;
 }
 
 .article__block {
@@ -6660,6 +6661,9 @@ button,
   .article__flex {
     flex-direction: column-reverse;
     gap: 40px;
+  }
+  .article__flex_reverse {
+    flex-direction: column;
   }
   .article__left,
   .article__right {
